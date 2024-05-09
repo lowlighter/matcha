@@ -8,8 +8,8 @@
     "fmt:check": "deno task fmt:ts:check && deno task fmt:css:check",
     "fmt:ts": "deno fmt",
     "fmt:ts:check": "deno fmt --check",
-    "fmt:css": "deno run --allow-read --allow-env --allow-sys --allow-write=styles https://deno.land/x/libs/bundle/css/fmt.ts styles/**/*.css",
-    "fmt:css:check": "deno run --allow-read --allow-env --allow-sys --allow-write=styles https://deno.land/x/libs/bundle/css/fmt.ts --check styles/**/*.css"
+    "fmt:css": "deno run --allow-read --allow-env --allow-sys --allow-write=styles jsr:@libs/bundle/css/fmt styles/**/*.css",
+    "fmt:css:check": "deno run --allow-read --allow-env --allow-sys --allow-write=styles jsr:@libs/bundle/css/fmt --check styles/**/*.css"
   },
   "fmt": {
     "semiColons": false,

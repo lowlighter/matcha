@@ -261,11 +261,17 @@
           const light = teapot.variables.filter(({mode}) => mode === "light").map(({name, value}) => `${name}: ${value};`).join("\n")
           const dark = teapot.variables.filter(({mode}) => mode === "dark").map(({name, value}) => `${name}: ${value};`).join("\n")
           stylesheet += "/* Variables */"
-          stylesheet += `:root,[data-color-scheme="light"] {\n${light}\n}\n`
-          stylesheet += `[data-color-scheme="dark"] {\n${dark}\n}\n`
-          stylesheet += `@media (prefers-color-scheme: dark) {\n  :root:not([data-color-scheme="light"]) {\n${dark.split("\n").map(line => `  ${line}`).join("\n")}\n  }\n}\n`
+          if (light.trim().length) {
+            stylesheet += `:root,[data-color-scheme="light"] {\n${light}\n}\n`
+          }
+          if (dark.trim().length) {
+            stylesheet += `[data-color-scheme="dark"] {\n${dark}\n}\n`
+            stylesheet += `@media (prefers-color-scheme: dark) {\n  :root:not([data-color-scheme="light"]) {\n${dark.split("\n").map(line => `  ${line}`).join("\n")}\n  }\n}\n`
+          }
         }
         try {
+          brewing.toggleAttribute("disabled", true)
+          brewing.style.cursor = "loading"
           const response = await fetch("/api/brew", {method:"POST", body:stylesheet})
           if (response.status !== 200) {
             throw new Error(await response.text())
@@ -277,6 +283,10 @@
           document.querySelector(".brewing-error").classList.remove("hidden")
           document.querySelector(".brewing-error").innerText = error.message
           setTimeout(() => document.querySelector(".brewing-error").classList.add("hidden"), 15*1000)
+        }
+        finally {
+          brewing.toggleAttribute("disabled", false)
+          brewing.style.removeProperty("cursor")
         }
       })
       form.dispatchEvent(new Event("change"))
