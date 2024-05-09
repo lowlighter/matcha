@@ -1,0 +1,31 @@
+/* Details */
+details {
+  display: block;
+  padding: 1rem;
+  border: 1px solid var(--bd-muted);
+  border-radius: var(--bd-radius);
+  margin: 0 0 1rem;
+}
+
+summary {
+  display: list-item;
+  color: var(--accent);
+  cursor: pointer;
+  user-select: none;
+}
+
+summary:hover {
+  text-decoration: underline;
+}
+
+details[open] > summary {
+  padding: 1rem;
+  border-bottom: 1px solid var(--bd-muted);
+  margin: -1rem;
+  margin-bottom: 1rem;
+  background: var(--bg-muted);
+}
+
+summary > :is(h1, h2, h3, h4, h5, h6) {
+  display: inline;
+}
