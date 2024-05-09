@@ -4,7 +4,8 @@
 
 **matcha.css** is a pure CSS library that directly styles HTML elements akin to a default browser stylesheet, rather than requiring users to patch their documents with classes.
 
-It is perfect for fast prototyping, Markdown-generated or static HTML pages, developers who don't want to bother with CSS, or want to use more than [`<div> and <span>`](https://developer.mozilla.org/docs/Web/HTML/Element) in their documents, etc.
+It is perfect for fast prototyping, Markdown-generated or static HTML pages, developers who don't want to bother with CSS, or want to use more than
+[`<div> and <span>`](https://developer.mozilla.org/docs/Web/HTML/Element) in their documents, etc.
 
 - ✅ **No** build steps
 - ✅ **No** dependencies
@@ -18,37 +19,35 @@ It is perfect for fast prototyping, Markdown-generated or static HTML pages, dev
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="/.github/demo-dark-a.png">
-  <img alt="" src="/.github/demo-light-a.png" width="480">
+  <img alt="" src="/.github/demo-light-a.png" width="400">
 </picture>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="/.github/demo-dark-b.png">
-  <img alt="" src="/.github/demo-light-b.png" width="480">
+  <img alt="" src="/.github/demo-light-b.png" width="400">
 </picture>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="/.github/demo-dark-c.png">
-  <img alt="" src="/.github/demo-light-c.png" width="480">
+  <img alt="" src="/.github/demo-light-c.png" width="400">
 </picture>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="/.github/demo-dark-d.png">
-  <img alt="" src="/.github/demo-light-d.png" width="480">
+  <img alt="" src="/.github/demo-light-d.png" width="400">
 </picture>
 
 ## 🥢 Why choose **matcha.css** ?
 
 ### 🍜 Agnostic
 
-Works with any document and cover a larger range of HTML elements than most other similar libraries.
-Remains unobstrusive by making clever usage of CSS pseudo-elements and support a wide range of browsers
+Works with any document and cover a larger range of HTML elements than most other similar libraries. Remains unobstrusive by making clever usage of CSS pseudo-elements and support a wide range of
+browsers
 
 ### 🍥 Reversible
 
-Simply include its `<link rel="stylesheet">` to get started, and remove it if you don't want to use it anymore.
-No need to refactor or clean your document thereafter.
+Simply include its `<link rel="stylesheet">` to get started, and remove it if you don't want to use it anymore. No need to refactor or clean your document thereafter.
 
 ### 🍡 Semantic
 
-Styling adapts to elements hierarchy.
-For example, nesting `<menu>` elements will implicitely « create » submenus, a `<label>` with an `<input required>` has an `*` indicator prepended, etc.
+Styling adapts to elements hierarchy. For example, nesting `<menu>` elements will implicitely « create » submenus, a `<label>` with an `<input required>` has an `*` indicator prepended, etc.
 
 ### 🍱 Customizable
 
@@ -65,4 +64,3 @@ To use **matcha.css**, simply include the following in your document `<head>`. T
 ```html
 <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
 ```
-
