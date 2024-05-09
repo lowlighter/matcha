@@ -1,0 +1,162 @@
+<section>
+  <h2 id="layouts-simple">
+    <a href="#layouts-simple">Simple layout</a>
+  </h2>
+  <p>
+    Add <code data-hl="css">.layout-simple</code> to the <code data-hl="html">&lt;body&gt;</code>
+    to enable this layout.
+  </p>
+  <p>
+    <b>Required structure:</b><br>
+    <small class="muted">Elements marked with <code class="danger">*</code> are required</small>
+  </p>
+  <ul class="layout-structure">
+    <li><code data-hl="css">body.layout-simple</code><span class="danger">*</span>
+      <ul>
+        <li><code data-hl="css">&gt; header:first-of-type</code></li>
+        <li><code data-hl="css">&gt; main:only-of-type</code></li>
+        <li>
+          <code data-hl="css">&gt; aside:nth-of-type(1), &gt; aside:nth-of-type(2)</code>
+          <ul>
+            <li>
+              <code data-hl="css">&gt; nav:only-child</code>
+              <ul>
+                <li><code data-hl="css">&gt; ul</code></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><code data-hl="css">&gt; footer:last-of-type</code></li>
+      </ul>
+    </li>
+  </ul>
+  <div class="example example-flex" data-codeless>
+    <template><!-- -brand margins from being trimmed --></template>
+    <article class="layout">
+      <header><code data-hl="css">@media (default)</code></header>
+      <div class="layout-s">
+        <div class="layout-header">&lt;header&gt;</div>
+        <div class="layout-main">&lt;main&gt;</div>
+        <div class="layout-footer">&lt;footer&gt;</div>
+      </div>
+    </article>
+    <article class="layout">
+      <header><code data-hl="css">@media (min-width: 960px)</code></header>
+      <div class="layout-m">
+        <div class="layout-header">&lt;header&gt;</div>
+        <div class="layout-aside1">&lt;aside&gt;</div>
+        <div class="layout-main">&lt;main&gt;</div>
+        <div class="layout-footer">&lt;footer&gt;</div>
+      </div>
+    </article>
+    <article class="layout">
+      <header><code data-hl="css">@media (min-width: 1280px)</code></header>
+      <div class="layout-l">
+        <div class="layout-header">&lt;header&gt;</div>
+        <div class="layout-aside1">&lt;aside&gt;</div>
+        <div class="layout-aside2">&lt;aside&gt;</div>
+        <div class="layout-main">&lt;main&gt;</div>
+        <div class="layout-footer">&lt;footer&gt;</div>
+      </div>
+    </article>
+    <template><!-- -brand margins from being trimmed --></template>
+  </div>
+</section>
+<style>
+  .layout-header, .layout-footer, .layout-main, .layout-aside1, .layout-aside2 {
+    border: 1px solid currentColor;
+    border-radius: var(--bd-radius);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .layout-header {
+    color: var(--success);
+    background: var(--bg-success);
+  }
+  .layout-main {
+    color: var(--accent);
+    background: var(--bg-accent);
+  }
+  .layout-aside1 {
+    color: var(--active);
+    background: var(--bg-active);
+    writing-mode: vertical-rl;
+  }
+  .layout-aside2 {
+    color: var(--variant);
+    background: var(--bg-variant);
+    writing-mode: vertical-rl;
+  }
+  .layout-footer {
+    color: var(--muted);
+    background: var(--bg-muted);
+  }
+
+  .layout-s,
+  .layout-m,
+  .layout-l {
+    display: grid;
+    gap: .25rem;
+    grid-template-rows: auto 5rem auto;
+  }
+
+  .layout-s {
+    grid-template-areas:
+      "s-header"
+      " s-main "
+      "s-footer";
+  }
+  .layout-s .layout-header {
+    grid-area: s-header;
+  }
+  .layout-s .layout-main {
+    grid-area: s-main;
+  }
+  .layout-s .layout-footer {
+    grid-area: s-footer;
+  }
+
+  .layout-m {
+    grid-template-areas:
+      "m-header m-header"
+      "m-aside1 m-main"
+      "m-footer m-footer";
+    grid-template-columns: minmax(0, .4fr) 1fr;
+  }
+  .layout-m .layout-header {
+    grid-area: m-header;
+  }
+  .layout-m .layout-main {
+    grid-area: m-main;
+  }
+  .layout-m .layout-aside1 {
+    grid-area: m-aside1;
+  }
+  .layout-m .layout-footer {
+    grid-area: m-footer;
+  }
+
+  .layout-l {
+    grid-template-areas:
+      "l-header l-header l-header"
+      "l-aside1 l-main   l-aside2"
+      "l-footer l-footer l-footer";
+    grid-template-columns: minmax(0, .3fr) 1fr minmax(0, .3fr);
+  }
+  .layout-l .layout-header {
+    grid-area: l-header;
+  }
+  .layout-l .layout-main {
+    grid-area: l-main;
+  }
+  .layout-l .layout-aside1 {
+    grid-area: l-aside1;
+  }
+  .layout-l .layout-aside2 {
+    grid-area: l-aside2;
+  }
+  .layout-l .layout-footer {
+    grid-area: l-footer;
+  }
+</style>
