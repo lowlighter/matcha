@@ -1,0 +1,40 @@
+/* Ruby */
+rp, rt {
+  color: var(--muted);
+  font-size: 75%;
+}
+
+/* Sidescript */
+sup, sub {
+  position: relative;
+  font-size: 75%;
+  line-height: 0;
+  vertical-align: baseline;
+}
+
+sup {
+  top: -.5em;
+}
+
+sub {
+  bottom: -.25em;
+}
+
+/* Annotations */
+mark, ins, del {
+  padding: 0 .25rem;
+  background: var(--bg-active);
+  color: var(--active);
+}
+
+ins {
+  background: var(--bg-success);
+  color: var(--success);
+  text-decoration: underline;
+}
+
+del {
+  background: var(--bg-danger);
+  color: var(--danger);
+  text-decoration: line-through;
+}
