@@ -1,0 +1,39 @@
+b, strong {
+  font-weight: bold;
+}
+
+i, q, cite, em, dfn, strong {
+  font-style: italic;
+}
+
+q::before {
+  content: "« ";
+}
+
+q::after {
+  content: " »";
+}
+
+dfn, em {
+  font-weight: 600;
+}
+
+u, cite {
+  text-decoration: underline;
+}
+
+u > u {
+  text-decoration: underline double;
+}
+
+s {
+  text-decoration: line-through;
+}
+
+s > s {
+  text-decoration: line-through double;
+}
+
+small {
+  font-size: 85%;
+}
