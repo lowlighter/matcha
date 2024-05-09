@@ -1,0 +1,24 @@
+/* Lists */
+ul, ol, dl {
+  padding-left: 2rem;
+  margin: 0 0 1rem;
+}
+
+li > :is(ul, ol, dl) {
+  margin: 0;
+}
+
+/* Definition lists */
+dl, dt {
+  padding: 0;
+}
+
+dt {
+  margin: 1rem 0 0;
+  font-weight: 600;
+}
+
+dd {
+  padding: 0 1rem;
+  margin: 0 0 1rem;
+}
