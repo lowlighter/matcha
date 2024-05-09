@@ -1,0 +1,14 @@
+{
+  "tasks": {
+    "testing": "deno run --allow-net --allow-read --allow-env --allow-sys --watch app/mod.ts serve",
+    "build": "deno run --allow-net --allow-read --allow-env --allow-sys --allow-write=.pages app/mod.ts build",
+    "fmt": "deno run --allow-read --allow-env --allow-sys --allow-write=styles app/fmt.ts",
+    "fmt:check": "deno run --allow-read --allow-env --allow-sys --allow-write=styles app/fmt.ts --check",
+  },
+  "fmt": {
+    "semiColons": false,
+    "exclude": [
+      "coverage"
+    ]
+  }
+}
