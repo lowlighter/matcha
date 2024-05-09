@@ -12,7 +12,7 @@ export async function ssg() {
   await ensureDir(new URL(".pages", root))
   console.log("Created .pages")
   // Copy favicons and assets
-  for await (const { path, name } of expandGlob("**/*.png", { root: fromFileUrl(new URL("app/icons", root)) })) {
+  for await (const { path, name } of expandGlob("**/*.{png,svg}", { root: fromFileUrl(new URL("app/icons", root)) })) {
     await copy(path, new URL(`.pages/${name}`, root))
     console.log(`Created .pages/${name}`)
   }
