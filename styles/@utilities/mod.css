@@ -1,0 +1,102 @@
+/* Scrollbars */
+::-webkit-scrollbar {
+  background-color: transparent;
+  width: .5rem;
+  height: .5rem;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--muted);
+  border-radius: var(--bd-radius);
+}
+
+/* Colors */
+.default {
+  color: var(--default);
+}
+
+.muted {
+  color: var(--muted);
+}
+
+.accent {
+  color: var(--accent);
+}
+
+.active {
+  color: var(--active);
+}
+
+.variant {
+  color: var(--variant);
+}
+
+.success {
+  color: var(--success);
+}
+
+.attention {
+  color: var(--attention);
+}
+
+.severe {
+  color: var(--severe);
+}
+
+.danger {
+  color: var(--danger);
+}
+
+/* Utilities */
+.hidden {
+  display: none;
+}
+
+/* Flash */
+.flash {
+  padding: 1rem;
+  border: 1px solid var(--default);
+  border-radius: var(--bd-radius);
+  margin: 1rem 0;
+  color: var(--default);
+}
+
+.flash.muted {
+  border-color: var(--muted);
+  background-color: var(--bg-muted);
+}
+
+.flash.accent {
+  border-color: var(--accent);
+  background-color: var(--bg-accent);
+}
+
+.flash.active {
+  border-color: var(--active);
+  background-color: var(--bg-active);
+}
+
+.flash.variant {
+  border-color: var(--variant);
+  background-color: var(--bg-variant);
+}
+
+.flash.success {
+  border-color: var(--success);
+  background-color: var(--bg-success);
+}
+
+.flash.attention {
+  border-color: var(--attention);
+  background-color: var(--bg-attention);
+}
+
+.flash.severe {
+  border-color: var(--severe);
+  background-color: var(--bg-severe);
+}
+
+.flash.danger {
+  border-color: var(--danger);
+  background-color: var(--bg-danger);
+}
