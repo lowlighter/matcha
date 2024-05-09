@@ -1,6 +1,6 @@
 # 🍵 matcha.css
 
-<img src="/app/icons/matchat.svg" width="300" align="center">
+<p align="center"><img src="/app/icons/matchat.svg" width="300"></p>
 
 **matcha.css** is a pure CSS library that directly styles HTML elements akin to a default browser stylesheet, rather than requiring users to patch their documents with classes.
 
@@ -12,17 +12,25 @@ It is perfect for fast prototyping, Markdown-generated or static HTML pages, dev
 - ✅ **No** configuration needed
 - ✅ **No** refactoring needed
 
+### 📸 Screenshot examples
+
+[See live on matcha.mizu.sh !](https://matcha.mizu.sh)
+
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="/.github/demo-dark-a.png">
-  <img alt="" src="/.github/demo-light-a.png" width="500">
+  <img alt="" src="/.github/demo-light-a.png" width="480">
 </picture>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="/.github/demo-dark-b.png">
-  <img alt="" src="/.github/demo-light-b.png" width="500">
+  <img alt="" src="/.github/demo-light-b.png" width="480">
 </picture>
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="/.github/demo-dark-c.png">
-  <img alt="" src="/.github/demo-light-c.png" width="500">
+  <img alt="" src="/.github/demo-light-c.png" width="480">
+</picture>
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="/.github/demo-dark-d.png">
+  <img alt="" src="/.github/demo-light-d.png" width="480">
 </picture>
 
 ## 🥢 Why choose **matcha.css** ?
@@ -57,4 +65,4 @@ To use **matcha.css**, simply include the following in your document `<head>`. T
 ```html
 <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
 ```
-          
+
