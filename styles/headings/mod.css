@@ -1,0 +1,80 @@
+/* Header group */
+hgroup {
+  padding: .25rem .5rem;
+  border-left: .25rem solid currentColor;
+  margin: 0 0 1rem;
+}
+
+hgroup > :is(h1, h2, h3, h4, h5, h6)[id] > a:hover::before {
+  right: calc(100% + 1.25rem);
+}
+
+/* Headings */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  border-bottom: 1px solid transparent;
+  margin: 0 0 1rem;
+  line-height: 1.25;
+}
+
+:not(:is(dialog, article, body) > header:first-child) > :is(h1, h2) {
+  border-color: var(--bd-muted);
+}
+
+:not(hgroup, blockquote, header) > :is(h1, h2, h3, h4, h5, h6):first-child {
+  margin-top: 1.5rem;
+}
+
+:is(h1, h2, h3, h4, h5, h6):last-child {
+  margin-bottom: 0;
+}
+
+h1 {
+  font-size: 2rem;
+}
+
+h2 {
+  font-size: 1.5rem;
+}
+
+h3 {
+  font-size: 1.25rem;
+}
+
+h4 {
+  font-size: 1rem;
+}
+
+h5 {
+  font-size: 0.875rem;
+}
+
+h6 {
+  color: var(--muted);
+  font-size: 0.85rem;
+}
+
+:is(h1, h2, h3, h4, h5, h6)[id] > a {
+  position: relative;
+  color: inherit;
+}
+
+:is(h1, h2, h3, h4, h5, h6)[id] > a:hover {
+  text-decoration: none;
+}
+
+:is(h1, h2, h3, h4, h5, h6)[id] > a:hover::before {
+  position: absolute;
+  top: .125rem;
+  right: calc(100% + .25rem);
+  color: var(--muted);
+  content: "#";
+}
+
+:is(h1, h2, h3, h4, h5, h6)[id]:has(> a:hover) {
+  border-color: currentColor;
+}
