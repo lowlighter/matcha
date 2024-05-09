@@ -1,11 +1,11 @@
 table {
+  display: block;
+  max-width: 100%;
   margin: 0 auto 1rem;
   border-collapse: collapse;
   border-spacing: 0;
   inline-size: fit-content;
-  display: block;
   overflow-x: auto;
-  max-width: 100%;
 }
 
 caption {

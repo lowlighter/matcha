@@ -1,13 +1,13 @@
 /* Scrollbars */
 ::-webkit-scrollbar {
-  background-color: transparent;
   width: .5rem;
   height: .5rem;
+  background-color: transparent;
 }
 
 ::-webkit-scrollbar-thumb {
-  background-color: var(--muted);
   border-radius: var(--bd-radius);
+  background-color: var(--muted);
 }
 
 /* Colors */

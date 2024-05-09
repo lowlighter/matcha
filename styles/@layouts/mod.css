@@ -11,8 +11,8 @@ body.layout-simple {
 
 body.layout-simple > :is(header:first-of-type, footer:last-of-type) {
   display: flex;
-  flex-wrap: wrap;
   height: max-content;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
   padding: 0 .5rem;
@@ -28,11 +28,11 @@ body.layout-simple > :is(header:first-of-type, footer:last-of-type) > * {
 }
 
 body.layout-simple > header:first-of-type {
-  white-space: nowrap;
   position: sticky;
-  top: 0;
   z-index: 200;
+  top: 0;
   height: var(--ly-header-size);
+  white-space: nowrap;
 }
 
 body.layout-simple > main:only-of-type {
@@ -126,20 +126,20 @@ body.layout-simple > aside a {
 
 body.layout-simple > header:first-of-type > nav {
   position: absolute;
-  background: var(--ly-bg-brand);
   top: 0;
-  left: 0;
   right: 0;
+  left: 0;
+  justify-content: center;
+  background: var(--ly-bg-brand);
   opacity: 0;
   pointer-events: none;
   transition: opacity var(--tr-duration), top var(--tr-duration);
-  justify-content: center;
 }
 
 body.layout-simple > header:first-of-type:hover > nav {
-  pointer-events: auto;
-  opacity: 1;
   top: 100%;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 @media (min-width: 768px) {
@@ -148,10 +148,10 @@ body.layout-simple > header:first-of-type:hover > nav {
   }
 
   body.layout-simple > header:first-child > nav {
-    pointer-events: auto;
-    opacity: 1;
     position: static;
-    justify-content: flex-start;
     height: var(--ly-header-size);
+    justify-content: flex-start;
+    opacity: 1;
+    pointer-events: auto;
   }
 }
