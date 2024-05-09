@@ -1,0 +1,12 @@
+a {
+  color: var(--accent);
+  text-decoration: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+a:active:hover {
+  color: var(--active);
+}
