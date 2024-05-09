@@ -1,0 +1,119 @@
+:root,[data-color-scheme="light"] {
+  /* Font */
+  --ft: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  --ft-mono: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
+  --ft-size: 18px;
+
+  /* Transition */
+  --tr-duration: .2s;
+
+  /* Layouts*/
+  --ly-header-size: 3rem;
+  --ly-brand: #e6edf3;
+  --ly-bg-brand: #010409;
+
+  /* Colors */
+  --default: #1f2328;
+  --subtle: #1f2328;
+  --contrast: #e6edf3;
+  --muted: #656d76;
+  --accent: #0969da;
+  --active: #8250df;
+  --variant: #bf3989;
+  --success: #1a7f37;
+  --attention: #9a6700;
+  --severe: #bc4c00;
+  --danger: #d1242f;
+
+  /* Backgrounds */
+  --bg-default: #ffffff;
+  --bg-subtle: #d0d7de;
+  --bg-contrast: #24292f;
+  --bg-muted: #f6f8fa;
+  --bg-accent: #ddf4ff;
+  --bg-active: #fbefff;
+  --bg-variant: #ffeff7;
+  --bg-success: #dafbe1;
+  --bg-attention: #fff8c5;
+  --bg-severe: #fff1e5;
+  --bg-danger:  #ffebe9;
+
+  /* Miscellaneous */
+  --backdrop: #8c959f33;
+  --bd-muted: #d0d7deb3;
+  --bd-radius: 6px;
+}
+
+[data-color-scheme="dark"] {
+  /* Colors */
+  --default: #e6edf3;
+  --subtle: #e6edf3;
+  --contrast: #1f2328;
+  --muted: #848d97;
+  --accent: #4493f8;
+  --active: #a371f7;
+  --variant: #db61a2;
+  --success: #3fb950;
+  --attention: #d29922;
+  --severe: #db6d28;
+  --danger: #f85149;
+
+  /* Backgrounds */
+  --bg-default: #0d1117;
+  --bg-subtle: #30363d;
+  --bg-contrast: #6e7681;
+  --bg-muted: #161b22;
+  --bg-accent: #121d2f;
+  --bg-active: #231f39;
+  --bg-variant: #221926;
+  --bg-success: #12261e;
+  --bg-attention: #272115;
+  --bg-severe: #221a19;
+  --bg-danger:  #25171c;
+
+  /* Miscellaneous */
+  --bd-muted: #30363db3;
+  --backdrop: #161b2266;
+}
+
+/* Computed properties */
+:root {
+  /* Shadows */
+  --shadow: 0px 0px 0px 1px var(--bg-subtle), 0px 6px 12px -3px var(--backdrop), 0px 6px 18px 0px var(--backdrop);
+  --shadow-r: 6px 0px 18px 0px var(--backdrop);
+  --shadow-l: -6px 0px 18px 0px var(--backdrop);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-color-scheme="light"]) {
+    /* Colors */
+    --default: #e6edf3;
+    --subtle: #e6edf3;
+    --contrast: #1f2328;
+    --muted: #848d97;
+    --accent: #4493f8;
+    --active: #a371f7;
+    --variant: #db61a2;
+    --success: #3fb950;
+    --attention: #d29922;
+    --severe: #db6d28;
+    --danger: #f85149;
+
+    /* Backgrounds */
+    --bg-default: #0d1117;
+    --bg-subtle: #30363d;
+    --bg-contrast: #6e7681;
+    --bg-muted: #161b22;
+    --bg-accent: #121d2f;
+    --bg-active: #231f39;
+    --bg-variant: #221926;
+    --bg-success: #12261e;
+    --bg-attention: #272115;
+    --bg-severe: #221a19;
+    --bg-danger:  #25171c;
+
+    /* Miscellaneous */
+    --bd-muted: #30363db3;
+    --backdrop: #161b2266;
+  }
+}
