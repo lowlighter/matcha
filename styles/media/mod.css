@@ -1,0 +1,10 @@
+img, video, iframe {
+  max-width: 100%;
+  border-radius: var(--bd-radius);
+  margin: auto;
+}
+
+iframe {
+  width: 100%;
+  border: none;
+}
