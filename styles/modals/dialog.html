@@ -1,0 +1,67 @@
+<section>
+  <h2 id="dialog">
+    <a href="#dialog"><var>&lt;dialog&gt;</var> Dialog modal</a>
+    <a class="mdn" href="https://developer.mozilla.org/docs/Web/HTML/Element/dialog" target="_blank"></a>
+  </h2>
+  <p>
+    Has capped size, box shadows, and borders with rounded corners.
+    <a href="https://developer.mozilla.org/docs/Web/CSS/::backdrop" target="_blank"><code data-hl="css">::backdrop</code></a> is displayed when <a href="https://developer.mozilla.org/docs/Web/API/HTMLDialogElement/showModal" target="_blank"><code data-hl="js">dialog.showModal()</code></a> is called.
+  </p>
+  <ul>
+    <li>
+      <code data-hl="css">&gt; header:first-child</code> has a bottom border.
+      <ul>
+        <li><code data-hl="css">&gt; :is(h1, h2)</code> have reduced font size.</li>
+      </ul>
+    </li>
+    <li>
+      <code data-hl="css">&gt; footer:last-child</code> has a top border.
+      <ul>
+        <li><code data-hl="css">&gt; form[method="dialog"]</code> has no background, padding, or margin.</li>
+      </ul>
+    </li>
+  </ul>
+  <div class="example">
+    <p class="note">
+      *This dialog contains additional scripting that is not part of <em>matcha.css</em> (it will remain open even after being closed).
+    </p>
+    <dialog open>
+      <header>
+        <h2>WANTED — Dead or Alive</h2>
+      </header>
+      <p>
+        <b><strong>Gol D. Roger</strong></b><br>
+        <b>฿5,564,800,000</b>
+      </p>
+      <p>
+        Kono sakuhin ha fiction dethunode jitsuzaisuru jinbutsu dantai sonota no soshiki to doitsu no meishou ga gekichu ni toujyou shitatoshitemo jitsuzai na monotoha issai mukankeideth.
+      </p>
+      <footer>
+        <form method="dialog">
+          <button type="button">Fullscreen</button>
+          <button type="submit">Close</button>
+        </form>
+      </footer>
+    </dialog>
+    <script>
+      {
+        const dialog = document.currentScript.previousElementSibling
+        dialog.querySelector('[type="button"]').addEventListener("click", event => {
+          event.preventDefault()
+          dialog.close()
+          dialog.style = "position: fixed;"
+          dialog.showModal()
+        })
+        dialog.querySelector('[type="submit"]').addEventListener("click", event => {
+          event.preventDefault()
+          dialog.close()
+          dialog.style = "position: relative;"
+          dialog.show()
+        })
+      }
+    </script>
+  </div>
+  <div class="flash accent">
+    It is advised to use <code data-hl="html">&lt;form method="dialog"&gt;</code> which makes the browser <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#method" target="_blank">natively close the dialog box without any JavaScript</a> when it is submitted.
+  </div>
+</section>
