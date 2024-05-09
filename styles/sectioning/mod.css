@@ -1,0 +1,85 @@
+/* Sections */
+body {
+  padding: 0 1.5rem;
+  margin: 0;
+  background: var(--bg-default);
+  color: var(--default);
+  font-family: var(--ft);
+  font-size: var(--ft-size);
+  line-height: 1.5;
+}
+
+main, header {
+  margin: 0 0 1rem;
+}
+
+body > header:first-child, body > footer:last-child {
+  margin-right: -1.5rem;
+  margin-left: -1.5rem;
+}
+
+footer {
+  text-align: right;
+}
+
+section {
+  max-width: 1024px;
+  margin: 0 auto 2rem;
+}
+
+aside {
+  padding: 1rem;
+  border-left: 4px solid var(--bd-muted);
+  margin: 0 0 0 .5rem;
+  color: var(--muted);
+  float: right;
+}
+
+aside.left {
+  border-right: 4px solid var(--bd-muted);
+  border-left: none;
+  margin: 0 .5rem 0 0;
+  float: left;
+}
+
+/* Article */
+article {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1rem;
+  border: 1px solid var(--bd-muted);
+  border-radius: var(--bd-radius);
+  margin: 1rem;
+}
+
+article > * {
+  width: 100%;
+  box-sizing: border-box;
+}
+
+article > header:first-child {
+  box-sizing: content-box;
+  padding: 0 1rem 1rem;
+  border-bottom: 1px solid var(--bd-muted);
+  margin: 0 -1rem 1rem;
+}
+
+article > footer:last-child {
+  box-sizing: content-box;
+  padding: 1rem 1rem 0;
+  border-top: 1px solid var(--bd-muted);
+  margin: auto -1rem 0;
+}
+
+/* Breaks */
+hr {
+  overflow: visible;
+  height: .25em;
+  box-sizing: content-box;
+  padding: 0;
+  border: none;
+  margin: 1.5em 0;
+  background: var(--bd-muted);
+}

@@ -1,0 +1,68 @@
+<section>
+  <h2 id="article">
+    <a href="#article"><var>&lt;article&gt;</var> Article</a>
+    <a class="mdn" href="https://developer.mozilla.org/docs/Web/HTML/Element/article" target="_blank"></a>
+  </h2>
+  <p>
+    In flex-columns with margins and borders.
+  </p>
+  <ul>
+    <li>
+      <code data-hl="css">&gt; *</code> is <code data-hl="css">border-box</code> sized with a full width.
+    </li>
+    <li>
+      <code data-hl="css">&gt; header:first-child</code> has a bottom margin.
+    </li>
+    <li>
+      <code data-hl="css">&gt; footer:last-child</code> has a top margin and a right aligned text.
+    </li>
+  </ul>
+  <div class="example example-flex">
+    <template><!-- -brand margins from being trimmed --></template>
+    <article>
+      <header>
+        <h1>
+          <img src="https://www.pokepedia.fr/images/c/c0/Miniature_0252_RS.gif" alt="">
+          Treecko
+        </h1>
+      </header>
+      <p>
+        Treecko has small hooks on the bottom of its feet that enable it to scale vertical walls. This Pokémon attacks by slamming foes with its thick tail.
+      </p>
+      <footer class="muted">
+        #0252
+      </footer>
+    </article>
+    <article>
+      <header>
+        <h1>
+          <img src="https://www.pokepedia.fr/images/5/55/Miniature_0255_RS.gif" alt="">
+          Torchic
+        </h1>
+      </header>
+      <p>
+        Torchic sticks with its Trainer, following behind with unsteady steps. This Pokémon breathes fire of over 1,800 degrees F, including fireballs that leave the foe scorched black.
+      </p>
+      <footer class="muted">
+        #0255
+      </footer>
+    </article>
+    <article>
+      <header>
+        <h1>
+          <img src="https://www.pokepedia.fr/images/5/56/Miniature_0258_RS.gif" alt="">
+          Mudkip
+        </h1>
+      </header>
+      <p>
+        The fin on Mudkip's head acts as highly sensitive radar. Using this fin to sense movements of water and air, this Pokémon can determine what is taking place around it without using its eyes.
+      </p>
+      <footer class="muted">
+        #0258
+      </footer>
+    </article>
+  </div>
+  <p class="flash accent">
+    <em>matcha.css</em> applies styling to <code data-hl="html">&lt;article&gt;</code> designed to combine very well with a <code data-hl="css">display: flex</code> parent.
+  </p>
+</section>
