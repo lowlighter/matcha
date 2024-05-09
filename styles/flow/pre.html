@@ -1,0 +1,33 @@
+<section>
+  <h2 id="pre">
+    <a href="#pre"><var>&lt;pre&gt;</var> Preformatted text</a>
+    <a class="mdn" href="https://developer.mozilla.org/docs/Web/HTML/Element/pre" target="_blank"></a>
+  </h2>
+  <p>
+    In monospaced font with a background and a bottom margin.
+  </p>
+  <ul>
+    <li><code data-hl="css">:last-child</code> has no bottom margin.</li>
+    <li><code data-hl="css">&gt; code</code> lose their default style.</li>
+  </ul>
+  <div class="example">
+    <pre><!--
+   --><code data-hl="lisp"><!--
+     -->(defun print-world (world generations)
+  (let ((lim (world-size world))
+        (current (world-current world)))
+    (dotimes (y lim)
+      (dotimes (x lim)
+        (if (zerop (bit current y x))
+            (princ " ")
+            (princ "*")))
+      (terpri))
+    (format t "~&~d Generations, ~d Organisms."
+            generations (world-numdots world))))<!--
+   --></code><!--
+ --></pre>
+  </div>
+  <p class="flash active">
+    <em>matcha.css</em> offers syntax highlighting classes that honors <a href="https://developer.mozilla.org/docs/Web/CSS/@media/prefers-color-scheme"><code data-hl="css">@media (prefers-color-scheme)</code></a> and are compatible with <a href="https://highlightjs.org" target="_blank">highlight.js library</a>.
+  </p>
+</section>

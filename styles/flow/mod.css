@@ -1,0 +1,61 @@
+/* Paragraphs */
+p, pre {
+  margin: 0 auto 1rem;
+}
+
+:is(p, pre):last-child {
+  margin-bottom: 0;
+}
+
+/* Preformatted text */
+pre {
+  position: relative;
+  overflow: auto;
+  padding: 1rem;
+  border-radius: var(--bd-radius);
+  background: var(--bg-muted);
+  font-size: .85rem;
+  line-height: 1.45;
+}
+
+pre > code {
+  overflow: visible;
+  padding: 0;
+  border-radius: 0;
+  background: transparent;
+  font-size: 100%;
+}
+
+/* Quotation block */
+blockquote {
+  padding: .25rem 1rem;
+  border-left: .25rem solid var(--bd-muted);
+  margin: 0 0 1rem;
+  color: var(--muted);
+}
+
+blockquote > cite:last-child {
+  display: block;
+  padding-left: 2rem;
+  margin-top: .25rem;
+  text-decoration: none;
+}
+
+blockquote > cite:last-child::before {
+  content: "— ";
+}
+
+/* Figure */
+figure {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+figcaption {
+  display: block;
+  width: 100%;
+  margin: 1rem 0;
+  color: var(--muted);
+  text-align: center;
+}
