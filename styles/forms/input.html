@@ -1,0 +1,142 @@
+<section>
+  <h2 id="input">
+    <a href="#input"><var>&lt;input&gt;</var> Input</a>
+    <a class="mdn" href="https://developer.mozilla.org/docs/Web/HTML/Element/input" target="_blank"></a>
+  </h2>
+  <p>
+    Depends on <a href="https://developer.mozilla.org/docs/Web/HTML/Element/input#input_types" target="_blank"><code data-hl="html">&lt;input type&gt;</code></a>.
+  </p>
+  <ul>
+    <li><code data-hl="css">:disabled</code> has a muted background and a <code data-hl="css">not-allowed</code> cursor.</li>
+    <li><code data-hl="css">:user-valid</code> has <code><span class="success">◉</span> --success</code> borders.</li>
+    <li><code data-hl="css">:user-invalid</code> has <code><span class="danger">◉</span> --danger</code> borders.</li>
+  </ul>
+  <div class="example">
+    <p class="note">*No validation except the ones operated by the browser are performed.</p>
+    <form method="get" onsubmit="event.preventDefault()">
+      <fieldset>
+        <legend>Textual</legend>
+        <label>
+          Text:
+          <input type="text" placeholder="Operator 6O">
+        </label>
+        <label>
+          Number:
+          <input type="number" placeholder="1.22474487139">
+        </label>
+        <label>
+          Password:
+          <input type="password" placeholder="●●●●●●●●">
+        </label>
+        <label>
+          Email:
+          <input type="email" placeholder="no-reply@yorha.org">
+        </label>
+        <label>
+          URL:
+          <input type="url" placeholder="https://yorha.org">
+        </label>
+        <label>
+          Telephone:
+          <input type="tel" placeholder="167-82-57-83">
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>Temporal</legend>
+        <label>
+          Datetime local:
+          <input type="datetime-local">
+        </label>
+        <label>
+          Date:
+          <input type="date">
+        </label>
+        <label>
+          Month:
+          <input type="month">
+        </label>
+        <label>
+          Week:
+          <input type="week">
+        </label>
+        <label>
+          Time:
+          <input type="time">
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>Special</legend>
+        <label>
+          Range:
+          <input type="range">
+        </label>
+        <label>
+          Search:
+          <input type="search" placeholder="Lunar tear">
+        </label>
+        <label>
+          Color:
+          <input type="color">
+        </label>
+        <label>
+          File:
+          <input type="file">
+        </label>
+      </fieldset>
+      <fieldset>
+        <legend>Radio & Checkbox</legend>
+        <div>
+          <label>
+            <input type="radio" name="input-radio-example" value="2B">
+            2B
+          </label>
+          <label>
+            <input type="radio" name="input-radio-example" value="9S">
+            9S
+          </label>
+          <label>
+            <input type="radio" name="input-radio-example" value="A2" checked>
+            A2
+          </label>
+          <label>
+            <input type="radio" name="input-radio-example" value="2P" disabled>
+            2P
+          </label>
+        </div>
+        <div>
+          <label>
+            <input type="checkbox" name="input-checkbox-example" value="Nier" checked>
+            Nier
+          </label>
+          <label>
+            <input type="checkbox" name="input-checkbox-example" value="Emil">
+            Emil
+          </label>
+          <label>
+            <input type="checkbox" name="input-checkbox-example" value="Kainé">
+            Kainé
+          </label>
+          <label>
+            <input type="checkbox" name="input-checkbox-example" value="Weiss" disabled>
+            Weiss
+          </label>
+        </div>
+      </fieldset>
+      <fieldset>
+        <legend>Button</legend>
+        <label>
+          <input type="image" src="https://upload.wikimedia.org/wikipedia/commons/b/b4/Yoko_Taro_cropped.jpg" alt="(Image)">
+        </label>
+        <label>
+          <input type="button" value="Button">
+        </label>
+        <label>
+          <input type="reset" value="Reset">
+        </label>
+        <label>
+          <input type="submit" value="Submit">
+        </label>
+      </fieldset>
+    </form>
+  </div>
+</section>

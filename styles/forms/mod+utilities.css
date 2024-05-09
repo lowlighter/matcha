@@ -1,0 +1,77 @@
+/* Buttons */
+button:is(.default, .accent, .active, .variant, .success, .attention, .severe, .danger) {
+  border-color: currentColor;
+}
+
+button.default:not(:disabled):hover,
+button.default:not(:disabled):active {
+  background: var(--default);
+}
+
+button.accent:not(:disabled):hover,
+button.accent:not(:disabled):active {
+  background: var(--accent);
+}
+
+button.active:not(:disabled):hover,
+button.active:not(:disabled):active {
+  background: var(--active);
+}
+
+button.variant:not(:disabled):hover,
+button.variant:not(:disabled):active {
+  background: var(--variant);
+}
+
+button.success:not(:disabled):hover,
+button.success:not(:disabled):active {
+  background: var(--success);
+}
+
+button.attention:not(:disabled):hover,
+button.attention:not(:disabled):active {
+  background: var(--attention);
+}
+
+button.severe:not(:disabled):hover,
+button.severe:not(:disabled):active {
+  background: var(--severe);
+}
+
+button.danger:not(:disabled):hover,
+button.danger:not(:disabled):active {
+  background: var(--danger);
+}
+
+/* Fieldsets */
+fieldset:is(.accent,.active,.variant,.success,.attention,.severe,.danger) {
+  border-color: currentColor;
+}
+
+fieldset.accent {
+  color: var(--accent);
+}
+
+fieldset.active {
+  color: var(--active);
+}
+
+fieldset.variant {
+  color: var(--variant);
+}
+
+fieldset.success {
+  color: var(--success);
+}
+
+fieldset.attention {
+  color: var(--attention);
+}
+
+fieldset.severe {
+  color: var(--severe);
+}
+
+fieldset.danger {
+  color: var(--danger);
+}

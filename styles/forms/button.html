@@ -1,0 +1,40 @@
+<section>
+  <h2 id="button">
+    <a href="#button"><var>&lt;button&gt;</var> Button</a>
+    <a class="mdn" href="https://developer.mozilla.org/docs/Web/HTML/Element/button" target="_blank"></a>
+  </h2>
+  <p>
+    Has borders with rounded corners.
+  </p>
+  <ul>
+    <li><code data-hl="css">:disabled</code> is half-opacity and has a <code data-hl="css">not-allowed</code> cursor.</li>
+    <li><code data-hl="css">:hover</code> has background.</li>
+    <li><code data-hl="css">[type="submit"]</code> has <code><span class="accent">◉</span> --accent</code> borders.</li>
+    <li><code data-hl="css">[type="reset"]</code> has <code><span class="danger">◉</span> --danger</code> borders.</li>
+  </ul>
+  <div class="example">
+    <form method="get" onsubmit="event.preventDefault()">
+      <button type="button">Button</button>
+      <button type="submit">Submit</button>
+      <button type="reset">Reset</button>
+      <button type="button" disabled>Disabled</button>
+    </form>
+  </div>
+  <div class="flash variant">
+    <p>
+      Utility color classes from <em>matcha.css</em> can be used to easily change the filling color.
+    </p>
+    <div class="example">
+      <form method="get" onsubmit="event.preventDefault()">
+        <button class="default">Button</button>
+        <button class="variant">Button</button>
+        <button class="active">Button</button>
+        <button class="accent">Button</button>
+        <button class="success">Button</button>
+        <button class="attention">Button</button>
+        <button class="severe">Button</button>
+        <button class="danger">Button</button>
+      </form>
+    </div>
+  </div>
+</section>

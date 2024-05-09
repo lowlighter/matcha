@@ -1,0 +1,57 @@
+<section>
+  <h2 id="label">
+    <a href="#label"><var>&lt;label&gt;</var> Label</a>
+    <a class="mdn" href="https://developer.mozilla.org/docs/Web/HTML/Element/label" target="_blank"></a>
+  </h2>
+  <ul>
+    <li>
+      <code data-hl="css">&gt; small</code> is in <code><span class="muted">◉</span> --muted</code> color.
+      <ul>
+        <li><code data-hl="css">::before</code> has <code data-hl="css">content: "\n"</code> to force a line break.</li>
+        <li><code data-hl="css">::after</code> has <code data-hl="css">content: "\n"</code> to force a line break.</li>
+      </ul>
+    </li>
+    <li>
+      <code data-hl="css">:has(> :is(input, textarea, button))</code> have a <code data-hl="css">pointer</code> cursor.
+    </li>
+    <li>
+      <code data-hl="css">:has(> :is(input, textarea, select, button):disabled)</code> are in <code><span class="muted">◉</span> --muted</code> color and have a <code data-hl="css">not-allowed</code> cursor.
+    </li>
+    <li>
+      <code data-hl="css">:has(> :is(input, textarea, select):required)</code> automatically prepend a <code><span class="danger">◉</span> --danger</code> asterisk (<code class="danger">*</code>).
+    </li>
+  </ul>
+  <div class="example">
+    <form method="get" onsubmit="event.preventDefault()">
+      <label>
+        Why did humans disappear from the world ?
+        <small>To whom  does the true voice speak, I ask.</small>
+        <select>
+          <option>Because of a black disease.</option>
+          <option>Because their lives are short.</option>
+        </select>
+      </label>
+      <label>
+        How can humans extends their lives ?
+        <small>To whom does the true form show itself, I ask.</small>
+        <select disabled>
+          <option>By separating body from soul.</option>
+          <option>By acquiring leaves of the sacred tree.</option>
+        </select>
+      </label>
+      <label>
+        What is the destination of souls ?
+        <small>I ask.</small>
+        <select required>
+          <option>They are placed in their corresponding shells.</option>
+          <option>They are in the promised land, bursting with light.</option>
+        </select>
+      </label>
+    </form>
+  </div>
+  <p class="flash attention">
+    It is advised to use the <code data-hl="html">&lt;label&gt;&lt;input&gt;&lt;/label&gt;</code> pattern so <em>matcha.css</em>
+    is able to autodetect whether <code data-hl="html">&lt;input&gt;</code> is required or not, which is not possible
+    when using the <a href="https://developer.mozilla.org/docs/Web/HTML/Element/label#for"><code data-hl="html">&lt;label for&gt;&lt;input&gt;</code></a> pattern instead.
+  </p>
+</section>
