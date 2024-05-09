@@ -1,0 +1,61 @@
+<section>
+  <h2 id="menu">
+    <a href="#menu"><var>&lt;menu&gt;</var> Menu list</a>
+    <a class="mdn" href="https://developer.mozilla.org/docs/Web/HTML/Element/menu" target="_blank"></a>
+  </h2>
+  <p>
+    Has a bottom border.
+  </p>
+  <ul>
+    <li><code data-hl="css">&gt; li &gt; a</code> lose their default style.</li>
+    <li><code data-hl="css">&gt; li.selected</code> is in <code><span class="accent">◉</span> --accent</code> color with a bottom border.</li>
+    <li><code data-hl="css">&gt; li.disabled</code> is in <code><span class="muted">◉</span> --muted</code> color.</li>
+  </ul>
+  <p>
+    Nesting a <code data-hl="html">&lt;menu&gt;</code> will create a submenu.
+  </p>
+  <ul>
+    <li><code data-hl="css">&gt; li:has(&gt; menu)::after</code> appends a downwards triangle (<code data-hl="css">▾</code>).</li>
+    <li><code data-hl="css">&gt; li &gt; menu &gt; li.selected</code> has a left border rather than a bottom one.</li>
+  </ul>
+  <!--/styles/lists/li.html-->
+  <div class="example">
+    <p class="note">
+      *This menu contains additional scripting that is not part of <em>matcha.css</em>.
+    </p>
+    <menu>
+      <li>
+        Viennoiseries
+        <menu>
+          <li>Croissant</li>
+          <li>Éclair</li>
+          <li>
+            Tartelettes
+            <menu>
+              <li>Aux mûres</li>
+              <li>Aux framboises</li>
+              <li class="disabled">Aux fraises</li>
+            </menu>
+          </li>
+          <li>Pain au chocolat</li>
+        </menu>
+      </li>
+      <li class="selected">Macarons</li>
+      <li class="disabled">Pain perdu</li>
+    </menu>
+    <script>
+      {
+        const menu = document.currentScript.previousElementSibling
+        menu.addEventListener("click", event => {
+          event.preventDefault()
+          menu.querySelectorAll("li").forEach(li => li.classList.remove("selected"))
+          let li = event.target.closest("li")
+          while (li) {
+            li.classList.add("selected")
+            li = li.parentElement.closest("li")
+          }
+        })
+      }
+    </script>
+  </div>
+</section>

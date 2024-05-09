@@ -1,0 +1,108 @@
+<section>
+  <h2 id="nav">
+    <a href="#nav"><var>&lt;nav&gt;</var> Navigation</a>
+    <a class="mdn" href="https://developer.mozilla.org/docs/Web/HTML/Element/nav" target="_blank"></a>
+  </h2>
+  <p>
+    Displayed depending on content.
+  </p>
+  <section>
+    <h4 id="nav-ol"><a href="#nav-ol">With ordered lists (<code data-hl="html">&lt;ol&gt;</code>)</a></h4>
+    <p>
+      Displayed as breadcrumbs.
+    </p>
+    <ul>
+      <li><code data-hl="css">ol &gt; li &gt; a::after</code> appends a slash (<code>/</code>).</li>
+      <li><code data-hl="css">ol &gt; li:last-child</code> is in <code><span>◉</span> --default</code> color and in semi-bold.</li>
+    </ul>
+    <div class="example">
+      <nav>
+        <ol>
+          <li><a href="#">Viennoiseries</a></li>
+          <li><a href="#">Tartelettes</a></li>
+          <li><a href="#">Aux mûres</a></li>
+        </ol>
+      </nav>
+      <script>
+        document.currentScript.previousElementSibling.querySelectorAll("a").forEach(a => {
+          a.addEventListener("click", event => event.preventDefault())
+        })
+      </script>
+    </div>
+  </section>
+  <section>
+    <h4 id="nav-ul"><a href="#nav-ul">With unordered lists (<code data-hl="html">&lt;ul&gt;</code>)</a></h4>
+    <p>
+      Displayed as navigation list.
+    </p>
+    <ul>
+      <li><code data-hl="css">ul &gt; li:hover</code> has a left border.</li>
+      <li><code data-hl="css">ul &gt; li.selected</code> is in <code><span>◉</span> --default</code> color and in semi-bold.</li>
+      <li><code data-hl="css">ul &gt; li.disabled</code> is in <code><span class="muted">◉</span> --muted</code> color.</li>
+    </ul>
+    <div class="example">
+      <nav>
+        <ul>
+          <li>
+            <a href="#">Viennoiseries</a>
+            <ul>
+              <li><a href="#">Croissant</a></li>
+              <li><a href="#">Éclair</a></li>
+              <li>
+                <a href="#">Tartelettes</a>
+                <ul>
+                  <li><a href="#">Aux mûres</a></li>
+                  <li><a href="#">Aux framboises</a></li>
+                  <li class="disabled"><a href="#">Aux fraises</a></li>
+                </ul>
+              </li>
+              <li><a href="#">Pain au chocolat</a></li>
+            </ul>
+          </li>
+          <li class="selected"><a href="#">Macarons</a></li>
+          <li class="disabled"><a href="#">Pain perdu</a></li>
+        </ul>
+      </nav>
+      <script>
+        document.currentScript.previousElementSibling.querySelectorAll("a").forEach(a => {
+          a.addEventListener("click", event => event.preventDefault())
+        })
+      </script>
+    </div>
+  </section>
+  <section>
+    <h4 id="nav-menu"><a href="#nav-menu">With menus (<code data-hl="html">&lt;menu&gt;</code>)</a></h4>
+    <p>
+      Displayed as navigation menu.
+    </p>
+    <div class="example">
+      <nav>
+        <menu>
+          <li>
+            <a href="#">Viennoiseries</a>
+            <menu>
+              <li><a href="#">Croissant</a></li>
+              <li><a href="#">Éclair</a></li>
+              <li>
+                <a href="#">Tartelettes</a>
+                <menu>
+                  <li><a href="#">Aux mûres</a></li>
+                  <li><a href="#">Aux framboises</a></li>
+                  <li class="disabled"><a href="#">Aux fraises</a></li>
+                </menu>
+              </li>
+              <li><a href="#">Pain au chocolat</a></li>
+            </menu>
+          </li>
+          <li class="selected"><a href="#">Macarons</a></li>
+          <li class="disabled"><a href="#">Pain perdu</a></li>
+        </menu>
+      </nav>
+      <script>
+        document.currentScript.previousElementSibling.querySelectorAll("a").forEach(a => {
+          a.addEventListener("click", event => event.preventDefault())
+        })
+      </script>
+    </div>
+  </section>
+</section>

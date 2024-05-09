@@ -1,0 +1,198 @@
+/* Menu */
+menu {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: 0;
+  border-bottom: 1px solid var(--bd-muted);
+  list-style: none;
+}
+
+menu > li {
+  position: relative;
+  flex-shrink: 0;
+  padding: .375rem .5rem;
+  margin: .5rem .25rem;
+  cursor: pointer;
+}
+
+menu > li:hover {
+  border-radius: var(--bd-radius);
+  background-color: var(--bg-muted);
+  color: var(--default);
+  transition: background-color var(--tr-duration), color var(--tr-duration);
+}
+
+menu > li.selected {
+  color: var(--accent);
+}
+
+menu > li.selected::before {
+  position: absolute;
+  right: 0;
+  bottom: -.5rem;
+  left: 0;
+  border-bottom: 2px solid currentColor;
+  content: "";
+}
+
+menu > li.disabled {
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+menu > li > :is(a, a:hover) {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Sub-menus */
+menu > li:has(> menu)::after {
+  content: "▾";
+}
+
+menu > li > menu {
+  position: absolute;
+  z-index: 100;
+  top: 100%;
+  left: 0%;
+  display: none;
+  width: max-content;
+  flex-direction: column;
+  padding: .5rem;
+  border: 1px solid var(--bd-muted);
+  border-radius: var(--bd-radius);
+  margin: 0;
+  background: var(--bg-muted);
+  color: var(--default);
+  opacity: .25;
+  transition: opacity var(--tr-duration);
+}
+
+menu > li:hover > menu {
+  display: block;
+  opacity: 1;
+}
+
+menu > li > menu > li {
+  margin: 0;
+}
+
+menu > li > menu > li:hover {
+  background: var(--bg-subtle);
+}
+
+menu > li > menu > li > menu {
+  top: 0;
+  left: 100%;
+}
+
+menu > li > menu > li.selected::before {
+  top: calc(.5 * var(--bd-radius));
+  bottom: calc(.5 * var(--bd-radius));
+  left: 0;
+  border-bottom: none;
+  border-left: 2px solid currentColor;
+}
+
+/* Navigation */
+
+nav {
+  display: flex;
+  margin: 0 0 1rem;
+}
+
+nav > menu {
+  border-bottom: none;
+  margin: 0;
+}
+
+nav :is(ul, ol) {
+  padding: 0 0 0 1rem;
+  margin: 0;
+  list-style: none;
+}
+
+nav > :is(ul, ol) {
+  padding-left: 0;
+}
+
+nav > ol {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+nav > ol > li:not(:last-child) > a::after {
+  display: inline-block;
+  margin: 0 .25rem;
+  color: var(--default);
+  content: "/";
+}
+
+nav > ol > li:last-child {
+  color: var(--default);
+  font-weight: 600;
+}
+
+nav > ol > li:last-child > a {
+  color: inherit;
+}
+
+nav ul {
+  position: relative;
+  overflow: hidden;
+  padding: 0;
+  color: var(--muted);
+}
+
+nav ul > li {
+  position: relative;
+  padding-left: 1.25rem;
+  border-left: 1px solid transparent;
+}
+
+nav ul > li.disabled > a {
+  color: var(--muted);
+  cursor: not-allowed;
+}
+
+nav ul > li:hover {
+  border-color: var(--accent);
+}
+
+nav ul > li.selected {
+  color: var(--default);
+  font-weight: 600;
+}
+
+nav ul > li.selected > a {
+  color: inherit;
+}
+
+nav ul > li::before, nav ul > li::after{
+  position: absolute;
+  left: 0;
+  content: '';
+}
+
+nav ul > li::before{
+  top: .75rem;
+  width: 1rem;
+  height: 0;
+  border-top: 1px solid var(--bg-subtle);
+}
+
+nav ul > li::after {
+  top: -.75rem;
+  width: 0;
+  height: 100%;
+  border-left: 1px solid var(--bg-subtle);
+}
+
+nav > ul > li::after{
+  top: .75rem;
+}
+
+nav > ul > li:last-child::after{
+  display:none;
+}
