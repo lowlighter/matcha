@@ -1,0 +1,369 @@
+/* Matcha introduction */
+body {
+  background-image: url("/mod.svg");
+  background-repeat: no-repeat;
+}
+
+.matcha {
+  margin: 4rem auto 4rem;
+}
+
+.matcha .logo {
+  max-width: 300px;
+}
+
+.matcha hgroup {
+  border: none;
+  text-align: center;
+}
+
+.matcha hgroup h1 {
+  font-size: 3rem;
+  border: none;
+}
+
+.matcha hgroup h1 a:hover::before {
+  content: "\1F375";
+}
+
+.matcha ul.features {
+  padding: 0;
+  list-style: none;
+}
+
+.matcha .usage-snippet {
+  cursor: pointer;
+  user-select: all;
+  transition: background var(--tr-duration);
+}
+
+.matcha .usage-snippet:hover {
+  background: var(--bg-subtle);
+}
+
+aside nav ul ul ul li :is(a, [class^="hljs-"], var) {
+  color: var(--muted) !important;
+}
+
+/* Matcha build */
+a[href="#custom-build"], a[href="#supported-browsers"] {
+  pointer-events: none;
+}
+
+.matcha-build .variables input[name$="opacity"] {
+  margin-left: .25rem;
+  max-width: 4rem;
+}
+
+.matcha-build .styling {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.matcha-build .styling > div {
+  flex: 1 1 0;
+}
+
+.matcha-build .extra label small {
+  margin-left: 1.75rem;
+  display: block;
+}
+
+main > section > :is(h1)[id]:not([id="matcha"]) {
+  position: sticky;
+  top: var(--ly-header-size);
+  background: var(--bg-default);
+  z-index: 150;
+  padding-bottom: .25rem;
+}
+
+/* MDN reference in titles */
+/*
+:is(h1, h2, h3, h4, h5, h6)[id]:has(.mdn) {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+:is(h1, h2, h3, h4, h5, h6)[id]:has(.mdn) a:first-child {
+  flex-grow: 1;
+}
+
+.mdn {
+  background: black;
+  color: white;
+}
+
+.mdn:hover {
+  background: var(--accent);
+  text-decoration: none;
+}
+
+.mdn::after {
+  padding: 0 .25rem;
+  content: "\1F517 MDN";
+}
+*/
+
+/* Caniuse */
+.css-compatibility-table th, .css-compatibility-table td {
+  vertical-align: baseline;
+  text-align: left;
+  min-width: 10rem;
+}
+.css-compatibility-table :is(td, th) :nth-child(1) {
+  display: block;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.15em;
+}
+
+.css-compatibility-table th:has([data-perfect]:first-child) {
+  background: var(--bg-success);
+  border-color: var(--success);
+}
+
+.css-compatibility-table th:has([data-good]:first-child) {
+  background: var(--bg-success);
+  border-color: var(--success);
+}
+
+.css-compatibility-table th:has([data-ok]:first-child) {
+  background: var(--bg-attention);
+  border-color: var(--attention);
+}
+
+.css-compatibility-table th:has([data-bad]:first-child) {
+  background: var(--bg-danger);
+  border-color: var(--danger);
+}
+
+.css-compatibility-table th:has([data-unknown]:first-child) {
+  background: var(--bg-muted);
+  border-color: var(--bd-muted);
+}
+
+.css-compatibility-table :is(td, th) > :nth-child(n+2) {
+  display: none;
+  white-space: nowrap;
+  font-size: 85%;
+  font-weight: normal;
+  list-style: circle;
+  margin: 0 .5rem;
+}
+
+.css-compatibility-table.details :is(td, th) > :nth-child(n+2) {
+  display: list-item;
+}
+
+.css-compatibility-table [data-version] {
+  font-size: 85%;
+  font-weight: normal;
+}
+
+.css-compatibility-table [data-empty] {
+  background: black;
+  border-color: black;
+}
+
+.css-compatibility-table [data-unknown] {
+  color: var(--muted);
+}
+
+.css-compatibility-table [data-prefix] {
+  color: var(--active);
+}
+
+.css-compatibility-table [data-perfect] {
+  color: var(--success);
+  text-decoration: underline;
+}
+
+.css-compatibility-table [data-good] {
+  color: var(--success);
+}
+
+.css-compatibility-table [data-ok] {
+  color: var(--attention);
+}
+
+.css-compatibility-table [data-bad] {
+  color: var(--danger);
+}
+
+.css-compatibility-legend {
+  display: none;
+}
+
+.css-compatibility-legend.details {
+  display: block;
+  margin-top: 1rem;
+}
+
+/* Extras */
+#extras {
+  visibility: hidden;
+  height: 0;
+  overflow: hidden;
+}
+
+/* Examples */
+.example {
+  padding: 1rem;
+  border: 1px solid var(--bd-muted);
+  border-radius: var(--bd-radius);
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+  box-sizing: border-box;
+}
+
+.example + details {
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+  margin-bottom: 1rem;
+}
+
+.example > :first-child {
+  margin-top: 0;
+}
+
+.example > :last-child {
+  margin-bottom: 0;
+}
+
+.example .note {
+  color: var(--muted);
+  font-size: 85%;
+  font-style: italic;
+  margin-top: 1rem;
+  display: block;
+  text-align: left;
+}
+
+/* Additional example styles */
+.example.example-border :is(section, header, footer, aside) {
+  border: 2px dotted var(--bg-subtle);
+  border-radius: var(--bd-radius);
+}
+
+.example.example-border aside {
+  border-left: 4px solid var(--bd-muted);
+  max-width: 33%;
+}
+
+.example :is(header, footer, aside) .note, .example > .note:first-child {
+  text-align: center;
+  margin-top: 0;
+}
+
+.example.example-flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 300px) {
+  .example article {
+    min-width: 100px;
+  }
+}
+
+@media (min-width: 600px) {
+  .example article {
+    min-width: 200px;
+  }
+}
+
+.example article.layout {
+  flex: 1 1 0;
+  width: fit-content;
+}
+
+.example article.layout header {
+  text-align: center;
+}
+
+.example > :is(img, video) {
+  max-height: 400px;
+  display: block;
+}
+
+.example dialog {
+  position: relative;
+}
+
+.example form fieldset {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.example table th[rowspan="4"] div {
+  transform: rotate(-90deg) translateX(-300%);
+  width: 1rem;
+  white-space: nowrap;
+}
+
+.example input[type="image"] {
+  height: 1.5em;
+  width: 1.5em;
+}
+
+.example input:is([type="datetime-local"],[type="date"],[type="month"],[type="week"],[type="time"]) {
+  max-width: 100px;
+}
+
+@media (min-width: 640px) {
+  .example input:is([type="datetime-local"],[type="date"],[type="month"],[type="week"],[type="time"]) {
+    max-width: none;
+  }
+}
+
+/* Layout structure */
+.layout-structure, .layout-structure ul {
+  padding-left: 1rem;
+  list-style: none;
+}
+
+/* Easter egg */
+.easter-egg {
+  width: 100%;
+}
+
+.easter-egg::backdrop {
+  background: transparent;
+}
+
+.easter-egg.glitch {
+  position: fixed;
+  z-index: 250;
+}
+
+.easter-egg.glitch.background {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(100, 0, 0, .2);
+  backdrop-filter: brightness(50%) blur(5px);
+}
+
+.easter-egg.glitch.blue {
+  background: #00ebe5;
+}
+
+.easter-egg.glitch.red {
+  background: #e80d48;
+}
+
+.easter-egg.glitch.blue, .easter-egg.glitch.red {
+  opacity: .1;
+  animation: 1s glitch infinite;
+}
+
+@keyframes glitch {
+  1%{
+    transform: rotateX(10deg) skewX(90deg);
+  }
+  2%{
+    transform: rotateX(0deg) skewX(0deg);
+  }
+}

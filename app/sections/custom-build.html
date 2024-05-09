@@ -1,0 +1,285 @@
+<details>
+  <summary>
+    <h4 id="custom-build"><a href="#custom-build">🛠️ Get a custom build</a></h4>
+  </summary>
+  <p>
+    You can use the form below to get a custom build of <em>matcha.css</em>.
+  </p>
+  <p>
+    For more fine-tuned customization, you may need to <a href="https://github.com/lowlighter/matcha/fork" target="_blank">fork it</a> and patch it directly.
+    Note that <em>matcha.css</em> never uses <a href="https://developer.mozilla.org/docs/Web/CSS/important"><code data-hl="css">!important</code></a> rules,
+    which make it easy to override its styles if needed.
+  </p>
+  <form class="matcha-build">
+    <fieldset class="styling">
+      <legend>
+        <label>
+          <input type="checkbox" data-for="styling" checked> Styling
+        </label>
+      </legend>
+      <div>
+        <label><input type="checkbox" name="styling" value="sectioning" checked> Sectioning</label>
+        <label><input type="checkbox" name="styling" value="navigation" checked> Navigation</label>
+        <label><input type="checkbox" name="styling" value="headings" checked> Headings</label>
+        <label><input type="checkbox" name="styling" value="flow" checked> Flow</label>
+      </div>
+      <div>
+        <label><input type="checkbox" name="styling" value="collapsibles" checked> Collapsibles</label>
+        <label><input type="checkbox" name="styling" value="modals" checked> Modals</label>
+        <label><input type="checkbox" name="styling" value="anchors" checked> Anchors</label>
+        <label><input type="checkbox" name="styling" value="abbreviations" checked> Abbreviations</label>
+      </div>
+      <div>
+        <label><input type="checkbox" name="styling" value="styling" checked> Styling and emphasis</label>
+        <label><input type="checkbox" name="styling" value="annotations" checked> Annotations</label>
+        <label><input type="checkbox" name="styling" value="computing" checked> Computing</label>
+        <label><input type="checkbox" name="styling" value="forms" checked> Forms</label>
+      </div>
+      <div>
+        <label><input type="checkbox" name="styling" value="bars" checked> Bars</label>
+        <label><input type="checkbox" name="styling" value="lists" checked> Lists</label>
+        <label><input type="checkbox" name="styling" value="tables" checked> Tables</label>
+        <label><input type="checkbox" name="styling" value="media" checked> Media</label>
+      </div>
+    </fieldset>
+    <fieldset class="extra">
+      <legend>
+        <label>
+          <input type="checkbox" data-for="extra" checked> Extra
+        </label>
+      </legend>
+      <label>
+        <input type="checkbox" name="extra" value="@layouts" checked>
+        Layouts<br>
+        <small>Include layouts that requires specific HTML structures.</small>
+      </label>
+      <label>
+        <input type="checkbox" name="extra" value="@utilities" checked>
+        Utilities<br>
+        <small>Additional classes as shorthands for colors, display, flash messages, etc.</small>
+      </label>
+      <label>
+        <input type="checkbox" name="extra" value="@syntax-highlighting" checked>
+        Syntax highlighting<br>
+        <small>Additional classes intended to be used along <a href="https://highlightjs.org" target="_blank">highlight.js library</a>.</small>
+      </label>
+      <label>
+        <input type="checkbox" name="extra" value="@break-words" checked>
+        Break words<br>
+        <small>
+          Apply <code data-hl="css">word-break: break-word; hyphens: auto;</code> to several elements to improve text wrapping.
+        </small>
+      </label>
+    </fieldset>
+    <fieldset class="variables">
+      <legend>
+        Variables
+      </legend>
+      <table>
+        <tr>
+          <th colspan="3">Colors</th>
+          <th colspan="3">Backgrounds</th>
+        </tr>
+        <tr>
+          <th>Name</th>
+          <th>Light</th>
+          <th>Dark</th>
+          <th>Name</th>
+          <th>Light</th>
+          <th>Dark</th>
+        </tr>
+        <tr>
+          <td><code>--ly-brand</code></td>
+          <td><input type="color" data-mode="light" name="--ly-brand"></td>
+          <td></td>
+          <td><code>--ly-bg-brand</code></td>
+          <td><input type="color" data-mode="light" name="--ly-bg-brand"></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td><code>--default</code></td>
+          <td><input type="color" data-mode="light" name="--default"></td>
+          <td><input type="color" data-mode="dark" name="--default"></td>
+          <td><code>--bg-default</code></td>
+          <td><input type="color" data-mode="light" name="--bg-default"></td>
+          <td><input type="color" data-mode="dark" name="--bg-default"></td>
+        </tr>
+        <tr>
+          <td><code>--contrast</code></td>
+          <td><input type="color" data-mode="light" name="--contrast"></td>
+          <td><input type="color" data-mode="dark" name="--contrast"></td>
+          <td><code>--bg-contrast</code></td>
+          <td><input type="color" data-mode="light" name="--bg-contrast"></td>
+          <td><input type="color" data-mode="dark" name="--bg-contrast"></td>
+        </tr>
+        <tr>
+          <td><code>--subtle</code></td>
+          <td><input type="color" data-mode="light" name="--subtle"></td>
+          <td><input type="color" data-mode="dark" name="--subtle"></td>
+          <td><code>--bg-subtle</code></td>
+          <td><input type="color" data-mode="light" name="--bg-subtle"></td>
+          <td><input type="color" data-mode="dark" name="--bg-subtle"></td>
+        </tr>
+        <tr>
+          <td><code>--muted</code></td>
+          <td><input type="color" data-mode="light" name="--muted"></td>
+          <td><input type="color" data-mode="dark" name="--muted"></td>
+          <td><code>--bg-muted</code></td>
+          <td><input type="color" data-mode="light" name="--bg-muted"></td>
+          <td><input type="color" data-mode="dark" name="--bg-muted"></td>
+        </tr>
+        <tr>
+          <td><code>--accent</code></td>
+          <td><input type="color" data-mode="light" name="--accent"></td>
+          <td><input type="color" data-mode="dark" name="--accent"></td>
+          <td><code>--bg-accent</code></td>
+          <td><input type="color" data-mode="light" name="--bg-accent"></td>
+          <td><input type="color" data-mode="dark" name="--bg-accent"></td>
+        </tr>
+        <tr>
+          <td><code>--active</code></td>
+          <td><input type="color" data-mode="light" name="--active"></td>
+          <td><input type="color" data-mode="dark" name="--active"></td>
+          <td><code>--bg-active</code></td>
+          <td><input type="color" data-mode="light" name="--bg-active"></td>
+          <td><input type="color" data-mode="dark" name="--bg-active"></td>
+        </tr>
+        <tr>
+          <td><code>--variant</code></td>
+          <td><input type="color" data-mode="light" name="--variant"></td>
+          <td><input type="color" data-mode="dark" name="--variant"></td>
+          <td><code>--bg-variant</code></td>
+          <td><input type="color" data-mode="light" name="--bg-variant"></td>
+          <td><input type="color" data-mode="dark" name="--bg-variant"></td>
+        </tr>
+        <tr>
+          <td><code>--success</code></td>
+          <td><input type="color" data-mode="light" name="--success"></td>
+          <td><input type="color" data-mode="dark" name="--success"></td>
+          <td><code>--bg-success</code></td>
+          <td><input type="color" data-mode="light" name="--bg-success"></td>
+          <td><input type="color" data-mode="dark" name="--bg-success"></td>
+        </tr>
+        <tr>
+          <td><code>--attention</code></td>
+          <td><input type="color" data-mode="light" name="--attention"></td>
+          <td><input type="color" data-mode="dark" name="--attention"></td>
+          <td><code>--bg-attention</code></td>
+          <td><input type="color" data-mode="light" name="--bg-attention"></td>
+          <td><input type="color" data-mode="dark" name="--bg-attention"></td>
+        </tr>
+        <tr>
+          <td><code>--severe</code></td>
+          <td><input type="color" data-mode="light" name="--severe"></td>
+          <td><input type="color" data-mode="dark" name="--severe"></td>
+          <td><code>--bg-severe</code></td>
+          <td><input type="color" data-mode="light" name="--bg-severe"></td>
+          <td><input type="color" data-mode="dark" name="--bg-severe"></td>
+        </tr>
+        <tr>
+          <td><code>--danger</code></td>
+          <td><input type="color" data-mode="light" name="--danger"></td>
+          <td><input type="color" data-mode="dark" name="--danger"></td>
+          <td><code>--bg-danger</code></td>
+          <td><input type="color" data-mode="light" name="--bg-danger"></td>
+          <td><input type="color" data-mode="dark" name="--bg-danger"></td>
+        </tr>
+      </table>
+      <footer>
+        <button type="reset">Reset colors to default</button>
+      </footer>
+    </fieldset>
+    <div data-color-scheme="light"></div>
+    <div data-color-scheme="dark"></div>
+    <fieldset class="brewing success">
+      <legend>Brew matcha !</legend>
+      <p>
+        Once you're ready, click the button below to get your custom build.
+      </p>
+      <footer>
+        <button class="success" disabled>🍵 Get your brewed matcha</button>
+      </footer>
+    </fieldset>
+    <p class="flash danger brewing-error hidden"></p>
+  </form>
+  <script>
+    {
+      const form = document.currentScript.previousElementSibling
+      // Manage meta-checkboxes
+      form.querySelectorAll("legend input").forEach(input => {
+        input.addEventListener("change", () => {
+          form.querySelectorAll(`input[name="${input.dataset.for}"]`).forEach(child => child.checked = input.checked)
+        })
+      })
+      form.querySelectorAll('input[type="checkbox"]').forEach(input => {
+        if (input.name) {
+          input.addEventListener("change", () => {
+            const checked = Array.from(form.querySelectorAll(`input[name="${input.name}"]`)).reduce((checked, input) => checked && input.checked, true)
+            form.querySelector(`input[data-for="${input.name}"]`).checked = checked
+          })
+        }
+      })
+      // Manage colors
+      const variables = {
+        light:form.querySelector('[data-color-scheme="light"]'),
+        dark:form.querySelector('[data-color-scheme="dark"]'),
+      }
+      function reset() {
+        form.querySelectorAll('.variables input[type="color"]').forEach(input => {
+          if (!input.name)
+            return
+          const value = getComputedStyle(variables[input.dataset.mode]).getPropertyValue(input.name)
+          input.value = value
+          input.dataset.default = value
+        })
+      }
+      form.querySelector('.variables button').addEventListener("click", event => {
+        event.preventDefault()
+        reset()
+      })
+      reset()
+      // Manage brewing
+      const brewing = form.querySelector(".brewing button")
+      const teapot = {styling:[], extra:[], variables:[]}
+      form.addEventListener("change", () => {
+        const styling = Array.from(form.querySelectorAll('input[name="styling"]'))
+        const extra = Array.from(form.querySelectorAll('input[name="extra"]'))
+        const variables = Array.from(form.querySelectorAll('.variables input[type="color"]'))
+        Object.assign(teapot, {
+          styling:styling.filter(({checked}) => checked).map(({value}) => value),
+          extra:extra.filter(({checked}) => checked).map(({value}) => value),
+          variables:variables.filter(({value, dataset}) => value !== dataset.default).map(({name, value, dataset:{mode}}) => ({mode, name, value}))
+        })
+        brewing.toggleAttribute("disabled", (teapot.styling.length === styling.length)&&(teapot.extra.length === extra.length)&&(!teapot.variables.length))
+      })
+      form.querySelector(".brewing button").addEventListener("click", async event => {
+        event.preventDefault()
+        let stylesheet = ""
+        const parts = await Promise.all([...teapot.styling, ...teapot.extra].sort((a, b) => a.localeCompare(b)).map(async name => await fetch(`/styles/${name}/mod.css`).then(response  => response.text())))
+        stylesheet = parts.join("\n")
+        if (teapot.variables.length) {
+          const light = teapot.variables.filter(({mode}) => mode === "light").map(({name, value}) => `${name}: ${value};`).join("\n")
+          const dark = teapot.variables.filter(({mode}) => mode === "dark").map(({name, value}) => `${name}: ${value};`).join("\n")
+          stylesheet += "/* Variables */"
+          stylesheet += `:root,[data-color-scheme="light"] {\n${light}\n}\n`
+          stylesheet += `[data-color-scheme="dark"] {\n${dark}\n}\n`
+          stylesheet += `@media (prefers-color-scheme: dark) {\n  :root:not([data-color-scheme="light"]) {\n${dark.split("\n").map(line => `  ${line}`).join("\n")}\n  }\n}\n`
+        }
+        try {
+          const response = await fetch("/api/brew", {method:"POST", body:stylesheet})
+          if (response.status !== 200) {
+            throw new Error(await response.text())
+          }
+          const url = URL.createObjectURL(await response.blob())
+          globalThis.open(url, "_blank")
+        }
+        catch (error) {
+          document.querySelector(".brewing-error").classList.remove("hidden")
+          document.querySelector(".brewing-error").innerText = error.message
+          setTimeout(() => document.querySelector(".brewing-error").classList.add("hidden"), 15*1000)
+        }
+      })
+      form.dispatchEvent(new Event("change"))
+    }
+  </script>
+</details>
