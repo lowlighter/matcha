@@ -46,7 +46,7 @@ aside nav ul ul ul li :is(a, [class^="hljs-"], var) {
 }
 
 /* Matcha build */
-a[href="#custom-build"], a[href="#supported-browsers"] {
+details summary a {
   pointer-events: none;
 }
 

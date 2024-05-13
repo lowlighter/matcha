@@ -58,8 +58,8 @@ export async function html() {
       const lv2 = Array.from(element.querySelectorAll("section > :is(h1, h2, h3, h4, h5, h6)"))
         .filter((hx) => (hx as HTMLElement).parentElement?.parentElement === element)
         .map((hx) => {
-          const lv3 = Array.from(hx.parentElement!.querySelectorAll("section > section > section > :is(h1, h2, h3, h4, h5, h6)"))
-            .map((hy) => `<li><small>${(hy.querySelector("a") as unknown as HTMLElement).outerHTML}</small></li>`)
+          const lv3 = Array.from(hx.parentElement!.querySelectorAll('section > section > section > :is(h1, h2, h3, h4, h5, h6), summary :is(h1, h2, h3, h4, h5, h6)'))
+            .map((hy) => `<li><small>${emojiless((hy.querySelector("a") as unknown as HTMLElement).outerHTML)}</small></li>`)
             .join("")
           const a = (hx.querySelector("a") as unknown as HTMLElement).outerHTML
           return `<li>${a}${lv3 ? `<ul>${lv3}</ul>` : ""}</li>`
@@ -70,4 +70,9 @@ export async function html() {
   })
   document.querySelector("aside > nav")!.innerHTML = `<ul>${nav.join("")}</ul>`
   return `<!DOCTYPE html>${document.documentElement!.outerHTML}`
+}
+
+/** Strip emojis */
+function emojiless(string:string) {
+  return string.replace(/[\u{1F600}-\u{1F64F}|\u{1F300}-\u{1F5FF}|\u{1F680}-\u{1F6FF}|\u{1F1E0}-\u{1F1FF}|\u{2600}-\u{26FF}|\u{2700}-\u{27BF}]+/gu, "")
 }
