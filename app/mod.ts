@@ -6,6 +6,7 @@ import { ssg } from "./build/ssg.ts"
 import { STATUS_CODE, STATUS_TEXT } from "jsr:@std/http@0.224.0"
 import { root } from "./build/root.ts"
 import api_minify from "../api/brew.ts"
+import api_preview from "../api/preview.ts"
 
 // Serve files
 switch (Deno.args[0]) {
@@ -29,6 +30,8 @@ switch (Deno.args[0]) {
           return new Response(await Deno.readFile(new URL(url.pathname.slice(1), root)), { headers: { "Content-Type": "text/css" } })
         case new URLPattern("/api/brew", url.origin).test(url.href):
           return api_minify(request)
+        case new URLPattern("/api/preview", url.origin).test(url.href.replace(url.search, "")):
+          return api_preview(request)
         default:
           return new Response(STATUS_TEXT[STATUS_CODE.NotFound], { status: STATUS_CODE.NotFound })
       }

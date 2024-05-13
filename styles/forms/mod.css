@@ -4,6 +4,11 @@ form {
   padding: 1rem;
   border-radius: var(--bd-radius);
   background: var(--bg-muted);
+  margin: 0 auto 1rem;
+}
+
+:is(form, label):last-child {
+  margin-bottom: 0;
 }
 
 /* Fieldset */
@@ -24,10 +29,6 @@ label {
   position: relative;
   display: table;
   margin: 0 0 1rem;
-}
-
-label:last-child {
-  margin-bottom: 0;
 }
 
 label > small {
