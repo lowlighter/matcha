@@ -78,32 +78,6 @@ main > section > :is(h1)[id]:not([id="matcha"]) {
   padding-bottom: .25rem;
 }
 
-/* MDN reference in titles */
-/*
-:is(h1, h2, h3, h4, h5, h6)[id]:has(.mdn) {
-  flex-wrap: wrap;
-  justify-content: space-between;
-}
-:is(h1, h2, h3, h4, h5, h6)[id]:has(.mdn) a:first-child {
-  flex-grow: 1;
-}
-
-.mdn {
-  background: black;
-  color: white;
-}
-
-.mdn:hover {
-  background: var(--accent);
-  text-decoration: none;
-}
-
-.mdn::after {
-  padding: 0 .25rem;
-  content: "\1F517 MDN";
-}
-*/
-
 /* Caniuse */
 .css-compatibility-table th, .css-compatibility-table td {
   vertical-align: baseline;

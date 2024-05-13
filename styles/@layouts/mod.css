@@ -7,6 +7,7 @@ body.layout-simple {
   "main"
   "footer";
   grid-template-rows: auto 1fr auto;
+  max-width: none;
 }
 
 body.layout-simple > :is(header:first-of-type, footer:last-of-type) {

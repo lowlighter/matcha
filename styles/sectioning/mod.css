@@ -1,12 +1,13 @@
 /* Sections */
 body {
   padding: 0 1.5rem;
-  margin: 0;
+  margin: 0 auto;
   background: var(--bg-default);
   color: var(--default);
   font-family: var(--ft);
   font-size: var(--ft-size);
   line-height: 1.5;
+  max-width: var(--ct-width);
 }
 
 main, header {
@@ -23,7 +24,7 @@ footer {
 }
 
 section {
-  max-width: 1024px;
+  max-width: var(--ct-width);
   margin: 0 auto 2rem;
 }
 

@@ -1,12 +1,23 @@
-:root {
+:root,[data-color-scheme="light"] {
   --comment: #57606a;
   --function: #6639ba;
   --language: #0550ae;
   --string: #0a307b;
   --keyword: #cf2248;
   --html: #0550ae;
-  --section: #0550ae;
+  --section: #0349b4;
   --bullet: #953800;
+}
+
+[data-color-scheme="dark"] {
+  --comment: #8b949e;
+  --function: #d2a8ff;
+  --language: #79c0ff;
+  --string: #a5d6ff;
+  --keyword: #ff7b72;
+  --html: #7ee787;
+  --section: #409eff;
+  --bullet: #ffa657;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -17,7 +28,7 @@
     --string: #a5d6ff;
     --keyword: #ff7b72;
     --html: #7ee787;
-    --section: #1f6feb;
+    --section: #409eff;
     --bullet: #ffa657;
   }
 }
