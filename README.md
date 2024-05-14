@@ -1,5 +1,7 @@
 # 🍵 matcha.css
 
+[`🌊 See live on matcha.mizu.sh !`](https://matcha.mizu.sh)
+
 <p align="center"><img src="/app/icons/matchat.svg" width="300"></p>
 
 **matcha.css** is a pure CSS library that directly styles HTML elements akin to a default browser stylesheet, rather than requiring users to patch their documents with classes.
@@ -14,8 +16,6 @@ It is perfect for fast prototyping, Markdown-generated or static HTML pages, dev
 - ✅ **No** refactoring needed
 
 ### 📸 Screenshot examples
-
-[See live on matcha.mizu.sh !](https://matcha.mizu.sh)
 
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="/.github/demo-dark-a.png">
