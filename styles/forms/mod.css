@@ -3,8 +3,8 @@ form {
   overflow: auto;
   padding: 1rem;
   border-radius: var(--bd-radius);
-  background: var(--bg-muted);
   margin: 0 auto 1rem;
+  background: var(--bg-muted);
 }
 
 :is(form, label):last-child {

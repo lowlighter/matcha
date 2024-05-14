@@ -12,7 +12,7 @@ export default async function (request: Request) {
   }
   try {
     const url = new URL(request.url).searchParams.get("url")!
-    const body = await fetch(url, {headers:{Accept:"text/html"}}).then((response) => response.text())
+    const body = await fetch(url, { headers: { Accept: "text/html" } }).then((response) => response.text())
     return new Response(body, { headers: { "Content-Type": "text/html" } })
   } catch (error) {
     return new Response(error.message, { status: STATUS_CODE.InternalServerError })

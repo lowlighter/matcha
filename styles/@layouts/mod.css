@@ -1,5 +1,6 @@
 body.layout-simple {
   display: grid;
+  max-width: none;
   padding: 0 1.5rem;
   column-gap: 1.5rem;
   grid-template-areas:
@@ -7,7 +8,6 @@ body.layout-simple {
   "main"
   "footer";
   grid-template-rows: auto 1fr auto;
-  max-width: none;
 }
 
 body.layout-simple > :is(header:first-of-type, footer:last-of-type) {

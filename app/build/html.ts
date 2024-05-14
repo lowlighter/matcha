@@ -58,7 +58,7 @@ export async function html() {
       const lv2 = Array.from(element.querySelectorAll("section > :is(h1, h2, h3, h4, h5, h6)"))
         .filter((hx) => (hx as HTMLElement).parentElement?.parentElement === element)
         .map((hx) => {
-          const lv3 = Array.from(hx.parentElement!.querySelectorAll('section > section > section > :is(h1, h2, h3, h4, h5, h6), summary :is(h1, h2, h3, h4, h5, h6)'))
+          const lv3 = Array.from(hx.parentElement!.querySelectorAll("section > section > section > :is(h1, h2, h3, h4, h5, h6), summary :is(h1, h2, h3, h4, h5, h6)"))
             .map((hy) => `<li><small>${emojiless((hy.querySelector("a") as unknown as HTMLElement).outerHTML)}</small></li>`)
             .join("")
           const a = (hx.querySelector("a") as unknown as HTMLElement).outerHTML
@@ -73,6 +73,6 @@ export async function html() {
 }
 
 /** Strip emojis */
-function emojiless(string:string) {
+function emojiless(string: string) {
   return string.replace(/[\u{1F600}-\u{1F64F}|\u{1F300}-\u{1F5FF}|\u{1F680}-\u{1F6FF}|\u{1F1E0}-\u{1F1FF}|\u{2600}-\u{26FF}|\u{2700}-\u{27BF}]+/gu, "")
 }
