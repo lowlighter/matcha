@@ -70,6 +70,10 @@ details summary a {
   display: block;
 }
 
+.matcha-build table td code {
+  word-break: keep-all;
+}
+
 main > section > :is(h1)[id]:not([id="matcha"]) {
   position: sticky;
   top: var(--ly-header-size);
@@ -125,8 +129,18 @@ main > section > :is(h1)[id]:not([id="matcha"]) {
   margin: 0 .5rem;
 }
 
+.css-compatibility-table.details :is(td, th) > :nth-child(1) {
+  border-bottom: 1px solid var(--bg-contrast);
+  padding-bottom: .5rem;
+  margin-bottom: .5rem;
+}
+
 .css-compatibility-table.details :is(td, th) > :nth-child(n+2) {
   display: list-item;
+}
+
+.css-compatibility-table.details :is(td, th) > br:nth-child(n+2) {
+  display: none;
 }
 
 .css-compatibility-table [data-version] {

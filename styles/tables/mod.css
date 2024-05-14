@@ -8,6 +8,16 @@ table {
   overflow-x: auto;
 }
 
+.table-responsive {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+  overflow-x: auto;
+}
+
+.table-responsive table {
+  display: table;
+}
+
 caption {
   margin-top: .5rem;
   caption-side: bottom;
@@ -24,7 +34,7 @@ th, td {
 }
 
 th {
-  border-color: var(--contrast);
+  border-color: var(--bg-contrast);
   background: var(--bg-subtle);
   font-weight: bold;
 }

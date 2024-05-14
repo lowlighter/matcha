@@ -6,26 +6,28 @@
     Has collapsed borders.
   </p>
   <p>
-    If parent has a set width, it has an automatic overflow.
+    If parent has a set width, it has an automatic overflow. If not, it can be wrapped within a <code>.table-responsive</code> container.
   </p>
   <!--/styles/tables/caption.html-->
   <!--/styles/tables/tr.html-->
   <!--/styles/tables/th.html-->
   <!--/styles/tables/td.html-->
   <div class="example">
-    <table class="center">
-      <caption>Table of type effectiveness</caption>
-      <thead>
-        <tr><th colspan="2" rowspan="2">×</th><th colspan="4">Defending type</th></tr>
-        <tr><th>🍃</th><th>🔥</th><th>💧</th><th>⚡</th></tr>
-      </thead>
-      <tbody>
-        <tr><th rowspan="4"><div>Attacking type</div></th><th>🍃</th><td>½</td><td>½</td><td>2</td><td>1</td></tr>
-        <tr><th>🔥</th><td>2</td><td>½</td><td>½</td><td>1</td></tr>
-        <tr><th>💧</th><td>½</td><td>2</td><td>½</td><td>1</td></tr>
-        <tr><th>⚡</th><td>½</td><td>1</td><td>2</td><td>½</td></tr>
-      </tbody>
-    </table>
+    <div class="table-responsive">
+      <table class="center">
+        <caption>Table of type effectiveness</caption>
+        <thead>
+          <tr><th colspan="2" rowspan="2">×</th><th colspan="4">Defending type</th></tr>
+          <tr><th>🍃</th><th>🔥</th><th>💧</th><th>⚡</th></tr>
+        </thead>
+        <tbody>
+          <tr><th rowspan="4"><div>Attacking type</div></th><th>🍃</th><td>½</td><td>½</td><td>2</td><td>1</td></tr>
+          <tr><th>🔥</th><td>2</td><td>½</td><td>½</td><td>1</td></tr>
+          <tr><th>💧</th><td>½</td><td>2</td><td>½</td><td>1</td></tr>
+          <tr><th>⚡</th><td>½</td><td>1</td><td>2</td><td>½</td></tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </section>
 
