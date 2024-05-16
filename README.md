@@ -6,7 +6,8 @@
 
 **matcha.css** is a pure CSS library designed to style HTML elements similarly to a default browser stylesheet, eliminating the need for users to manually patch their documents.
 
-Ideal for fast prototyping, static HTML pages, Markdown-generated documents, and developers seeking to streamline their workflow without delving into CSS intricacies and want to make use of [the full range of available HTML elements](https://developer.mozilla.org/docs/Web/HTML/Element).
+Ideal for fast prototyping, static HTML pages, Markdown-generated documents, and developers seeking to streamline their workflow without delving into CSS intricacies and want to make use of
+[the full range of available HTML elements](https://developer.mozilla.org/docs/Web/HTML/Element).
 
 - ✅ **No** build steps
 - ✅ **No** dependencies
@@ -37,7 +38,8 @@ Ideal for fast prototyping, static HTML pages, Markdown-generated documents, and
 
 ### 🍜 Agnostic
 
-Works seamlessly with any document and covers a broader range of HTML elements compared to similar libraries. It remains unobtrusive by leveraging CSS pseudo-elements and offers extensive [browser support](https://matcha.mizu.sh/#supported-browsers).
+Works seamlessly with any document and covers a broader range of HTML elements compared to similar libraries. It remains unobtrusive by leveraging CSS pseudo-elements and offers extensive
+[browser support](https://matcha.mizu.sh/#supported-browsers).
 
 ### 🍥 Reversible
 
@@ -45,7 +47,8 @@ Simply include its `<link rel="stylesheet">` to get started, and remove it whene
 
 ### 🍡 Semantic
 
-Adapts styling based on elements hierarchy, providing intuitive behaviors such as "implicit submenus" when nesting `<menu>` elements, required field indicator (`*`) when a `<label>` is paired with `<input required>`, etc.
+Adapts styling based on elements hierarchy, providing intuitive behaviors such as "implicit submenus" when nesting `<menu>` elements, required field indicator (`*`) when a `<label>` is paired with
+`<input required>`, etc.
 
 ### 🍱 Customizable
 
