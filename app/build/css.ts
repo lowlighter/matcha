@@ -19,7 +19,5 @@ export async function css(exclude = [] as string[]) {
   for (const { path } of files) {
     css += await Deno.readTextFile(path)
   }
-  const bundled = await bundle(css, { minify: true, banner, rules: { "no-descending-specificity": false, "no-duplicate-selectors": false } })
-  console.log(`Bundle size: ${new Blob([bundled], { type: "text/css" }).size} bytes`)
-  return bundled
+  return bundle(css, { minify: true, banner, rules: { "no-descending-specificity": false, "no-duplicate-selectors": false } })
 }

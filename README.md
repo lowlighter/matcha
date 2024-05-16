@@ -14,6 +14,7 @@ Ideal for fast prototyping, static HTML pages, Markdown-generated documents, and
 - ✅ **No** JavaScript
 - ✅ **No** configuration needed
 - ✅ **No** refactoring required
+- ✅ `~6kB` gzipped _(can be further reduced)_
 
 ### 📸 Screenshot examples
 
