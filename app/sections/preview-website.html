@@ -1,18 +1,19 @@
 <details>
   <summary>
-    <h3 id="preview-website"><a href="#preview-website">🕵️ Preview a website</a></h3>
+    <h3 id="preview-website"><a href="#preview-website">🕵️ Preview a Website</a></h3>
   </summary>
   <p>
-    You can use the form below to preview any website with <em>matcha.css</em>.
+    Feel free to use the form below to preview any website using <em>matcha.css</em>.
   </p>
   <form>
     <label for="url">
       Website URL:
       <small>
-        Previewed site will be trimmed from their <code data-hl="html">&lt;style&gt;</code> and <code data-hl="html">&lt;script&gt;</code> tags.
-        External resources may not be properly loaded, this form is only intended for a quick preview.
+        Please note that the previewed site will be stripped of its <code data-hl="html">&lt;style&gt;</code> and <code data-hl="html">&lt;script&gt;</code> tags.
+        External resources may not load properly.
+        This form is intended for quick previews only.
       </small>
-      <input list="preview-datalist" type="url" placeholder="https://example.com" required>
+      <input list="preview-datalist" type="url" placeholder="https://example.com" value="https://example.com" required>
       <datalist id="preview-datalist">
         <option value="https://example.com"></option>
         <option value="https://perfectmotherfuckingwebsite.com"></option>

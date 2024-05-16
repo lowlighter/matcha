@@ -4,16 +4,15 @@
 
 <p align="center"><img src="/app/icons/matchat.svg" width="300"></p>
 
-**matcha.css** is a pure CSS library that directly styles HTML elements akin to a default browser stylesheet, rather than requiring users to patch their documents with classes.
+**matcha.css** is a pure CSS library designed to style HTML elements similarly to a default browser stylesheet, eliminating the need for users to manually patch their documents.
 
-It is perfect for fast prototyping, Markdown-generated or static HTML pages, developers who don't want to bother with CSS, or want to use more than
-[`<div> and <span>`](https://developer.mozilla.org/docs/Web/HTML/Element) in their documents, etc.
+Ideal for fast prototyping, static HTML pages, Markdown-generated documents, and developers seeking to streamline their workflow without delving into CSS intricacies and want to make use of [the full range of available HTML elements](https://developer.mozilla.org/docs/Web/HTML/Element).
 
 - ✅ **No** build steps
 - ✅ **No** dependencies
 - ✅ **No** JavaScript
 - ✅ **No** configuration needed
-- ✅ **No** refactoring needed
+- ✅ **No** refactoring required
 
 ### 📸 Screenshot examples
 
@@ -34,33 +33,39 @@ It is perfect for fast prototyping, Markdown-generated or static HTML pages, dev
   <img alt="" src="/.github/demo-light-d.png" width="400">
 </picture>
 
-## 🥢 Why choose **matcha.css** ?
+## 🥢 Why choose **matcha.css**?
 
 ### 🍜 Agnostic
 
-Works with any document and cover a larger range of HTML elements than most other similar libraries. Remains unobstrusive by making clever usage of CSS pseudo-elements and support a wide range of
-browsers
+Works seamlessly with any document and covers a broader range of HTML elements compared to similar libraries. It remains unobtrusive by leveraging CSS pseudo-elements and offers extensive [browser support](https://matcha.mizu.sh/#supported-browsers).
 
 ### 🍥 Reversible
 
-Simply include its `<link rel="stylesheet">` to get started, and remove it if you don't want to use it anymore. No need to refactor or clean your document thereafter.
+Simply include its `<link rel="stylesheet">` to get started, and remove it whenever necessary without the need for document refactoring or cleanup.
 
 ### 🍡 Semantic
 
-Styling adapts to elements hierarchy. For example, nesting `<menu>` elements will implicitely « create » submenus, a `<label>` with an `<input required>` has an `*` indicator prepended, etc.
+Adapts styling based on elements hierarchy, providing intuitive behaviors such as "implicit submenus" when nesting `<menu>` elements, required field indicator (`*`) when a `<label>` is paired with `<input required>`, etc.
 
 ### 🍱 Customizable
 
-Brew your own build using our [custom builder](https://matcha.mizu.sh/#custom-build) to select which features you want to include and reduce the final build size.
+Brew your own build using our [custom builder](https://matcha.mizu.sh/#custom-build) to select specific features and reduce the final build size according to your project's needs.
 
 ### 🍘 Open-source
 
-Released under the [MIT License](/LICENSE), source code is available at [github.com/lowlighter/matcha](https://github.com/lowlighter/matcha).
+Released under the [MIT License](/LICENSE), freely available at [github.com/lowlighter/matcha](https://github.com/lowlighter/matcha).
 
 ## 📖 Usage
 
-To use **matcha.css**, simply include the following in your document `<head>`. That's it.
+To utilize **matcha.css**, just include the following line in the `<head>` section of your document. It's that simple!
 
 ```html
 <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
+```
+
+# 📜 License
+
+```
+MIT License
+Copyright (c) 2024-present Simon Lecoq (lowlighter)
 ```

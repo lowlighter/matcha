@@ -41,8 +41,48 @@ body {
   background: var(--bg-subtle);
 }
 
+/* Matcha menu */
 aside nav ul ul ul li :is(a, [class^="hljs-"], var) {
   color: var(--muted) !important;
+}
+
+/* Matcha header and footer */
+body > header svg,
+body > footer svg {
+  fill: var(--ly-brand);
+  transition: fill var(--tr-duration);
+}
+
+body > header li:hover svg,
+body > footer li:hover svg {
+  fill: var(--accent);
+}
+
+body > header svg.sponsor,
+body > footer svg.sponsor {
+  fill: var(--variant);
+}
+
+[data-color-scheme="dark"] body > header svg.light {
+  display: none;
+}
+
+[data-color-scheme="light"] body > header svg.dark {
+  display: none;
+}
+
+:root:not([data-color-scheme="dark"]) body > header svg.dark {
+  display: none;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-color-scheme="light"]) body > header svg.dark {
+    display: inline-block;
+  }
+
+  :root:not([data-color-scheme="light"]) body > header svg.light {
+    display: none;
+  }
 }
 
 /* Matcha build */
@@ -82,7 +122,7 @@ main > section > :is(h1)[id]:not([id="matcha"]) {
   padding-bottom: .25rem;
 }
 
-/* Caniuse */
+/* CSS compatibility */
 .css-compatibility-table th, .css-compatibility-table td {
   vertical-align: baseline;
   text-align: left;

@@ -3,31 +3,31 @@
     <h3 id="supported-browsers"><a href="#supported-browsers">☑️ Supported browsers</a></h3>
   </summary>
   <p>
-    <em>matcha.css</em> is designed to support all modern browsers. See below for more details.
+    <em>matcha.css</em> is meticulously crafted to ensure compatibility with all modern browsers.
   </p>
   <form>
     <b>Methodology:</b>
     <ol>
       <li>Generate <em>matcha.css</em> stylesheet.</li>
       <li>
-        Generate report table using <a href="https://jsr.io/@libs/bundle">jsr.io/@libs/bundle</a>, which does the following:
+        Generate report table using <a href="https://jsr.io/@libs/bundle">jsr.io/@libs/bundle</a>, which performs the following tasks:
         <ol>
-          <li>Get browsers list using <a href="https://github.com/browserslist/browserslist">browserslist.</a></li>
-          <li>Parse stylesheet using <a href="https://github.com/csstree/csstree">csstree.</a></li>
-          <li>Check support of each CSS features over each browser version using <a href="https://github.com/mdn/browser-compat-data">MDN browser compatibility data.</a></li>
-          <li>Generate a <code data-hl="html">&lt;table&gt;</code> summary</li>
+          <li>Retrieves the browsers list using <a href="https://github.com/browserslist/browserslist">browserslist.</a></li>
+          <li>Parses the stylesheet using <a href="https://github.com/csstree/csstree">csstree.</a></li>
+          <li>Checks the support of each CSS feature across browser versions using <a href="https://github.com/mdn/browser-compat-data">MDN browser compatibility data.</a></li>
+          <li>Generates a summary <code data-hl="html">&lt;table&gt;</code> for easy reference.</li>
         </ol>
       </li>
     </ol>
     <b>Notes:</b>
     <ul>
-      <li>Browser list is set to <code>defaults</code> (<code>&gt; 0.5%, last 2 versions, Firefox ESR, not dead</code>).</li>
-      <li>The first row display the overall support for a given browser column.</li>
-      <li>As the table is auto-generated and it is hard to map back every CSS features against compatibility data, so it may contain inaccuracies.</li>
-      <li>Thus, a browser with a score of 90% and above is considered supported.</li>
+      <li>Browser list adheres to <code>defaults</code> (<code>&gt; 0.5%, last 2 versions, Firefox ESR, not dead</code>).</li>
+      <li>The first row displays the overall support for each browser.</li>
+      <li>Please note that the auto-generated table may contain minor inaccuracies due to the complexity of mapping CSS features against compatibility data.</li>
+      <li>Thus, browsers scoring 90% and above are considered fully supported.</li>
     </ul>
     <p>
-      Toggle verbosity to display which CSS features and which rules were reported as either partially supported or unsupported.
+      You can toggle verbosity to display additional information, such as specific CSS features and rules reported as partially supported or unsupported.
     </p>
     <button class="variant" onclick="event.preventDefault();document.querySelectorAll('table.css-compatibility-table,ul.css-compatibility-legend').forEach(element => element.classList.toggle('details'))">Toggle verbosity</button>
     <ul class="css-compatibility-legend">
