@@ -8,6 +8,8 @@ export default async function (request: Request) {
     return new Response(STATUS_TEXT[STATUS_CODE.MethodNotAllowed], { status: STATUS_CODE.MethodNotAllowed })
   }
   if (new URL(`https://${request.headers.get("Host")}`).hostname !== new URL(`https://${Deno.env.get("VERCEL_URL") || "localhost"}`).hostname) {
+    console.log(new URL(`https://${request.headers.get("Host")}`).hostname)
+    console.log(new URL(`https://${Deno.env.get("VERCEL_URL") || "localhost"}`).hostname)
     return new Response(STATUS_TEXT[STATUS_CODE.Forbidden], { status: STATUS_CODE.Forbidden })
   }
   try {
