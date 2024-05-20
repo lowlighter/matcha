@@ -1,0 +1,95 @@
+/* Global */
+body {
+  background: var(--bg-default);
+  color: var(--default);
+}
+.quiet {
+  color: var(--muted);
+}
+.fraction {
+  background: var(--bg-accent);
+  color: var(--accent);
+}
+.red.solid {
+  background: var(--danger);
+}
+
+/* Links */
+a {
+  color: var(--accent);
+}
+div.path a:link,
+div.path a:visited {
+  color: var(--muted);
+}
+
+/* Branches */
+.missing-if-branch {
+  background: var(--bg-attention);
+  color: var(--attention);
+}
+.skip-if-branch {
+  background: var(--bg-muted);
+  color: var(--muted);
+}
+
+/* Status */
+.low {
+  background: var(--bg-danger);
+  color: var(--danger);
+}
+.medium {
+  background: var(--bg-attention);
+  color: var(--attention);
+}
+.high {
+  background: var(--bg-success);
+  color: var(--success);
+}
+.status-line.low,
+.status-line.medium,
+.status-line.high,
+.low .cover-fill,
+.medium .cover-fill,
+.high .cover-fill {
+  background: currentColor;
+}
+.low .chart,
+.medium .chart,
+.high .chart {
+  border-color: currentColor;
+}
+
+/* Coverage */
+.cline-yes,
+.cstat-yes {
+  background: var(--bg-success);
+  color: var(--success);
+}
+.cline-no,
+.cstat-no,
+.fstat-no {
+  background: var(--bg-danger);
+  color: var(--danger);
+}
+.cstat-skip,
+.fstat-skip {
+  background: var(--bg-muted);
+  color: var(--muted);
+}
+span.cline-neutral {
+  background: transparent;
+}
+
+/* Coverage summary */
+.coverage-summary tr,
+.coverage-summary tbody,
+.coverage-summary td {
+  border-color: var(--muted);
+}
+.coverage-summary td.empty {
+  color: var(--muted);
+}
+.cover-empty {
+  background: var(--bg-muted);
+}
