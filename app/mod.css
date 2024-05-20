@@ -239,9 +239,12 @@ main > section > :is(h1)[id]:not([id="matcha"]) {
   padding: 1rem;
   border: 1px solid var(--bd-muted);
   border-radius: var(--bd-radius);
+  box-sizing: border-box;
+}
+
+.example:not([data-codeless]) {
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
-  box-sizing: border-box;
 }
 
 .example + details {
