@@ -5,6 +5,7 @@ import { default as hlxml } from "https://esm.sh/highlight.js@11.9.0/lib/languag
 import { default as hlcss } from "https://esm.sh/highlight.js@11.9.0/lib/languages/css"
 import { default as hllisp } from "https://esm.sh/highlight.js@11.9.0/lib/languages/lisp"
 import { default as hljs } from "https://esm.sh/highlight.js@11.9.0/lib/languages/javascript"
+import { default as hlts } from "https://esm.sh/highlight.js@11.9.0/lib/languages/typescript"
 import { default as hlmd } from "https://esm.sh/highlight.js@11.9.0/lib/languages/markdown"
 import { default as hlsh } from "https://esm.sh/highlight.js@11.9.0/lib/languages/diff"
 import { DOMParser } from "https://deno.land/x/deno_dom@v0.1.45/deno-dom-wasm.ts"
@@ -14,6 +15,7 @@ syntax.registerLanguage("xml", hlxml)
 syntax.registerLanguage("css", hlcss)
 syntax.registerLanguage("lisp", hllisp)
 syntax.registerLanguage("js", hljs)
+syntax.registerLanguage("ts", hlts)
 syntax.registerLanguage("md", hlmd)
 syntax.registerLanguage("diff", hlsh)
 

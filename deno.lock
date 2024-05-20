@@ -973,6 +973,7 @@
     "https://esm.sh/highlight.js@11.9.0/lib/languages/javascript": "18fbf4c43a006af98f6f62ea7a34454ff47963fe3404098410fc9f4529cdb05e",
     "https://esm.sh/highlight.js@11.9.0/lib/languages/lisp": "438887e41a0eb37f264bbdfd249af4f6df9c0403224d2380de542a48ca2b87d8",
     "https://esm.sh/highlight.js@11.9.0/lib/languages/markdown": "99751298c6be22e7ab8205fd573e0b3ddf0074211b7754d8f5dcc82cbc0b129e",
+    "https://esm.sh/highlight.js@11.9.0/lib/languages/typescript": "8c62af1da11125f27ce702dd916d921225cb6885e78ef4cb217356f908657bdc",
     "https://esm.sh/highlight.js@11.9.0/lib/languages/xml": "3b89db3dea1472052b4f8b21ad34088bdd2f8204afc35acd18392921a8dc603e",
     "https://esm.sh/v135/highlight.js@11.9.0/denonext/lib/core.js": "8653667a14004953b2fcbf10be691096e9f699741b23e5a858cb1e4b09f9e3b3",
     "https://esm.sh/v135/highlight.js@11.9.0/denonext/lib/languages/css.js": "6e85e97190d1a912eb300b665da5f1661b36fef032946b14b4401714c0130a67",
@@ -980,6 +981,7 @@
     "https://esm.sh/v135/highlight.js@11.9.0/denonext/lib/languages/javascript.js": "98b360160bab20259991f09536fc39175d7c4756347b80650bd04e1f65a4eddc",
     "https://esm.sh/v135/highlight.js@11.9.0/denonext/lib/languages/lisp.js": "190ad98ea7eadf8989e8319eadf281b296e351d846213d65483b0f8d2e00c0d5",
     "https://esm.sh/v135/highlight.js@11.9.0/denonext/lib/languages/markdown.js": "5871a0b8cce85bd53c0966df9c7cf861e7b141fd0f6e114bedcd2a56cf66df74",
+    "https://esm.sh/v135/highlight.js@11.9.0/denonext/lib/languages/typescript.js": "13b63f5907f203d43b4023c4128f0d085a5a5980c34c1ebd5b2e67a405dbee14",
     "https://esm.sh/v135/highlight.js@11.9.0/denonext/lib/languages/xml.js": "5616f6c4d4566ec9f2987cd2438de12ab190a3fb056cbb051721fdbe8bd7ecc2"
   }
 }
