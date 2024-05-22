@@ -5,7 +5,7 @@ body.layout-simple {
   column-gap: 1.5rem;
   grid-template-areas:
   "header"
-  "aside"
+  "aside1"
   "main"
   "footer";
   grid-template-rows: auto 1fr auto;
@@ -51,12 +51,11 @@ body.layout-simple > :is(header:first-of-type, footer:last-of-type) > nav > menu
 }
 
 body.layout-simple > aside {
+  display: none;
   padding: 0;
   border-left: none;
   margin: 0;
   backdrop-filter: blur(100px);
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
 }
 
 body.layout-simple > aside > nav:only-child {
@@ -68,6 +67,28 @@ body.layout-simple > aside > nav:only-child {
   margin: 0;
 }
 
+body.layout-simple > aside:nth-of-type(1)[data-expandable] {
+  margin-left: -1.5rem;
+  margin-right: -1.5rem;
+  grid-area: aside1;
+  max-height: var(--ly-aside-size-small);
+  display: block;
+  overflow: hidden;
+}
+
+body.layout-simple > aside:nth-of-type(1)[data-expandable]::before {
+  content: attr(data-expandable);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: var(--ly-aside-size-small);
+  cursor: pointer;
+}
+
+body.layout-simple > aside:nth-of-type(1)[data-expandable]:hover {
+  max-height: none;
+}
+
 body.layout-simple > aside > nav:only-child > ul {
   height: 100%;
 }
@@ -77,7 +98,16 @@ body.layout-simple > aside a {
 }
 
 @media (min-width: 960px) {
-  body.layout-simple > aside {
+  body.layout-simple > aside:nth-of-type(1)[data-expandable]::before {
+    height: 0;
+    display: none;
+  }
+
+  body.layout-simple > aside:nth-of-type(1)[data-expandable] {
+    max-height: none;
+  }
+
+  body.layout-simple > aside:nth-of-type(1)[data-expandable] {
     margin-left: 0;
     margin-right: 0;
   }
@@ -101,8 +131,8 @@ body.layout-simple > aside a {
   }
 
   body.layout-simple > aside:nth-of-type(1) {
+    display: block;
     box-shadow: var(--shadow-r);
-    grid-area: aside1;
   }
 }
 
