@@ -1,0 +1,49 @@
+.editor {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border-radius: var(--bd-radius);
+  background: var(--bg-muted);
+}
+
+.editor > textarea, .editor > div.highlight {
+  box-sizing: border-box;
+  padding: 1rem;
+  border: 0;
+  margin: 0;
+  background: transparent;
+  font-family: var(--ft-mono);
+  font-size: 1rem;
+  line-height: 1.5;
+  white-space: pre-wrap;
+}
+
+.editor > textarea {
+  z-index: 1;
+  border: 1px solid transparent;
+  caret-color: var(--default);
+  color: transparent;
+}
+
+.editor > div.highlight {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+}
+
+.editor > textarea:user-valid {
+  border-color: transparent;
+}
+
+.editor:hover > textarea {
+  border-color: var(--accent);
+}
+
+.editor > textarea:focus {
+  border-color: var(--active);
+}
