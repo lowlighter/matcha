@@ -1,6 +1,6 @@
 /* Global */
 body {
-  background: var(--bg-default);
+  background-color: var(--bg-default);
   color: var(--default);
 }
 .quiet {
