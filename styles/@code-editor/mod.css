@@ -1,39 +1,39 @@
 .editor {
   position: relative;
+  overflow: hidden;
   width: 100%;
   border-radius: var(--bd-radius);
   background: var(--bg-muted);
-  overflow: hidden;
 }
 
 .editor > textarea, .editor > div.highlight {
+  box-sizing: border-box;
+  padding: 1rem;
+  border: 0;
+  margin: 0;
+  background: transparent;
   font-family: var(--ft-mono);
   font-size: 1rem;
   line-height: 1.5;
-  margin: 0;
-  padding: 1rem;
   white-space: pre-wrap;
-  border: 0;
-  box-sizing: border-box;
-  background: transparent;
 }
 
 .editor > textarea {
   z-index: 1;
-  color: transparent;
-  caret-color: var(--default);
   border: 1px solid transparent;
+  caret-color: var(--default);
+  color: transparent;
 }
 
 .editor > div.highlight {
   position: absolute;
+  z-index: 0;
   top: 0;
   left: 0;
+  overflow: hidden;
   width: 100%;
   height: 100%;
-  z-index: 0;
   pointer-events: none;
-  overflow: hidden;
 }
 
 .editor > textarea:user-valid {
