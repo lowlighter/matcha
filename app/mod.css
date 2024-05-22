@@ -348,6 +348,10 @@ main > section > :is(h1)[id]:not([id="matcha"]) {
   }
 }
 
+.example menu {
+  z-index: 200;
+}
+
 /* Layout structure */
 .layout-structure, .layout-structure ul {
   padding-left: 1rem;
