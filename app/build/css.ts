@@ -12,7 +12,7 @@ export const banner = [
 ].join("\n")
 
 /** Generate CSS */
-export async function css(exclude = ["@istanbul-coverage"] as string[]) {
+export async function css(exclude = ["@istanbul-coverage", "@code-editor"] as string[]) {
   let css = ""
   const files = await Array.fromAsync(expandGlob("styles/**/*.css", { root: fromFileUrl(root), exclude: exclude.map((directory) => `styles/${directory}/*.css`) }))
   files.sort((a, b) => a.path.localeCompare(b.path))

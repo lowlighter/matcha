@@ -40,7 +40,8 @@ export async function html() {
   Array.from(document.querySelectorAll(".example:not([data-codeless])")).forEach((_element) => {
     const element = _element as unknown as HTMLElement
     const clone = element.cloneNode(true) as unknown as HTMLElement
-    clone.querySelectorAll("script,.note").forEach((element) => element.remove())
+    clone.querySelectorAll("script:not([data-keep]),.note").forEach((element) => element.remove())
+    clone.querySelectorAll("script[data-keep]").forEach((element) => element.removeAttribute("data-keep"))
     const html = clone.innerHTML.replaceAll(/<template>[\s\S]*?<\/template>/g, "")
     const indent = html.match(/^( *)(?=\S)/m)?.[1]?.length || 0
     const code = html
