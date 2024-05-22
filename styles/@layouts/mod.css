@@ -68,21 +68,25 @@ body.layout-simple > aside > nav:only-child {
   margin: 0;
 }
 
-body.layout-simple > aside:nth-of-type(1)[data-expandable] {
-  margin-left: -1.5rem;
-  margin-right: -1.5rem;
-  grid-area: aside1;
-  max-height: var(--ly-aside-size-small);
+body.layout-simple > aside:nth-of-type(1):is([data-expandable], [data-expand]) {
   display: block;
   overflow: hidden;
+  max-height: var(--ly-aside-size-small);
+  margin-right: -1.5rem;
+  margin-left: -1.5rem;
+  grid-area: aside1;
+}
+
+body.layout-simple > aside:nth-of-type(1)[data-expand] {
+  max-height: none;
 }
 
 body.layout-simple > aside:nth-of-type(1)[data-expandable]::before {
-  content: attr(data-expandable);
   display: flex;
-  justify-content: center;
-  align-items: center;
   height: var(--ly-aside-size-small);
+  align-items: center;
+  justify-content: center;
+  content: attr(data-expandable);
   cursor: pointer;
 }
 
@@ -108,11 +112,11 @@ body.layout-simple > aside a {
     display: none;
   }
 
-  body.layout-simple > aside:nth-of-type(1)[data-expandable] {
-    margin-left: 0;
-    margin-right: 0;
-    max-height: none;
+  body.layout-simple > aside:nth-of-type(1):is([data-expandable], [data-expand]) {
     overflow: unset;
+    max-height: none;
+    margin-right: 0;
+    margin-left: 0;
   }
 
   body.layout-simple:has(> aside:nth-of-type(1)) {
