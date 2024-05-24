@@ -67,6 +67,40 @@ To utilize **matcha.css**, just include the following line in the `<head>` secti
 <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
 ```
 
+## 🫰 Contributing
+
+### 📂 Project structure
+
+This project is separated into three main directories:
+- `/api` for serverless functions run on [Vercel](https://vercel.com)
+- `/app` for entry points, static assets, and build scripts
+- `/styles` for CSS source files
+
+### 🎨 About `/styles` directory
+
+Each subdirectory within this folder is intended to be mostly self-contained and scoped.
+It helps to keep the codebase organized while also allows users to cherry-pick specific features and create custom builds.
+
+Extra features should be prefixed using the character `@` and should most likely be excluded by default in the builder to avoid bloating the default build.
+
+### 🧑‍💻 Development lifecycle
+
+When submitting a pull request, the preview will be available on [Vercel](https://vercel.com).
+Maintainers and other contributors can review the changes and provide feedback before merging.
+
+Local development is intended to be done using the [deno](https://deno.com) runtime.
+If you do not wish to install it, you can also use the provided [devcontainer](/.devcontainer) configuration to run the project in a containerized environment or directly on [GitHub Codespaces](https://github.com/features/codespaces).
+
+To start the development server, run the following command:
+```sh
+deno task serve
+```
+
+Before submitting your changes, ensure everything is correctly formatted by running the following command:
+```sh
+deno task fmt
+```
+
 # 📜 License
 
 ```
