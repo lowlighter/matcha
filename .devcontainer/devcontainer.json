@@ -1,0 +1,17 @@
+{
+  "name": "Deno",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+  "customizations": {
+    "vscode": {
+      "settings": {
+        "editor.defaultFormatter": "denoland.vscode-deno",
+        "deno.lint": true,
+        "deno.enable": true
+      },
+      "extensions": ["denoland.vscode-deno"]
+    },
+    "remoteUser": "vscode"
+  }
+}
