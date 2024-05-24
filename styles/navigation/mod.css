@@ -122,7 +122,7 @@ nav > ol {
   flex-wrap: wrap;
 }
 
-nav > ol > li:not(:last-child) > a::after {
+nav > ol > li:not(:last-child):has(>a)::after {
   display: inline-block;
   margin: 0 .25rem;
   color: var(--default);
