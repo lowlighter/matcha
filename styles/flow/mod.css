@@ -14,8 +14,9 @@ pre {
   padding: 1rem;
   border-radius: var(--bd-radius);
   background: var(--bg-muted);
-  font-size: .85rem;
-  line-height: 1.45;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
 pre > code {
@@ -23,22 +24,26 @@ pre > code {
   padding: 0;
   border-radius: 0;
   background: transparent;
-  font-size: 100%;
+  font-size: inherit;
 }
 
 /* Quotation block */
 blockquote {
-  padding: .25rem 1rem;
-  border-left: .25rem solid var(--bd-muted);
-  margin: 0 0 1rem;
+  padding: 0.5rem 1.5rem;
+  border-left: 0.25rem solid var(--primary-color);
+  margin: 0 0 1.5rem;
   color: var(--muted);
+  background: var(--bg-light);
+  border-radius: var(--bd-radius);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 blockquote > cite:last-child {
   display: block;
   padding-left: 2rem;
-  margin-top: .25rem;
+  margin-top: 0.5rem;
   text-decoration: none;
+  font-style: italic;
 }
 
 blockquote > cite:last-child::before {
@@ -49,7 +54,13 @@ blockquote > cite:last-child::before {
 figure {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto 1.5rem;
+  padding: 1rem;
+  border-radius: var(--bd-radius);
+  background: var(--bg-muted);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 figcaption {
@@ -58,4 +69,5 @@ figcaption {
   margin: 1rem 0;
   color: var(--muted);
   text-align: center;
+  font-style: italic;
 }
