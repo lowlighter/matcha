@@ -192,7 +192,7 @@ input[type="file"]::file-selector-button {
 
 input[type="file"]:hover::file-selector-button {
   background: var(--accent);
-  color: var(--default);
+  color: var(--white);
 }
 
 /* Buttons */
@@ -231,12 +231,12 @@ button[type]:not([type="button"]), input:is([type="submit"],[type="reset"]) {
 :is(button, input:is([type="submit"],[type="reset"],[type="button"],[type="image"])):not(:disabled):active {
   border-color: transparent;
   background: var(--accent);
-  color: var(--default);
+  color: var(--white);
 }
 
 :is(button, input)[type="reset"]:not(:disabled):hover,
 :is(button, input)[type="reset"]:not(:disabled):active {
   border-color: transparent;
   background: var(--danger);
-  color: var(--default);
+  color: var(--white);
 }
