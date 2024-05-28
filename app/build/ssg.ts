@@ -1,10 +1,10 @@
 // Imports
-import { copy, emptyDir, ensureDir, expandGlob } from "jsr:@std/fs@0.223.0"
-import { dirname, fromFileUrl } from "jsr:@std/path@0.223.0"
+import { copy, emptyDir, ensureDir, expandGlob } from "jsr:@std/fs@0.229.1"
+import { dirname, fromFileUrl } from "jsr:@std/path@0.225.1"
 import { root } from "./root.ts"
 import { css } from "./css.ts"
 import { html } from "./html.ts"
-import { compatibility } from "jsr:@libs/bundle@2.1.0/css/compatibility"
+import { compatibility } from "jsr:@libs/bundle@5/css"
 
 /** Static site generation */
 export async function ssg() {

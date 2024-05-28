@@ -1,8 +1,8 @@
 #!/usr/bin/env DENO_DIR=/tmp deno run
 // Imports
-import { bundle } from "jsr:@libs/bundle@1.0.2/css"
+import { bundle } from "jsr:@libs/bundle@5/css"
 import { banner as _banner } from "../app/build/css.ts"
-import { STATUS_CODE, STATUS_TEXT } from "jsr:@std/http@0.224.0"
+import { STATUS_CODE, STATUS_TEXT } from "jsr:@std/http@0.224.1"
 
 /** API: Minify css */
 export default async function (request: Request) {

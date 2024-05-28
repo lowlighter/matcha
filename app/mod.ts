@@ -3,7 +3,7 @@
 import { css } from "./build/css.ts"
 import { html } from "./build/html.ts"
 import { ssg } from "./build/ssg.ts"
-import { STATUS_CODE, STATUS_TEXT } from "jsr:@std/http@0.224.0"
+import { STATUS_CODE, STATUS_TEXT } from "jsr:@std/http@0.224.1"
 import { root } from "./build/root.ts"
 import api_minify from "../api/brew.ts"
 import api_preview from "../api/preview.ts"

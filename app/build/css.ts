@@ -1,7 +1,7 @@
 // Imports
-import { expandGlob } from "jsr:@std/fs@0.223.0"
-import { fromFileUrl } from "jsr:@std/path@0.223.0"
-import { bundle } from "jsr:@libs/bundle@1.0.2/css"
+import { expandGlob } from "jsr:@std/fs@0.229.1"
+import { fromFileUrl } from "jsr:@std/path@0.225.1"
+import { bundle } from "jsr:@libs/bundle@5/css"
 import { root } from "./root.ts"
 
 /** Banner */
