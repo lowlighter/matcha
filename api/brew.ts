@@ -15,7 +15,7 @@ export default async function (request: Request) {
   try {
     const body = await request.text()
     const banner = _banner.replace("matcha.css\n", `matcha.css — Custom build (${new Date().toDateString()})\n`)
-    const bundled = await bundle(body, { minify: true, banner, rules: { "no-descending-specificity": false, "no-duplicate-selectors": false } })
+    const bundled = await bundle(body, { minify: true, banner, rules: { "no-descending-specificity": false, "no-duplicate-selectors": false, "declaration-no-important": false } })
     return new Response(bundled, { headers: { "Content-Type": "text/css" } })
   } catch (error) {
     return new Response(error.message, { status: STATUS_CODE.InternalServerError })
