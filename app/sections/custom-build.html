@@ -13,7 +13,7 @@
     <fieldset class="styling">
       <legend>
         <label>
-          <input type="checkbox" data-for="styling" checked> Styling
+          <input type="checkbox" data-for="styling" checked> Styling scopes
         </label>
       </legend>
       <div>
@@ -44,7 +44,7 @@
     <fieldset class="extra">
       <legend>
         <label>
-          <input type="checkbox" data-for="extra" checked> Extra
+          <input type="checkbox" data-for="extra" checked> Extra features
         </label>
       </legend>
       <label>
@@ -202,6 +202,50 @@
     </fieldset>
     <div data-color-scheme="light"></div>
     <div data-color-scheme="dark"></div>
+    <fieldset>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+      <legend>Customization</legend>
+      <label style="width: 100%;">
+        Extra CSS content
+        <small>
+          Append your own custom CSS styles to the final build without the need to fork the project.
+          You can use <a href="https://developer.mozilla.org/docs/Web/CSS/important"><code data-hl="css">!important</code></a> rules
+          when needed to ensure your styles are applied since <em>matcha.css</em> never uses this priority level.
+        </small>
+        <div class="editor" style="margin-top: .5rem;">
+          <textarea rows="8" name="custom">/** Your custom extra CSS here */</textarea>
+          <div class="highlight"></div>
+        </div>
+        <script>
+          {
+            const editor = document.currentScript.previousElementSibling
+            const textarea = editor.querySelector("textarea")
+            const highlight = editor.querySelector(".highlight")
+            textarea.addEventListener("input", () => coloration(textarea.value))
+            textarea.addEventListener("scroll", function () {
+              highlight.scrollTop = this.scrollTop
+              highlight.scrollLeft = this.scrollLeft
+            })
+            function coloration(value) {
+              highlight.innerHTML = hljs.highlight(value, { language: "css" }).value
+            }
+            coloration(textarea.value)
+          }
+        </script>
+      </label>
+    </fieldset>
+    <fieldset class="miscellaneous">
+      <legend>Miscellaneous</legend>
+      <label>
+        <input type="checkbox" name="minify" checked>
+        Minify<br>
+        <small>
+          Minify CSS to reduce final bundle size.
+          It requires a call to a serverless function that may fail because of a time-limit or rate-limit, if you're having issues
+          with getting your custom build, try disabling this option.
+        </small>
+      </label>
+    </fieldset>
     <fieldset class="brewing success">
       <legend>Brew matcha!</legend>
       <p>
@@ -216,6 +260,13 @@
   </form>
   <script>
     {
+      const banner = [
+        "/**",
+        ` * matcha.css — Custom build (${new Date().toDateString()})`,
+        ` * Copyright © ${new Date().getFullYear()} Lecoq Simon (@lowlighter)`,
+        " * MIT license — https://github.com/lowlighter/matcha",
+        " */"
+      ].join("\n")
       const form = document.currentScript.previousElementSibling
       // Manage meta-checkboxes
       form.querySelectorAll("legend input").forEach(input => {
@@ -267,8 +318,11 @@
       form.querySelector(".brewing button").addEventListener("click", async event => {
         event.preventDefault()
         let stylesheet = ""
+        const minify = form.querySelector('input[name="minify"]').checked
+        const custom = form.querySelector('textarea[name="custom"]').value
         const parts = await Promise.all([...teapot.styling, ...teapot.extra].sort((a, b) => a.localeCompare(b)).map(async name => await fetch(`/styles/${name}/mod.css`).then(response  => response.text())))
-        stylesheet = parts.join("\n")
+        stylesheet = [banner, ...parts, custom.trim()].join("\n")
+        console.log(stylesheet)
         if (teapot.variables.length) {
           const light = teapot.variables.filter(({mode}) => mode === "light").map(({name, value}) => `${name}: ${value};`).join("\n")
           const dark = teapot.variables.filter(({mode}) => mode === "dark").map(({name, value}) => `${name}: ${value};`).join("\n")
@@ -284,11 +338,14 @@
         try {
           brewing.toggleAttribute("disabled", true)
           brewing.style.cursor = "loading"
-          const response = await fetch("/api/brew", {method:"POST", body:stylesheet})
-          if (response.status !== 200) {
-            throw new Error(await response.text())
+          let url = URL.createObjectURL(new Blob([new TextEncoder().encode(stylesheet)], {type:"text/css;charset=utf-8"}))
+          if (minify) {
+            const response = await fetch("/api/brew", {method:"POST", body:stylesheet})
+            if (response.status !== 200) {
+              throw new Error(await response.text())
+            }
+            url = URL.createObjectURL(new Blob([await response.blob()], {type:"text/css;charset=utf-8"}))
           }
-          const url = URL.createObjectURL(await response.blob())
           globalThis.open(url, "_blank")
         }
         catch (error) {

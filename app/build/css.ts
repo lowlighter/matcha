@@ -19,5 +19,5 @@ export async function css(exclude = ["@istanbul-coverage", "@code-editor"] as st
   for (const { path } of files) {
     css += await Deno.readTextFile(path)
   }
-  return bundle(css, { minify: true, banner, rules: { "no-descending-specificity": false, "no-duplicate-selectors": false } })
+  return bundle(css, { minify: true, banner, rules: { "no-descending-specificity": false, "no-duplicate-selectors": false, "declaration-no-important": true } })
 }

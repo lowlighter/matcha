@@ -105,7 +105,7 @@ details summary a {
   flex: 1 1 0;
 }
 
-.matcha-build .extra label small {
+.matcha-build .extra label small, .matcha-build .miscellaneous label small {
   margin-left: 1.75rem;
   display: block;
 }
