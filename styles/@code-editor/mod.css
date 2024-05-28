@@ -6,6 +6,10 @@
   background: var(--bg-muted);
 }
 
+form .editor {
+  background: var(--bg-default);
+}
+
 .editor > textarea, .editor > div.highlight {
   box-sizing: border-box;
   padding: 1rem;
