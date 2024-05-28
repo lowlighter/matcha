@@ -85,7 +85,7 @@
   --shadow-r: 6px 0px 18px 0px var(--backdrop);
   --shadow-l: -6px 0px 18px 0px var(--backdrop);
   /** Forced colors */
-  --white: #e6edf3;
+  --light: #e6edf3;
 }
 
 @media (prefers-color-scheme: dark) {
