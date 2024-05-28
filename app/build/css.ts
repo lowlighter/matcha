@@ -1,7 +1,7 @@
 // Imports
-import { expandGlob } from "jsr:@std/fs@0.223.0"
-import { fromFileUrl } from "jsr:@std/path@0.223.0"
-import { bundle } from "jsr:@libs/bundle@1.0.2/css"
+import { expandGlob } from "jsr:@std/fs@0.229.1"
+import { fromFileUrl } from "jsr:@std/path@0.225.1"
+import { bundle } from "jsr:@libs/bundle@5/css"
 import { root } from "./root.ts"
 
 /** Banner */
@@ -19,5 +19,5 @@ export async function css(exclude = ["@istanbul-coverage", "@code-editor"] as st
   for (const { path } of files) {
     css += await Deno.readTextFile(path)
   }
-  return bundle(css, { minify: true, banner, rules: { "no-descending-specificity": false, "no-duplicate-selectors": false } })
+  return bundle(css, { minify: true, banner, rules: { "no-descending-specificity": false, "no-duplicate-selectors": false, "declaration-no-important": true } })
 }

@@ -1,8 +1,8 @@
 #!/usr/bin/env DENO_DIR=/tmp deno run
 // Imports
-import { bundle } from "jsr:@libs/bundle@1.0.2/css"
+import { bundle } from "jsr:@libs/bundle@5/css"
 import { banner as _banner } from "../app/build/css.ts"
-import { STATUS_CODE, STATUS_TEXT } from "jsr:@std/http@0.224.0"
+import { STATUS_CODE, STATUS_TEXT } from "jsr:@std/http@0.224.1"
 
 /** API: Minify css */
 export default async function (request: Request) {
@@ -15,7 +15,7 @@ export default async function (request: Request) {
   try {
     const body = await request.text()
     const banner = _banner.replace("matcha.css\n", `matcha.css — Custom build (${new Date().toDateString()})\n`)
-    const bundled = await bundle(body, { minify: true, banner, rules: { "no-descending-specificity": false, "no-duplicate-selectors": false } })
+    const bundled = await bundle(body, { minify: true, banner, rules: { "no-descending-specificity": false, "no-duplicate-selectors": false, "declaration-no-important": false } })
     return new Response(bundled, { headers: { "Content-Type": "text/css" } })
   } catch (error) {
     return new Response(error.message, { status: STATUS_CODE.InternalServerError })

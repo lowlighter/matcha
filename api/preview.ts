@@ -1,6 +1,6 @@
 #!/usr/bin/env DENO_DIR=/tmp deno run
 // Imports
-import { STATUS_CODE, STATUS_TEXT } from "jsr:@std/http@0.224.0"
+import { STATUS_CODE, STATUS_TEXT } from "jsr:@std/http@0.224.1"
 
 /** API: Preview website */
 export default async function (request: Request) {
