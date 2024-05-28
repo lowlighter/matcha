@@ -67,7 +67,28 @@ To utilize **matcha.css**, just include the following line in the `<head>` secti
 <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
 ```
 
+### 🍴 À la carte
+
+Each subdirectory listed in [`/styles`](/styles) directory is also directly served from [matcha.mizu.sh](https://matcha.mizu.sh). For example, if you only wish to include the
+[`@syntax-highlighting`](/styles/@syntax-highlighting/mod.css) styles rather than using the default build or a custom one, you could use:
+
+```html
+<link rel="stylesheet" href="https://matcha.mizu.sh/styles/@syntax-highlighting/mod.css">
+```
+
+However note that unless you provide your own CSS variables, you will most likely need to include the [`@root`](/styles/@root/mod.css) package as it contains all matcha.css variables definition.
+
 ## 🫰 Contributing
+
+### 🎌 Project scope
+
+- Respect accessibility and usability best practices
+- Respect end-users' preferences _(e.g., color scheme)_
+- Be desktop and mobile friendly
+- Not drastically change its current styling _(unless to fulfill one of the previous mentioned principles)_
+- Remain lightweight, modular and customizable
+  - Additional features considered as "bloat" will be excluded by default and will be opt-in
+  - `!important` rules will never be used to ensure users can easily override styles
 
 ### 📂 Project structure
 
