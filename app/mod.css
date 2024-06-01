@@ -240,6 +240,7 @@ main > section > :is(h1)[id]:not([id="matcha"]) {
   border: 1px solid var(--bd-muted);
   border-radius: var(--bd-radius);
   box-sizing: border-box;
+  transition: all var(--tr-duration);
 }
 
 .example:not([data-codeless]) {
@@ -268,6 +269,28 @@ main > section > :is(h1)[id]:not([id="matcha"]) {
   margin-top: 1rem;
   display: block;
   text-align: left;
+}
+
+/** Example tabs */
+.example-tabs {
+  justify-content: end;
+  margin-bottom: 0;
+  border-bottom: none;
+  margin: .5rem 0 .25rem;
+}
+
+.example-tabs > li {
+  margin: 0;
+}
+
+.example-tabs > li:hover {
+  background: var(--bg-accent);
+  color: var(--accent);
+}
+
+.example-tabs svg {
+  display: none;
+  fill: currentColor;
 }
 
 /* Additional example styles */

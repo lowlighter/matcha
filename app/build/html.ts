@@ -53,6 +53,13 @@ export async function html() {
     details.querySelector("code")!.innerHTML = syntax.highlight(code, { language: "html" }).value.trim()
     element.after(details)
   })
+  Array.from(document.querySelectorAll(".example:not([data-codeless]), .example[data-color-schemeable]")).forEach((_element) => {
+    const element = _element as unknown as HTMLElement
+    const tabs = document.createElement("menu") as unknown as HTMLMenuElement
+    tabs.classList.add("example-tabs")
+    tabs.innerHTML = `<li class="color-scheme">${document.querySelector(".color-scheme")!.innerHTML}</li>`
+    element.before(tabs)
+  })
   // Generate table of contents
   const nav = [] as string[]
   Array.from(document.querySelectorAll("main > section")).forEach((_element) => {
