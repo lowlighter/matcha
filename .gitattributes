@@ -1,2 +1,6 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+.devcontainer/* -linguist-detectable
+*.ts -linguist-detectable
+*.html linguist-documentation
