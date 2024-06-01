@@ -1,0 +1,10 @@
+::-webkit-scrollbar {
+  width: .5rem;
+  height: .5rem;
+  background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  border-radius: var(--bd-radius);
+  background-color: var(--muted);
+}
