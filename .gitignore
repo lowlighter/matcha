@@ -1,2 +1,4 @@
 .pages
 .vercel
+.npmrc
+package.json

@@ -1,4 +1,26 @@
 {
+  "name": "@lowlighter/matcha",
+  "version": "0.1.0",
+  "description": "",
+  "keywords": [
+    "css",
+    "theme",
+    "design",
+    "web",
+    "css-framework",
+    "semantic-web",
+    "minimalist",
+    "classless",
+    "classless-css"
+  ],
+  "license": "MIT License",
+  "author": "lowlighter (Simon Lecoq)",
+  "funding": "https://github.com/sponsors/lowlighter",
+  "homepage": "https://github.com/lowlighter/matcha",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lowlighter/matcha.git"
+  },
   "tasks": {
     "ci": "deno task lint && deno task fmt:check && deno task build",
     "serve": "deno run --allow-net --allow-read --allow-env --allow-sys --watch app/mod.ts serve",
