@@ -10,6 +10,11 @@ body {
   line-height: 1.5;
 }
 
+[data-color-scheme] {
+  background: var(--bg-default);
+  color: var(--default);
+}
+
 main, header {
   margin: 0 0 1rem;
 }
