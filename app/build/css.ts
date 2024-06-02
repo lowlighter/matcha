@@ -2,7 +2,7 @@
 import { expandGlob } from "jsr:@std/fs@0.229.1"
 import { fromFileUrl } from "jsr:@std/path@0.225.1"
 import { bundle } from "jsr:@libs/bundle@5/css"
-import { root } from "./root.ts"
+import { root as _root } from "./root.ts"
 
 /** Banner */
 export const banner = [
@@ -11,13 +11,35 @@ export const banner = [
   "MIT license — https://github.com/lowlighter/matcha",
 ].join("\n")
 
-/** Generate CSS */
-export async function css(exclude = ["@istanbul-coverage", "@code-editor"] as string[]) {
+/**
+ * Generate CSS
+ *
+ * Pass `exclude` to exclude specific directories from the build.
+ *
+ * Pass `only` to only include specific directories in the build (this takes precedence over `exclude`).
+ * Use the special value `*` to include all "base styles" (`@root` and all directories not starting with `@`).
+ *
+ * Pass `minify` to minify the output CSS.
+ */
+export async function css({ only = [] as string[], exclude = ["@istanbul-coverage", "@code-editor"] as string[], minify = true } = {}) {
+  const root = fromFileUrl(_root)
   let css = ""
-  const files = await Array.fromAsync(expandGlob("styles/**/*.css", { root: fromFileUrl(root), exclude: exclude.map((directory) => `styles/${directory}/*.css`) }))
+  if (only.length) {
+    exclude = []
+  }
+  let files = await Array.fromAsync(expandGlob("styles/**/*.css", { root, exclude: exclude.map((directory) => `styles/${directory}/*.css`) }))
+  if (only.length) {
+    files = files.filter((file) => {
+      const name = file.path.replace(root, "").replaceAll("\\", "/").split("/")[1]
+      if ((only.includes("*")) && (!name.startsWith("@") || (name === "@root"))) {
+        return true
+      }
+      return only.includes(name)
+    })
+  }
   files.sort((a, b) => a.path.localeCompare(b.path))
   for (const { path } of files) {
     css += await Deno.readTextFile(path)
   }
-  return bundle(css, { minify: true, banner, rules: { "no-descending-specificity": false, "no-duplicate-selectors": false, "declaration-no-important": true } })
+  return bundle(css, { minify, banner, rules: { "no-descending-specificity": false, "no-duplicate-selectors": false, "declaration-no-important": true } })
 }
