@@ -10,7 +10,6 @@ import { default as hlmd } from "https://esm.sh/highlight.js@11.9.0/lib/language
 import { default as hlsh } from "https://esm.sh/highlight.js@11.9.0/lib/languages/diff"
 import { DOMParser } from "https://deno.land/x/deno_dom@v0.1.45/deno-dom-wasm.ts"
 import { gzipSize } from "https://deno.land/x/gzip_size@v0.3.0/mod.ts"
-import { css } from "./css.ts"
 syntax.registerLanguage("xml", hlxml)
 syntax.registerLanguage("css", hlcss)
 syntax.registerLanguage("lisp", hllisp)
@@ -87,8 +86,7 @@ export async function html() {
     let size = 0
     try {
       size = gzipSize(Deno.readTextFileSync(new URL(`dist/${element.dataset.matchaSize}`, root)))
-    }
-    catch {
+    } catch {
       // Ignore
     }
     element.innerText = `~${new Intl.NumberFormat("en-US", { style: "unit", unit: "kilobyte", unitDisplay: "narrow", maximumSignificantDigits: 3 }).format(size / 1000)}`
