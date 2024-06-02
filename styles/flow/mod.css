@@ -3,6 +3,10 @@ p, pre {
   margin: 0 auto 1rem;
 }
 
+p img {
+  vertical-align: middle;
+}
+
 :is(p, pre):last-child {
   margin-bottom: 0;
 }
