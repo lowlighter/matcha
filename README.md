@@ -1,6 +1,7 @@
 # 🍵 matcha.css
 
 [`🌊 See live on matcha.mizu.sh !`](https://matcha.mizu.sh)
+[![npm](https://img.shields.io/npm/v/@lowlighter%2Fmatcha?logo=npm&labelColor=cb0000&color=black)](https://www.npmjs.com/package/@lowlighter/matcha)
 
 <p align="center"><img src="/app/icons/matchat.svg" width="300"></p>
 
