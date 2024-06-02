@@ -1,0 +1,16 @@
+# GitHub and services
+.devcontainer
+.github
+.gitattributes
+.vercel
+vercel.json
+
+# Web site
+.pages
+*.html
+api
+app
+
+# Deno
+deno.jsonc
+deno.lock
