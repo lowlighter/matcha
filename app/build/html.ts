@@ -82,9 +82,15 @@ export async function html() {
   })
   document.querySelector("aside > nav")!.innerHTML = `<ul>${nav.join("")}</ul>`
   // Compute gzip size
-  const size = document.querySelector("[data-matcha-size]") ? gzipSize(await css()) : NaN
   Array.from(document.querySelectorAll("[data-matcha-size]")).forEach((_element) => {
     const element = _element as unknown as HTMLElement
+    let size = 0
+    try {
+      size = gzipSize(Deno.readTextFileSync(new URL(`dist/${element.dataset.matchaSize}`, root)))
+    }
+    catch {
+      // Ignore
+    }
     element.innerText = `~${new Intl.NumberFormat("en-US", { style: "unit", unit: "kilobyte", unitDisplay: "narrow", maximumSignificantDigits: 3 }).format(size / 1000)}`
   })
   return `<!DOCTYPE html>${document.documentElement!.outerHTML}`
