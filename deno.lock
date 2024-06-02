@@ -4,32 +4,32 @@
     "specifiers": {
       "jsr:@cliffy/table@1.0.0-rc.4": "jsr:@cliffy/table@1.0.0-rc.4",
       "jsr:@libs/bundle@5": "jsr:@libs/bundle@5.0.4",
-      "jsr:@libs/logger@1": "jsr:@libs/logger@1.0.8",
+      "jsr:@libs/logger@1": "jsr:@libs/logger@1.1.2",
       "jsr:@std/assert@^0.221.0": "jsr:@std/assert@0.221.0",
       "jsr:@std/assert@^0.225.2": "jsr:@std/assert@0.225.3",
       "jsr:@std/assert@^0.225.3": "jsr:@std/assert@0.225.3",
       "jsr:@std/async@^0.224.1": "jsr:@std/async@0.224.1",
-      "jsr:@std/cli@^0.224.3": "jsr:@std/cli@0.224.3",
+      "jsr:@std/cli@^0.224.3": "jsr:@std/cli@0.224.4",
       "jsr:@std/console@0.221": "jsr:@std/console@0.221.0",
-      "jsr:@std/encoding@^0.224.2": "jsr:@std/encoding@0.224.2",
+      "jsr:@std/encoding@^0.224.2": "jsr:@std/encoding@0.224.3",
       "jsr:@std/fmt@0.221": "jsr:@std/fmt@0.221.0",
       "jsr:@std/fmt@0.225.1": "jsr:@std/fmt@0.225.1",
-      "jsr:@std/fmt@^0.225.1": "jsr:@std/fmt@0.225.1",
+      "jsr:@std/fmt@^0.225.1": "jsr:@std/fmt@0.225.2",
       "jsr:@std/fs@0.229.1": "jsr:@std/fs@0.229.1",
       "jsr:@std/http@0.224.1": "jsr:@std/http@0.224.1",
       "jsr:@std/media-types@^1.0.0-rc.1": "jsr:@std/media-types@1.0.0-rc.1",
       "jsr:@std/path@0.225.1": "jsr:@std/path@0.225.1",
       "jsr:@std/path@^0.225.1": "jsr:@std/path@0.225.1",
       "jsr:@std/semver@0.224.0": "jsr:@std/semver@0.224.0",
-      "jsr:@std/streams@^0.224.1": "jsr:@std/streams@0.224.1",
-      "npm:@mdn/browser-compat-data@5": "npm:@mdn/browser-compat-data@5.5.29",
+      "jsr:@std/streams@^0.224.1": "jsr:@std/streams@0.224.2",
+      "npm:@mdn/browser-compat-data@5": "npm:@mdn/browser-compat-data@5.5.31",
       "npm:browserslist@4": "npm:browserslist@4.23.0",
       "npm:css-tree@2": "npm:css-tree@2.3.1",
       "npm:csso@5": "npm:csso@5.0.5",
-      "npm:stylelint-config-idiomatic-order@10": "npm:stylelint-config-idiomatic-order@10.0.0_stylelint@16.6.0__@csstools+css-tokenizer@2.3.1__@csstools+css-parser-algorithms@2.6.3___@csstools+css-tokenizer@2.3.1__postcss-selector-parser@6.1.0__postcss@8.4.38",
-      "npm:stylelint-config-recommended@14": "npm:stylelint-config-recommended@14.0.0_stylelint@16.6.0__@csstools+css-tokenizer@2.3.1__@csstools+css-parser-algorithms@2.6.3___@csstools+css-tokenizer@2.3.1__postcss-selector-parser@6.1.0__postcss@8.4.38",
-      "npm:stylelint-order@6": "npm:stylelint-order@6.0.4_stylelint@16.6.0__@csstools+css-tokenizer@2.3.1__@csstools+css-parser-algorithms@2.6.3___@csstools+css-tokenizer@2.3.1__postcss-selector-parser@6.1.0__postcss@8.4.38_postcss@8.4.38",
-      "npm:stylelint@16": "npm:stylelint@16.6.0_@csstools+css-tokenizer@2.3.1_@csstools+css-parser-algorithms@2.6.3__@csstools+css-tokenizer@2.3.1_postcss-selector-parser@6.1.0_postcss@8.4.38"
+      "npm:stylelint-config-idiomatic-order@10": "npm:stylelint-config-idiomatic-order@10.0.0_stylelint@16.6.1__@csstools+css-tokenizer@2.3.1__@csstools+css-parser-algorithms@2.6.3___@csstools+css-tokenizer@2.3.1__postcss-selector-parser@6.1.0__postcss@8.4.38",
+      "npm:stylelint-config-recommended@14": "npm:stylelint-config-recommended@14.0.0_stylelint@16.6.1__@csstools+css-tokenizer@2.3.1__@csstools+css-parser-algorithms@2.6.3___@csstools+css-tokenizer@2.3.1__postcss-selector-parser@6.1.0__postcss@8.4.38",
+      "npm:stylelint-order@6": "npm:stylelint-order@6.0.4_stylelint@16.6.1__@csstools+css-tokenizer@2.3.1__@csstools+css-parser-algorithms@2.6.3___@csstools+css-tokenizer@2.3.1__postcss-selector-parser@6.1.0__postcss@8.4.38_postcss@8.4.38",
+      "npm:stylelint@16": "npm:stylelint@16.6.1_@csstools+css-tokenizer@2.3.1_@csstools+css-parser-algorithms@2.6.3__@csstools+css-tokenizer@2.3.1_postcss-selector-parser@6.1.0_postcss@8.4.38"
     },
     "jsr": {
       "@cliffy/table@1.0.0-rc.4": {
@@ -57,8 +57,8 @@
           "npm:stylelint@16"
         ]
       },
-      "@libs/logger@1.0.8": {
-        "integrity": "69df7f765a68498d4f965e1e08d286e01a97030a97d6c5bd5af861b86adf2beb"
+      "@libs/logger@1.1.2": {
+        "integrity": "7d718f54c9a5d1c00f570051bee0217e3b282e8c2131144ec55c794a8ebd5d4f"
       },
       "@std/assert@0.221.0": {
         "integrity": "a5f1aa6e7909dbea271754fd4ab3f4e687aeff4873b4cef9a320af813adb489a"
@@ -69,8 +69,8 @@
       "@std/async@0.224.1": {
         "integrity": "2fda2c8151cc5811a6ca37fe825f1f71c95e02a374abb6ef868e0e19eca814a5"
       },
-      "@std/cli@0.224.3": {
-        "integrity": "54fd879e24b738f6812dcc75bcae1534ba8f014245064ceae1bcfc2996c06d44"
+      "@std/cli@0.224.4": {
+        "integrity": "1f6a8fb983013e7743393e144d05c15094debc6f79032e32441846ef6196c9a3"
       },
       "@std/console@0.221.0": {
         "integrity": "8f2afc1f3f14f5d6039c0c767f057e4aa1897d2210e167c4667cb155cafb9d11",
@@ -78,14 +78,17 @@
           "jsr:@std/assert@^0.221.0"
         ]
       },
-      "@std/encoding@0.224.2": {
-        "integrity": "bd9ef45d6028296440005804db7fc8fcc86e72fc1a19bb77684fb39c4a613672"
+      "@std/encoding@0.224.3": {
+        "integrity": "5e861b6d81be5359fad4155e591acf17c0207b595112d1840998bb9f476dbdaf"
       },
       "@std/fmt@0.221.0": {
         "integrity": "379fed69bdd9731110f26b9085aeb740606b20428ce6af31ef6bd45ef8efa62a"
       },
       "@std/fmt@0.225.1": {
         "integrity": "44a8cb375d7344adb3cb0208b85ea0bde7cdc15224c11188c85e733834ffe356"
+      },
+      "@std/fmt@0.225.2": {
+        "integrity": "8a2d157586372f9d5e74cdf0f463a828dee5d09d7de10e56394d8f20dbb5bf26"
       },
       "@std/fs@0.229.1": {
         "integrity": "38d3fb31f0ca0a8c1118e039939188f32e291a3f7f17dc0868fec22024bdfadd",
@@ -119,8 +122,8 @@
       "@std/semver@0.224.0": {
         "integrity": "8da7354393dd9d2029278412107dbd5ca9dfb1fa240148d948eb2bfeb14f136a"
       },
-      "@std/streams@0.224.1": {
-        "integrity": "e8565a376ae3888f60770cd09e480952ec7c349007aed81b8f7165424ce2195f"
+      "@std/streams@0.224.2": {
+        "integrity": "5d437af1423e4f616111b986ea783c15e0bc998b53e23e93b623de7ef0b14c2b"
       }
     },
     "npm": {
@@ -171,8 +174,8 @@
         "integrity": "sha512-+nxncfwHM5SgAtrVzgpzJOI1ol0PkumhVo469KCf9lUi21IGcY90G98VuHm9VRrUypmAzawAHO9bs6hqeADaVg==",
         "dependencies": {}
       },
-      "@mdn/browser-compat-data@5.5.29": {
-        "integrity": "sha512-NHdG3QOiAsxh8ygBSKMa/WaNJwpNt87uVqW+S2RlnSqgeRdk+L3foNWTX6qd0I3NHSlCFb47rgopeNCJtRDY5A==",
+      "@mdn/browser-compat-data@5.5.31": {
+        "integrity": "sha512-k2cK7WJKjWkcU3TY7yIc1dK6RZY8nqm+wNiR9uX9+Qcy5Gy9XzWoWNm+sQ/78OtBi6aTTXrK3HEopidhXasD+w==",
         "dependencies": {}
       },
       "@nodelib/fs.scandir@2.1.5": {
@@ -247,8 +250,8 @@
       "browserslist@4.23.0": {
         "integrity": "sha512-QW8HiM1shhT2GuzkvklfjcKDiWFXHOeFCIA/huJPwHsslwcydgk7X+z2zXpEijP98UCY7HbubZt5J2Zgvf0CaQ==",
         "dependencies": {
-          "caniuse-lite": "caniuse-lite@1.0.30001623",
-          "electron-to-chromium": "electron-to-chromium@1.4.783",
+          "caniuse-lite": "caniuse-lite@1.0.30001625",
+          "electron-to-chromium": "electron-to-chromium@1.4.787",
           "node-releases": "node-releases@2.0.14",
           "update-browserslist-db": "update-browserslist-db@1.0.16_browserslist@4.23.0"
         }
@@ -257,8 +260,8 @@
         "integrity": "sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==",
         "dependencies": {}
       },
-      "caniuse-lite@1.0.30001623": {
-        "integrity": "sha512-X/XhAVKlpIxWPpgRTnlgZssJrF0m6YtRA0QDWgsBNT12uZM6LPRydR7ip405Y3t1LamD8cP2TZFEDZFBf5ApcA==",
+      "caniuse-lite@1.0.30001625": {
+        "integrity": "sha512-4KE9N2gcRH+HQhpeiRZXd+1niLB/XNLAhSy4z7fI8EzcbcPoAqjNInxVHTiTwWfTIV4w096XG8OtCOCQQKPv3w==",
         "dependencies": {}
       },
       "chalk@2.4.2": {
@@ -342,8 +345,8 @@
           "path-type": "path-type@4.0.0"
         }
       },
-      "electron-to-chromium@1.4.783": {
-        "integrity": "sha512-bT0jEz/Xz1fahQpbZ1D7LgmPYZ3iHVY39NcWWro1+hA2IvjiPeaXtfSqrQ+nXjApMvQRE2ASt1itSLRrebHMRQ==",
+      "electron-to-chromium@1.4.787": {
+        "integrity": "sha512-d0EFmtLPjctczO3LogReyM2pbBiiZbnsKnGF+cdZhsYzHm/A0GV7W94kqzLD8SN4O3f3iHlgLUChqghgyznvCQ==",
         "dependencies": {}
       },
       "emoji-regex@8.0.0": {
@@ -392,10 +395,10 @@
           "reusify": "reusify@1.0.4"
         }
       },
-      "file-entry-cache@8.0.0": {
-        "integrity": "sha512-XXTUwCvisa5oacNGRP9SfNtYBNAMi+RPwBFmblZEF7N7swHYQS6/Zfk7SRwx4D5j3CH211YNRco1DEMNVfZCnQ==",
+      "file-entry-cache@9.0.0": {
+        "integrity": "sha512-6MgEugi8p2tiUhqO7GnPsmbCCzj0YRCwwaTbpGRyKZesjRSzkqkAE9fPp7V2yMs5hwfgbQLgdvSSkGNg1s5Uvw==",
         "dependencies": {
-          "flat-cache": "flat-cache@4.0.1"
+          "flat-cache": "flat-cache@5.0.0"
         }
       },
       "fill-range@7.1.1": {
@@ -404,8 +407,8 @@
           "to-regex-range": "to-regex-range@5.0.1"
         }
       },
-      "flat-cache@4.0.1": {
-        "integrity": "sha512-f7ccFPK3SXFHpx15UIGyRJ/FJQctuKZ0zVuN3frBo4HnK3cay9VEW0R6yPYFHC0AgqhukPzKjq22t5DmAyqGyw==",
+      "flat-cache@5.0.0": {
+        "integrity": "sha512-JrqFmyUl2PnPi1OvLyTVHnQvwQ0S+e6lGSwu8OkAZlSaNIZciTY2H/cOOROxsBA1m/LZNHDsqAgDZt6akWcjsQ==",
         "dependencies": {
           "flatted": "flatted@3.3.1",
           "keyv": "keyv@4.5.4"
@@ -730,29 +733,29 @@
           "ansi-regex": "ansi-regex@6.0.1"
         }
       },
-      "stylelint-config-idiomatic-order@10.0.0_stylelint@16.6.0__@csstools+css-tokenizer@2.3.1__@csstools+css-parser-algorithms@2.6.3___@csstools+css-tokenizer@2.3.1__postcss-selector-parser@6.1.0__postcss@8.4.38": {
+      "stylelint-config-idiomatic-order@10.0.0_stylelint@16.6.1__@csstools+css-tokenizer@2.3.1__@csstools+css-parser-algorithms@2.6.3___@csstools+css-tokenizer@2.3.1__postcss-selector-parser@6.1.0__postcss@8.4.38": {
         "integrity": "sha512-gJjT1nwhgnHS52+mRn+5Iw6keZIPRN4W+vbzct9Elb+tWOo61jC/CzXzAJHvvOYQZqUYItfs2aQ8fU5hnCvuGg==",
         "dependencies": {
-          "stylelint": "stylelint@16.6.0_@csstools+css-tokenizer@2.3.1_@csstools+css-parser-algorithms@2.6.3__@csstools+css-tokenizer@2.3.1_postcss-selector-parser@6.1.0_postcss@8.4.38",
-          "stylelint-order": "stylelint-order@6.0.4_stylelint@16.6.0__@csstools+css-tokenizer@2.3.1__@csstools+css-parser-algorithms@2.6.3___@csstools+css-tokenizer@2.3.1__postcss-selector-parser@6.1.0__postcss@8.4.38_postcss@8.4.38"
+          "stylelint": "stylelint@16.6.1_@csstools+css-tokenizer@2.3.1_@csstools+css-parser-algorithms@2.6.3__@csstools+css-tokenizer@2.3.1_postcss-selector-parser@6.1.0_postcss@8.4.38",
+          "stylelint-order": "stylelint-order@6.0.4_stylelint@16.6.1__@csstools+css-tokenizer@2.3.1__@csstools+css-parser-algorithms@2.6.3___@csstools+css-tokenizer@2.3.1__postcss-selector-parser@6.1.0__postcss@8.4.38_postcss@8.4.38"
         }
       },
-      "stylelint-config-recommended@14.0.0_stylelint@16.6.0__@csstools+css-tokenizer@2.3.1__@csstools+css-parser-algorithms@2.6.3___@csstools+css-tokenizer@2.3.1__postcss-selector-parser@6.1.0__postcss@8.4.38": {
+      "stylelint-config-recommended@14.0.0_stylelint@16.6.1__@csstools+css-tokenizer@2.3.1__@csstools+css-parser-algorithms@2.6.3___@csstools+css-tokenizer@2.3.1__postcss-selector-parser@6.1.0__postcss@8.4.38": {
         "integrity": "sha512-jSkx290CglS8StmrLp2TxAppIajzIBZKYm3IxT89Kg6fGlxbPiTiyH9PS5YUuVAFwaJLl1ikiXX0QWjI0jmgZQ==",
         "dependencies": {
-          "stylelint": "stylelint@16.6.0_@csstools+css-tokenizer@2.3.1_@csstools+css-parser-algorithms@2.6.3__@csstools+css-tokenizer@2.3.1_postcss-selector-parser@6.1.0_postcss@8.4.38"
+          "stylelint": "stylelint@16.6.1_@csstools+css-tokenizer@2.3.1_@csstools+css-parser-algorithms@2.6.3__@csstools+css-tokenizer@2.3.1_postcss-selector-parser@6.1.0_postcss@8.4.38"
         }
       },
-      "stylelint-order@6.0.4_stylelint@16.6.0__@csstools+css-tokenizer@2.3.1__@csstools+css-parser-algorithms@2.6.3___@csstools+css-tokenizer@2.3.1__postcss-selector-parser@6.1.0__postcss@8.4.38_postcss@8.4.38": {
+      "stylelint-order@6.0.4_stylelint@16.6.1__@csstools+css-tokenizer@2.3.1__@csstools+css-parser-algorithms@2.6.3___@csstools+css-tokenizer@2.3.1__postcss-selector-parser@6.1.0__postcss@8.4.38_postcss@8.4.38": {
         "integrity": "sha512-0UuKo4+s1hgQ/uAxlYU4h0o0HS4NiQDud0NAUNI0aa8FJdmYHA5ZZTFHiV5FpmE3071e9pZx5j0QpVJW5zOCUA==",
         "dependencies": {
           "postcss": "postcss@8.4.38",
           "postcss-sorting": "postcss-sorting@8.0.2_postcss@8.4.38",
-          "stylelint": "stylelint@16.6.0_@csstools+css-tokenizer@2.3.1_@csstools+css-parser-algorithms@2.6.3__@csstools+css-tokenizer@2.3.1_postcss-selector-parser@6.1.0_postcss@8.4.38"
+          "stylelint": "stylelint@16.6.1_@csstools+css-tokenizer@2.3.1_@csstools+css-parser-algorithms@2.6.3__@csstools+css-tokenizer@2.3.1_postcss-selector-parser@6.1.0_postcss@8.4.38"
         }
       },
-      "stylelint@16.6.0_@csstools+css-tokenizer@2.3.1_@csstools+css-parser-algorithms@2.6.3__@csstools+css-tokenizer@2.3.1_postcss-selector-parser@6.1.0_postcss@8.4.38": {
-        "integrity": "sha512-vjWYlDEgOS3Z/IcXagQwi8PFJyPro1DxBYOnTML1PAqnrYUHs8owleGStv20sgt0OhW8r9zZm6MK7IT2+l2B6A==",
+      "stylelint@16.6.1_@csstools+css-tokenizer@2.3.1_@csstools+css-parser-algorithms@2.6.3__@csstools+css-tokenizer@2.3.1_postcss-selector-parser@6.1.0_postcss@8.4.38": {
+        "integrity": "sha512-yNgz2PqWLkhH2hw6X9AweV9YvoafbAD5ZsFdKN9BvSDVwGvPh+AUIrn7lYwy1S7IHmtFin75LLfX1m0D2tHu8Q==",
         "dependencies": {
           "@csstools/css-parser-algorithms": "@csstools/css-parser-algorithms@2.6.3_@csstools+css-tokenizer@2.3.1",
           "@csstools/css-tokenizer": "@csstools/css-tokenizer@2.3.1",
@@ -767,7 +770,7 @@
           "debug": "debug@4.3.4",
           "fast-glob": "fast-glob@3.3.2",
           "fastest-levenshtein": "fastest-levenshtein@1.0.16",
-          "file-entry-cache": "file-entry-cache@8.0.0",
+          "file-entry-cache": "file-entry-cache@9.0.0",
           "global-modules": "global-modules@2.0.0",
           "globby": "globby@11.1.0",
           "globjoin": "globjoin@0.1.4",
