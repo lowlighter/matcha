@@ -1,4 +1,7 @@
 .pages
 .vercel
+
+# npm
 .npmrc
+node_modules
 package.json
