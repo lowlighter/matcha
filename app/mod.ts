@@ -3,6 +3,7 @@
 import { css } from "./build/css.ts"
 import { html } from "./build/html.ts"
 import { ssg } from "./build/ssg.ts"
+import { dist } from "./build/dist.ts"
 import { STATUS_CODE, STATUS_TEXT } from "jsr:@std/http@0.224.1"
 import { root } from "./build/root.ts"
 import api_minify from "../api/brew.ts"
@@ -42,6 +43,7 @@ switch (Deno.args[0]) {
     })
     break
   case "build":
+    await dist()
     await ssg()
     break
 }

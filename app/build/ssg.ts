@@ -2,7 +2,6 @@
 import { copy, emptyDir, ensureDir, expandGlob } from "jsr:@std/fs@0.229.1"
 import { dirname, fromFileUrl } from "jsr:@std/path@0.225.1"
 import { root } from "./root.ts"
-import { css } from "./css.ts"
 import { html } from "./html.ts"
 import { compatibility } from "jsr:@libs/bundle@5/css"
 
@@ -21,8 +20,11 @@ export async function ssg() {
   await copy(new URL("app/mod.css", root), new URL(".pages/mod.css", root))
   console.log("Created .pages/mod.css")
   // Generate CSS
-  await Deno.writeTextFile(new URL(".pages/matcha.css", root), await css())
-  console.log("Created .pages/matcha.css")
+  const dist = fromFileUrl(new URL("dist", root)).replaceAll("\\", "/")
+  for await (const { path, name } of expandGlob("**/*.css", { root: dist })) {
+    await copy(path, new URL(`.pages/${name}`, root))
+    console.log(`Created .pages/${name}`)
+  }
   // Generate compatibility table
   const table = await compatibility(new URL(".pages/matcha.css", root), { output: "html", style: false, verbose: true })
   await Deno.writeTextFile(new URL(".pages/compatibility.html", root), table)
@@ -34,11 +36,16 @@ export async function ssg() {
   await ensureDir(new URL(".pages/styles", root))
   console.log("Created .pages/styles")
   const styles = fromFileUrl(new URL("styles", root)).replaceAll("\\", "/")
-  for await (const { path } of expandGlob("**/*.css", { root: styles })) {
+  for await (const { path, name } of expandGlob("**/*.css", { root: styles })) {
     const subpath = path.replaceAll("\\", "/").replace(styles, "").slice(1)
     await ensureDir(`.pages/styles/${dirname(subpath)}`)
     await copy(path, new URL(`.pages/styles/${subpath}`, root))
     console.log(`Created .pages/styles/${subpath}`)
+    if (name === "mod.css") {
+      const alias = `${dirname(subpath)}.css`
+      await copy(path, new URL(`.pages/${alias}`, root))
+      console.log(`Created .pages/${alias}`)
+    }
   }
   console.log("Done!")
 }
