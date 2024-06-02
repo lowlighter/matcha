@@ -111,9 +111,12 @@
               Each subdirectory available in <a href="https://github.com/lowlighter/matcha/tree/main/styles" target="_blank">github.com/lowlighter/matcha/styles</a> is also served directly from this website.
               For example, if you only wish to include the <code>@syntax-highlighting</code> styles rather than using the default build or a custom one, you could use:
             </p>
-            <pre class="usage-snippet"><code data-hl="html">&lt;link rel="stylesheet" href="https://matcha.mizu.sh/styles/@syntax-highlighting/mod.css"&gt;</code></pre>
+            <pre class="usage-snippet"><code data-hl="html">&lt;link rel="stylesheet" href="https://matcha.mizu.sh/styles/@syntax-highlighting.css"&gt;</code></pre>
             <p>
-              However note that unless you provide your own CSS variables, you will most likely need to include the <a href="/styles/@root/mod.css" target="_blank"><code>@root</code></a> package as it contains all <em>matcha.css</em> variables definition.
+              Note that all <code>mod.css</code> files are also aliased to their respective parent directories for convenience.
+            </p>
+            <p>
+              However note that unless you provide your own CSS variables, you will most likely need to include the <a href="/styles/@root.css" target="_blank"><code>@root</code></a> package as it contains all <em>matcha.css</em> variables definition.
             </p>
           </section>
           <!--/app/sections/preview-website.html-->
