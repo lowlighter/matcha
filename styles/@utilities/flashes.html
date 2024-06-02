@@ -3,18 +3,44 @@
     <a href="#utilities-flashes">Flashs</a>
   </h2>
   <p>
-    Use <code data-hl="css">.flash</code> class to style elements as a flash blocks.
-    It can be combined with any color class.
+    Flash blocks can be used to draw attention.
+    They can be combined with any color class.
   </p>
-  <div class="example">
+  <ul>
+    <li><code data-hl="css">.flash</code> styles the element as a flash block.</li>
+    <li><code data-hl="css">.flash.foreground</code> styles the element as a flash block with a foreground.</li>
+  </ul>
+  <div class="example flashes">
+    <template><!-- Prevent margins from being trimmed --></template>
     <div class="flash default">Default</div>
+    <div class="flash fg-default">Default foreground</div>
     <div class="flash muted">Muted</div>
+    <div class="flash fg-muted">Muted foreground</div>
     <div class="flash accent">Accent</div>
+    <div class="flash fg-accent">Accent foreground</div>
     <div class="flash active">Active</div>
+    <div class="flash fg-active">Active foreground</div>
     <div class="flash variant">Variant</div>
+    <div class="flash fg-variant">Variant foreground</div>
     <div class="flash success">Success</div>
+    <div class="flash fg-success">Success foreground</div>
     <div class="flash attention">Attention</div>
+    <div class="flash fg-attention">Attention foreground</div>
     <div class="flash severe">Severe</div>
+    <div class="flash fg-severe">Severe foreground</div>
     <div class="flash danger">Danger</div>
+    <div class="flash fg-danger">Danger foreground</div>
+    <template><!-- Prevent margins from being trimmed --></template>
   </div>
+  <style>
+    .example.flashes {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: .5rem
+    }
+
+    .example.flashes > .flash {
+      margin: 0;
+    }
+  </style>
 </section>

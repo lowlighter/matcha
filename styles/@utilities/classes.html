@@ -1,0 +1,173 @@
+<section>
+  <h2 id="utilities-classes">
+    <a href="#utilities-classes">Classes</a>
+  </h2>
+  <p>
+    While <em>matcha.css</em> is mostly intended to be used along with semantic styling, it still provides a subset of utility classes for added convenience.
+  </p>
+  <div class="flash danger">
+    <p>
+      <b><em>matcha.css</em> does not aim to become a fully-fledged CSS framework.</b>
+    </p>
+    <p>
+      Consider using (or switching to) a utility-first CSS framework if you find the provided utility classes lacking or too limited.
+    </p>
+  </div>
+  <ul>
+    <li>
+      Text <a href="https://developer.mozilla.org/docs/Web/CSS/font-weight">weight</a>, <a href="https://developer.mozilla.org/docs/Web/CSS/font-style">style</a>, <a href="https://developer.mozilla.org/docs/Web/CSS/text-decoration">decoration</a>, <a href="https://developer.mozilla.org/docs/Web/CSS/text-transform">transform</a>, <a href="https://developer.mozilla.org/docs/Web/CSS/text-align">align</a>, and <a href="https://developer.mozilla.org/docs/Web/CSS/font-family">font</a>.
+      <ul>
+        <li><code data-hl="css">.bold</code> sets <code data-hl="css">font-weight: bold;</code></li>
+        <li><code data-hl="css">.semibold</code> sets <code data-hl="css">font-weight: 600;</code></li>
+        <li><code data-hl="css">.italic</code> sets <code data-hl="css">font-style: italic;</code></li>
+        <li><code data-hl="css">.underline</code> sets <code data-hl="css">text-decoration: underline;</code></li>
+        <li><code data-hl="css">.strikethrough</code> sets <code data-hl="css">text-decoration: line-through;</code></li>
+        <li><code data-hl="css">.uppercase</code> sets <code data-hl="css">text-transform: uppercase;</code></li>
+        <li><code data-hl="css">.lowercase</code> sets <code data-hl="css">text-transform: lowercase;</code></li>
+        <li><code data-hl="css">.capitalize</code> sets <code data-hl="css">text-transform: capitalize;</code></li>
+        <li><code data-hl="css">.centered</code> sets <code data-hl="css">text-align: center;</code></li>
+        <li><code data-hl="css">.justified</code> sets <code data-hl="css">text-align: justify;</code></li>
+        <li><code data-hl="css">.monospace</code> sets <code data-hl="css">font-family: var(--mono);</code></li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://developer.mozilla.org/docs/Web/CSS/font-size">Text size</a>
+      <ul>
+        <li><code data-hl="css">.smaller</code> sets <code data-hl="css">font-size: .85rem;</code></li>
+        <li><code data-hl="css">.small</code> sets <code data-hl="css">font-size: .875rem;</code></li>
+        <li><code data-hl="css">.normal</code> sets <code data-hl="css">font-size: 1rem;</code></li>
+        <li><code data-hl="css">.large</code> sets <code data-hl="css">font-size: 1.25rem;</code></li>
+        <li><code data-hl="css">.larger</code> sets <code data-hl="css">font-size: 1.5rem;</code></li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://developer.mozilla.org/docs/Web/CSS/position">Positioning</a>
+      <ul>
+        <li><code data-hl="css">.relative</code> sets <code data-hl="css">position: relative;</code></li>
+        <li><code data-hl="css">.fixed</code> sets <code data-hl="css">position: fixed;</code></li>
+        <li><code data-hl="css">.absolute</code> sets <code data-hl="css">position: absolute;</code></li>
+        <li><code data-hl="css">.sticky</code> sets <code data-hl="css">position: sticky;</code></li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://developer.mozilla.org/docs/Web/CSS/display">Display</a>
+      <ul>
+        <li><code data-hl="css">.hidden</code> sets <code data-hl="css">display: none;</code></li>
+        <li>
+          <code data-hl="css">.inline</code> sets <code data-hl="css">display: inline;</code>
+          <ul>
+            <li><code data-hl="css">&.block</code> sets <code data-hl="css">display: inline-block;</code></li>
+            <li><code data-hl="css">&.flex</code> sets <code data-hl="css">display: inline-flex;</code></li>
+          </ul>
+        </li>
+        <li><code data-hl="css">.block</code> sets <code data-hl="css">display: block;</code></li>
+        <li>
+          <code data-hl="css">.flex</code> sets <code data-hl="css">display: flex;</code>
+          <ul>
+            <li><code data-hl="css">&.row</code> sets <code data-hl="css"> flex-direction: row;</code></li>
+            <li><code data-hl="css">&.column</code> sets <code data-hl="css"> flex-direction: column;</code></li>
+            <li><code data-hl="css">&.wrap</code> sets <code data-hl="css"> flex-wrap: wrap;</code></li>
+            <li><code data-hl="css">&.no-wrap</code> sets <code data-hl="css"> flex-wrap: no-wrap;</code></li>
+            <li>
+              <code data-hl="css">&.reverse</code>
+              <ul>
+                <li><code data-hl="css">&.row</code> sets <code data-hl="css"> flex-direction: row-reverse;</code></li>
+                <li><code data-hl="css">&.column</code> sets <code data-hl="css"> flex-direction: column-reverse;</code></li>
+                <li><code data-hl="css">&.wrap</code> sets <code data-hl="css"> flex-wrap: wrap-reverse;</code></li>
+              </ul>
+            </li>
+          </ul>
+        </li>
+        <li><code data-hl="css">.contents</code> sets <code data-hl="css">display: contents;</code></li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://developer.mozilla.org/docs/Web/CSS/flex">Flex display</a>
+      <ul>
+        <li>
+          <code data-hl="css">.flex</code>
+          <ul>
+            <li><code data-hl="css">&.start</code> sets <code data-hl="css">justify-content: flex-start;</code></li>
+            <li><code data-hl="css">&.end</code> sets <code data-hl="css">justify-content: flex-end;</code></li>
+            <li><code data-hl="css">&.center</code> sets <code data-hl="css">justify-content: center;</code></li>
+            <li><code data-hl="css">&.space-between</code> sets <code data-hl="css">justify-content: space-between;</code></li>
+            <li><code data-hl="css">&.space-around</code> sets <code data-hl="css">justify-content: space-around;</code></li>
+            <li><code data-hl="css">&.space-evenly</code> sets <code data-hl="css">justify-content: space-evenly;</code></li>
+            <li><code data-hl="css">&.stretch</code> sets <code data-hl="css">justify-content: stretch;</code></li>
+            <li><code data-hl="css">&.align-start</code> sets <code data-hl="css">align-items: flex-start;</code></li>
+            <li><code data-hl="css">&.align-end</code> sets <code data-hl="css">align-items: flex-end;</code></li>
+            <li><code data-hl="css">&.align-center</code> sets <code data-hl="css">align-items: center;</code></li>
+            <li><code data-hl="css">&.align-stretch</code> sets <code data-hl="css">align-items: stretch;</code></li>
+          </ul>
+        </li>
+        <li><code data-hl="css">.grow</code> sets <code data-hl="css">flex-grow: 1;</code></li>
+        <li><code data-hl="css">.shrink</code> sets <code data-hl="css">flex-shrink: 1;</code></li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://developer.mozilla.org/docs/Web/CSS/overflow">Overflow</a>
+      <ul>
+        <li><code data-hl="css">.overflow</code> sets <code data-hl="css">overflow: auto;</code></li>
+        <li><code data-hl="css">.overflow-x</code> sets <code data-hl="css">overflow-x: auto;</code></li>
+        <li><code data-hl="css">.overflow-y</code> sets <code data-hl="css">overflow-y: auto;</code></li>
+        <li><code data-hl="css">.no-overflow</code> sets <code data-hl="css">overflow: hidden;</code></li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://developer.mozilla.org/docs/Web/CSS/cursor">Cursor</a>
+      <ul>
+        <li><code data-hl="css">.pointer</code> sets <code data-hl="css">cursor: pointer;</code></li>
+        <li><code data-hl="css">.wait</code> sets <code data-hl="css">cursor: wait;</code></li>
+        <li><code data-hl="css">.not-allowed</code> sets <code data-hl="css">cursor: not-allowed;</code></li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://developer.mozilla.org/docs/Web/CSS/user-select">User selection</a>
+      <ul>
+        <li><code data-hl="css">.select-all</code> sets <code data-hl="css">user-select: all;</code></li>
+        <li><code data-hl="css">.no-select</code> sets <code data-hl="css">user-select: none;</code></li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://developer.mozilla.org/docs/Web/CSS/pointer-events">Interactivity</a>
+      <ul>
+        <li><code data-hl="css">.events</code> sets <code data-hl="css">pointer-events: auto;</code></li>
+        <li><code data-hl="css">.no-events</code> sets <code data-hl="css">pointer-events: none;</code></li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://developer.mozilla.org/docs/Web/CSS/box-sizing">Sizing</a> and dimensions
+      <ul>
+        <li><code data-hl="css">.width</code> sets <code data-hl="css">width: 100%;</code></li>
+        <li><code data-hl="css">.height</code> sets <code data-hl="css">height: 100%;</code></li>
+        <li><code data-hl="css">.border-box</code> sets <code data-hl="css">box-sizing: border-box;</code></li>
+        <li><code data-hl="css">.content-box</code> sets <code data-hl="css">box-sizing: content-box;</code></li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://developer.mozilla.org/docs/Web/CSS/resize">Resizing</a>
+      <ul>
+        <li><code data-hl="css">.resize</code> sets <code data-hl="css">resize: both;</code></li>
+        <li><code data-hl="css">.resize-x</code> sets <code data-hl="css">resize: horizontal;</code></li>
+        <li><code data-hl="css">.resize-y</code> sets <code data-hl="css">resize: vertical;</code></li>
+        <li><code data-hl="css">.no-resize</code> sets <code data-hl="css">resize: none;</code></li>
+      </ul>
+    </li>
+    <li>
+      Miscellaneous
+      <ul>
+        <li><code data-hl="css">.no-shadow</code> sets <code data-hl="css">box-shadow: none;</code></li>
+        <li><code data-hl="css">.shadow</code> sets <code data-hl="css">box-shadow: var(--shadow);</code></li>
+      </ul>
+    </li>
+    <li>
+      <code data-hl="html">&lt;svg&gt;</code> <a href="https://developer.mozilla.org/docs/Web/CSS/fill">fill</a> and <a href="https://developer.mozilla.org/docs/Web/CSS/stroke">stroke</a>
+      <ul>
+        <li><code data-hl="css">svg.fill-current</code> sets <code data-hl="css">fill: currentColor;</code></li>
+        <li><code data-hl="css">svg.no-fill</code> sets <code data-hl="css">fill: none;</code></li>
+        <li><code data-hl="css">svg.stroke-current</code> sets <code data-hl="css">stroke: currentColor;</code></li>
+        <li><code data-hl="css">svg.no-stroke</code> sets <code data-hl="css">stroke: none;</code></li>
+      </ul>
+    </li>
+  </ul>
+</section>

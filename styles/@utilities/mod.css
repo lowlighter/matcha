@@ -1,5 +1,12 @@
+/* Flash */
+.flash {
+  padding: 1rem;
+  border: 1px solid transparent;
+  margin: 1rem 0;
+}
+
 /* Colors */
-.default {
+.default, .flash {
   color: var(--default);
 }
 
@@ -35,56 +42,428 @@
   color: var(--danger);
 }
 
-/* Utilities */
+/* Backgrounds */
+.bg-default, .flash.default {
+  background-color: var(--bg-default);
+}
+
+.bg-muted, .flash.muted {
+  background-color: var(--bg-muted);
+}
+
+.bg-accent, .flash.accent {
+  background-color: var(--bg-accent);
+}
+
+.bg-active, .flash.active {
+  background-color: var(--bg-active);
+}
+
+.bg-variant, .flash.variant {
+  background-color: var(--bg-variant);
+}
+
+.bg-success, .flash.success {
+  background-color: var(--bg-success);
+}
+
+.bg-attention, .flash.attention {
+  background-color: var(--bg-attention);
+}
+
+.bg-severe, .flash.severe {
+  background-color: var(--bg-severe);
+}
+
+.bg-danger, .flash.danger {
+  background-color: var(--bg-danger);
+}
+
+/* Foregrounds */
+.fg-muted, .fg-accent, .fg-active, .fg-variant, .fg-success, .fg-attention, .fg-severe, .fg-danger {
+  color: var(--light);
+}
+
+.fg-default {
+  background-color: var(--default);
+  color: var(--contrast);
+}
+
+.fg-muted {
+  background-color: var(--muted);
+}
+
+.fg-accent {
+  background-color: var(--accent);
+}
+
+.fg-active {
+  background-color: var(--active);
+}
+
+.fg-variant {
+  background-color: var(--variant);
+}
+
+.fg-success {
+  background-color: var(--success);
+}
+
+.fg-attention {
+  background-color: var(--attention);
+}
+
+.fg-severe {
+  background-color: var(--severe);
+}
+
+.fg-danger {
+  background-color: var(--danger);
+}
+
+/* Borders */
+.rounded, .flash {
+  border-radius: var(--bd-radius);
+}
+
+.bd-default, .bd-muted, .bd-accent, .bd-active, .bd-variant, .bd-success, .bd-attention, .bd-severe, .bd-danger {
+  border: 1px solid var(--default);
+}
+
+.bd-default, .flash.default {
+  border-color: var(--default);
+}
+
+.bd-muted, .flash.muted {
+  border-color: var(--muted);
+}
+
+.bd-accent, .flash.accent {
+  border-color: var(--accent);
+}
+
+.bd-active, .flash.active {
+  border-color: var(--active);
+}
+
+.bd-variant, .flash.variant {
+  border-color: var(--variant);
+}
+
+.bd-success, .flash.success {
+  border-color: var(--success);
+}
+
+.bd-attention, .flash.attention {
+  border-color: var(--attention);
+}
+
+.bd-severe, .flash.severe {
+  border-color: var(--severe);
+}
+
+.bd-danger, .flash.danger {
+  border-color: var(--danger);
+}
+
+/* Text style */
+.bold {
+  font-weight: bold;
+}
+
+.semibold {
+  font-weight: 600;
+}
+
+.italic {
+  font-style: italic;
+}
+
+.underline {
+  text-decoration: underline;
+}
+
+.strikethrough {
+  text-decoration: line-through;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.lowercase {
+  text-transform: lowercase;
+}
+
+.capitalize {
+  text-transform: capitalize;
+}
+
+.centered {
+  text-align: center;
+}
+
+.justified {
+  text-align: justify;
+}
+
+.monospace {
+  font-family: var(--mono);
+}
+
+/* Font size */
+.smaller {
+  font-size: .85rem
+}
+
+.small {
+  font-size: .875rem;
+}
+
+.normal {
+  font-size: 1rem;
+}
+
+.large {
+  font-size: 1.25rem;
+}
+
+.larger {
+  font-size: 1.5rem;
+}
+
+/* Position */
+.relative {
+  position: relative;
+}
+
+.fixed {
+  position: fixed;
+}
+
+.absolute {
+  position: absolute;
+}
+
+.sticky {
+  position: sticky;
+}
+
+/* Display */
 .hidden {
   display: none;
 }
 
-/* Flash */
-.flash {
-  padding: 1rem;
-  border: 1px solid var(--default);
-  border-radius: var(--bd-radius);
-  margin: 1rem 0;
-  color: var(--default);
+.inline {
+  display: inline;
 }
 
-.flash.muted {
-  border-color: var(--muted);
-  background-color: var(--bg-muted);
+.block {
+  display: block;
 }
 
-.flash.accent {
-  border-color: var(--accent);
-  background-color: var(--bg-accent);
+.block.inline {
+  display: inline-block
 }
 
-.flash.active {
-  border-color: var(--active);
-  background-color: var(--bg-active);
+.flex {
+  display: flex;
 }
 
-.flash.variant {
-  border-color: var(--variant);
-  background-color: var(--bg-variant);
+.flex.inline {
+  display: inline-flex;
 }
 
-.flash.success {
-  border-color: var(--success);
-  background-color: var(--bg-success);
+.contents {
+  display: contents;
 }
 
-.flash.attention {
-  border-color: var(--attention);
-  background-color: var(--bg-attention);
+/* Flex */
+.flex.row {
+  flex-direction: row;
 }
 
-.flash.severe {
-  border-color: var(--severe);
-  background-color: var(--bg-severe);
+.flex.column {
+  flex-direction: column;
 }
 
-.flash.danger {
-  border-color: var(--danger);
-  background-color: var(--bg-danger);
+.flex.row.reverse {
+  flex-direction: row-reverse;
+}
+
+.flex.column.reverse {
+  flex-direction: column-reverse;
+}
+
+.flex.wrap {
+  flex-wrap: wrap;
+}
+
+.flex.wrap.reverse {
+  flex-wrap: wrap-reverse;
+}
+
+.flex.no-wrap {
+  flex-wrap: nowrap;
+}
+
+
+.flex.start {
+  justify-content: flex-start;
+}
+
+.flex.end {
+  justify-content: flex-end;
+}
+
+.flex.center {
+  justify-content: center;
+}
+
+.flex.space-between {
+  justify-content: space-between;
+}
+
+.flex.space-around {
+  justify-content: space-around;
+}
+
+.flex.space-evenly {
+  justify-content: space-evenly;
+}
+
+.flex.stretch {
+  justify-content: stretch;
+}
+
+.flex.align-start {
+  align-items: flex-start;
+}
+
+.flex.align-end {
+  align-items: flex-end;
+}
+
+.flex.align-center {
+  align-items: center;
+}
+
+.flex.align-stretch {
+  align-items: stretch;
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+.shrink {
+  flex-shrink: 1;
+}
+
+/* Overflow */
+.overflow {
+  overflow: auto;
+}
+
+.overflow-x {
+  overflow-x: auto;
+}
+
+.overflow-y {
+  overflow-y: auto;
+}
+
+.no-overflow {
+  overflow: hidden;
+}
+
+/* Cursors */
+.pointer {
+  cursor: pointer;
+}
+
+.wait {
+  cursor: wait;
+}
+
+.not-allowed {
+  cursor: not-allowed;
+}
+
+/* User selection */
+.no-select {
+  user-select: none;
+}
+
+.select-all {
+  user-select: all;
+}
+
+/* Events */
+.events {
+  pointer-events: auto;
+}
+
+.no-events {
+  pointer-events: none;
+}
+
+/* Sizing */
+.width {
+  width: 100%;
+}
+
+.height {
+  height: 100%;
+}
+
+.border-box {
+  box-sizing: border-box;
+}
+
+.content-box {
+  box-sizing: content-box;
+}
+
+/* Resizing */
+.resize {
+  resize: both;
+}
+
+.resize-x {
+  resize: horizontal;
+}
+
+.resize-y {
+  resize: vertical;
+}
+
+.no-resize {
+  resize: none;
+}
+
+/* SVG fill and stroke */
+svg.fill-current {
+  fill: currentColor;
+}
+
+svg.no-fill {
+  fill: none;
+}
+
+svg.stroke-current {
+  stroke: currentColor;
+}
+
+svg.no-stroke {
+  stroke: none;
+}
+
+/* Effects */
+.shadow {
+  box-shadow: var(--shadow);
+}
+
+.no-shadow {
+  box-shadow: none;
 }
