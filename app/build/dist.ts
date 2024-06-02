@@ -15,6 +15,7 @@ export async function dist() {
       { name: "matcha" },
       { name: "matcha.lite", options: { only: ["*", "@break-words", "@discrete-scrollbars"] } },
       { name: "matcha.istanbul", options: { only: ["@root", "@syntax-highlighting", "@istanbul-coverage"] } },
+      { name: "matcha.utilities", options: { only: ["@root", "@utilities"] } },
     ]
   ) {
     await Deno.writeTextFile(new URL(`dist/${name}.css`, root), await css(options))
