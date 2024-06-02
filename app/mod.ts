@@ -36,8 +36,7 @@ switch (Deno.args[0]) {
           default:
             return new Response(STATUS_TEXT[STATUS_CODE.NotFound], { status: STATUS_CODE.NotFound })
         }
-      }
-      catch (error) {
+      } catch (error) {
         return new Response(`Server was unable to respond to request for the followin reason:\n\n${error}`, { status: STATUS_CODE.InternalServerError })
       }
     })
