@@ -1,7 +1,7 @@
 {
   "name": "@lowlighter/matcha",
-  "version": "0.1.0",
-  "description": "",
+  "version": "0.1.1",
+  "description": "🍵 Drop-in semantic styling library in pure CSS.",
   "keywords": [
     "css",
     "theme",
