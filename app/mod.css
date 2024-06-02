@@ -114,12 +114,13 @@ details summary a {
   word-break: keep-all;
 }
 
-main > section > :is(h1)[id]:not([id="matcha"]) {
-  position: sticky;
-  top: var(--ly-header-size);
-  background: var(--bg-default);
-  z-index: 150;
-  padding-bottom: .25rem;
+:is(section) > :is(h1, h2, h3, h4, h5, h6)[id]::before, .hx[id]::before, #matcha::before {
+  content: "";
+  display: block;
+  height: calc(1rem + var(--ly-header-size));
+  margin-top: calc(-1 * (1rem + var(--ly-header-size)));
+  visibility: hidden;
+  pointer-events: none;
 }
 
 /* CSS compatibility */
