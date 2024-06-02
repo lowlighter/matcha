@@ -21,7 +21,7 @@ export const banner = [
  *
  * Pass `minify` to minify the output CSS.
  */
-export async function css({ only = [] as string[], exclude = ["@istanbul-coverage", "@code-editor"] as string[], minify = true } = {}) {
+export async function css({ only = [] as string[], exclude = ["@istanbul-coverage"] as string[], minify = true } = {}) {
   const root = fromFileUrl(_root)
   let css = ""
   if (only.length) {
