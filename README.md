@@ -1,6 +1,6 @@
 # 🍵 matcha.css
 
-[`🌊 See live on matcha.mizu.sh !`](https://matcha.mizu.sh)
+[![matcha.mizu.sh](https://img.shields.io/badge/%F0%9F%8C%8A-See%20it%20live%20on%20matcha.mizu.sh!-black?labelColor=black)](https://matcha.mizu.sh)
 [![npm](https://img.shields.io/npm/v/@lowlighter%2Fmatcha?logo=npm&labelColor=cb0000&color=black)](https://www.npmjs.com/package/@lowlighter/matcha)
 
 <p align="center"><img src="/app/icons/matchat.svg" width="300"></p>
@@ -15,7 +15,7 @@ Ideal for fast prototyping, static HTML pages, Markdown-generated documents, and
 - ✅ **No** JavaScript
 - ✅ **No** configuration needed
 - ✅ **No** refactoring required
-- ✅ `~6kB` gzipped _(can be further reduced)_
+- ✅ `~7kB` gzipped _(can be further reduced)_
 
 ### 📸 Screenshot examples
 
