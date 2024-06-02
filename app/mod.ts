@@ -1,7 +1,7 @@
 /// <reference lib="dom" />
 // Imports
 import { css } from "./build/css.ts"
-import { html } from "./build/html.ts"
+import { html, html_builder } from "./build/html.ts"
 import { ssg } from "./build/ssg.ts"
 import { dist } from "./build/dist.ts"
 import { STATUS_CODE, STATUS_TEXT } from "jsr:@std/http@0.224.1"
@@ -18,6 +18,8 @@ switch (Deno.args[0]) {
         switch (true) {
           case new URLPattern("/{index.html}?", url.origin).test(url.href) && request.headers.get("Accept")?.includes("text/html"):
             return new Response(await html(), { headers: { "Content-Type": "text/html" } })
+          case new URLPattern("/build{.html}?", url.origin).test(url.href) && request.headers.get("Accept")?.includes("text/html"):
+            return new Response(await html_builder(), { headers: { "Content-Type": "text/html" } })
           case new URLPattern("/matcha.css", url.origin).test(url.href):
             return new Response(await css(), { headers: { "Content-Type": "text/css" } })
           case new URLPattern("/mod.css", url.origin).test(url.href):

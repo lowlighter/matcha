@@ -31,6 +31,7 @@ export async function html() {
   }
   // Generate code examples
   const document = new DOMParser().parseFromString(html, "text/html")!
+  document.querySelector('header nav menu a[href="/"]')?.parentElement?.remove()
   Array.from(document.querySelectorAll("[data-hl]")).forEach((_element) => {
     const element = _element as unknown as HTMLElement
     element.innerHTML = syntax.highlight(element.innerText, { language: element.getAttribute("data-hl")! }).value.trim()
@@ -79,7 +80,9 @@ export async function html() {
       nav.push(`<li><b>${lv1}</b><ul>${lv2}</ul></li>`)
     }
   })
-  document.querySelector("aside > nav")!.innerHTML = `<ul>${nav.join("")}</ul>`
+  if (document.querySelector("aside > nav")) {
+    document.querySelector("aside > nav")!.innerHTML = `<ul>${nav.join("")}</ul>`
+  }
   // Compute gzip size
   Array.from(document.querySelectorAll("[data-matcha-size]")).forEach((_element) => {
     const element = _element as unknown as HTMLElement
@@ -97,4 +100,22 @@ export async function html() {
 /** Strip emojis */
 function emojiless(string: string) {
   return string.replace(/[\u{1F600}-\u{1F64F}|\u{1F300}-\u{1F5FF}|\u{1F680}-\u{1F6FF}|\u{1F1E0}-\u{1F1FF}|\u{2600}-\u{26FF}|\u{2700}-\u{27BF}]+/gu, "")
+}
+
+/** Generate HTML for custom builder */
+export async function html_builder() {
+  // Clean mod.html
+  const html = await Deno.readTextFile(new URL("app/mod.html", root))
+  const document = new DOMParser().parseFromString(html, "text/html")!
+  document.querySelector('header nav menu a[href="/build"]')?.parentElement?.remove()
+  for (const selection of ["body > aside", "body > script", " main > section:not(.matcha)", "section.matcha section"]) {
+    document.querySelectorAll(selection).forEach((element) => (element as unknown as HTMLElement).remove())
+  }
+  // Include uncollapsed builder
+  const builder = new DOMParser().parseFromString(await Deno.readTextFile(new URL("app/sections/custom-build.html", root)), "text/html")!
+  const section = document.createElement("section")
+  section.innerHTML = builder.querySelector("details")!.innerHTML
+  section.querySelector("summary")?.remove()
+  document.querySelector("main")!.append(section)
+  return `<!DOCTYPE html>${document.documentElement!.outerHTML}`
 }
