@@ -19,6 +19,7 @@ form .editor {
   font-family: var(--ft-mono);
   font-size: 1rem;
   line-height: 1.5;
+  -webkit-text-size-adjust: 100%;
   white-space: pre-wrap;
 }
 

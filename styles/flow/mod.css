@@ -20,6 +20,7 @@ pre {
   background: var(--bg-muted);
   font-size: .85rem;
   line-height: 1.45;
+  -webkit-text-size-adjust: 100%;
 }
 
 pre > code {
