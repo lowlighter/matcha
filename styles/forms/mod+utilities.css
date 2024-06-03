@@ -6,6 +6,7 @@ button:is(.default, .accent, .active, .variant, .success, .attention, .severe, .
 button.default:not(:disabled):hover,
 button.default:not(:disabled):active {
   background: var(--default);
+  color: var(--contrast);
 }
 
 button.accent:not(:disabled):hover,
