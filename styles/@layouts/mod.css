@@ -47,6 +47,7 @@ body.layout-simple > footer:last-of-type {
 }
 
 body.layout-simple > :is(header:first-of-type, footer:last-of-type) > nav > menu {
+  flex-direction: row;
   justify-content: center;
 }
 
