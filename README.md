@@ -1,7 +1,6 @@
 # 🍵 matcha.css
 
 [![matcha.mizu.sh](https://img.shields.io/badge/%F0%9F%8C%8A-See%20it%20live%20on%20matcha.mizu.sh!-black?labelColor=black)](https://matcha.mizu.sh)
-[![npm](https://img.shields.io/npm/v/@lowlighter%2Fmatcha?logo=npm&labelColor=cb0000&color=black)](https://www.npmjs.com/package/@lowlighter/matcha)
 
 <p align="center"><img src="/app/icons/matchat.svg" width="300"></p>
 
@@ -67,6 +66,9 @@ To utilize **matcha.css**, just include the following line in the `<head>` secti
 ```html
 <link rel="stylesheet" href="https://matcha.mizu.sh/matcha.css">
 ```
+
+Assets are hosted on [Vercel](https://vercel.com) but _matcha.css_ is also available on
+[![npm](https://img.shields.io/npm/v/@lowlighter%2Fmatcha?logo=npm&labelColor=cb0000&color=black)](https://www.npmjs.com/package/@lowlighter/matcha) and CDN services that distributes npm packages.
 
 ### 🍴 À la carte
 
