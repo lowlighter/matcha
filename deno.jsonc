@@ -25,6 +25,8 @@
     "ci": "deno task lint && deno task fmt:check && deno task build",
     "serve": "deno run --allow-net --allow-read --allow-env --allow-sys --watch app/mod.ts serve",
     "build": "deno run --allow-net --allow-read --allow-env --allow-sys --allow-write=.pages,dist app/mod.ts build",
+    "generate": "deno task generate:utilities",
+    "generate:utilities": "deno run --allow-write=styles/@utilities/mod+generated.css styles/@utilities/generate.ts",
     "lint": "deno lint",
     "fmt": "deno task fmt:ts && deno task fmt:css",
     "fmt:check": "deno task fmt:ts:check && deno task fmt:css:check",
