@@ -274,6 +274,7 @@ details summary a {
 
 /** Example tabs */
 .example-tabs {
+  align-items: end;
   justify-content: end;
   margin-bottom: 0;
   border-bottom: none;
