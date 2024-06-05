@@ -13,6 +13,9 @@
       Consider using (or switching to) a utility-first CSS framework if you find the provided utility classes lacking or too limited.
     </p>
   </div>
+  <h3 id="utilities-classes-list">
+    <a href="#utilities-classes-list">Utilities classes</a>
+  </h3>
   <ul>
     <li>
       Text <a href="https://developer.mozilla.org/docs/Web/CSS/font-weight">weight</a>, <a href="https://developer.mozilla.org/docs/Web/CSS/font-style">style</a>, <a href="https://developer.mozilla.org/docs/Web/CSS/text-decoration">decoration</a>, <a href="https://developer.mozilla.org/docs/Web/CSS/text-transform">transform</a>, <a href="https://developer.mozilla.org/docs/Web/CSS/text-align">align</a>, and <a href="https://developer.mozilla.org/docs/Web/CSS/font-family">font</a>.
@@ -167,6 +170,46 @@
         <li><code data-hl="css">svg.no-fill</code> sets <code data-hl="css">fill: none;</code></li>
         <li><code data-hl="css">svg.stroke-current</code> sets <code data-hl="css">stroke: currentColor;</code></li>
         <li><code data-hl="css">svg.no-stroke</code> sets <code data-hl="css">stroke: none;</code></li>
+      </ul>
+    </li>
+  </ul>
+  <h3 id="utilities-classes-spacing">
+    <a href="#utilities-classes-spacing">Spacing classes</a>
+  </h3>
+  <p>
+    The following classes are numbered and the following values are supported in place of <code>*</code>:<br>
+    <code data-hl="ts">0</code>, <code data-hl="ts">.125</code>, <code data-hl="ts">.25</code>, <code data-hl="ts">.5</code>, <code data-hl="ts">.75</code>, <code data-hl="ts">1</code>, <code data-hl="ts">1.25</code>, <code data-hl="ts">1.5</code>, <code data-hl="ts">1.75</code>, <code data-hl="ts">2</code>, <code data-hl="ts">3</code>, <code data-hl="ts">4</code>,
+  </p>
+  <ul>
+    <li>
+      <a href="https://developer.mozilla.org/docs/Web/CSS/margin">Margins</a>
+      <ul>
+        <li><code data-hl="css">.m-*</code> sets <code data-hl="css">margin: *rem;</code></li>
+        <li><code data-hl="css">.mx-*</code> sets <code data-hl="css">margin-left: *rem; margin-right: *rem;</code></li>
+        <li><code data-hl="css">.my-*</code> sets <code data-hl="css">margin-top: *rem; margin-bottom: *rem;</code></li>
+        <li><code data-hl="css">.mt-*</code> sets <code data-hl="css">margin-top: *rem;</code></li>
+        <li><code data-hl="css">.mb-*</code> sets <code data-hl="css">margin-bottom: *rem;</code></li>
+        <li><code data-hl="css">.ml-*</code> sets <code data-hl="css">margin-left: *rem;</code></li>
+        <li><code data-hl="css">.mr-*</code> sets <code data-hl="css">margin-right: *rem;</code></li>
+        <li>
+          <code data-hl="css">&</code>
+          <ul>
+            <li><code data-hl="css">&.spacing-x-* &gt; * + *</code> sets <code data-hl="css">margin-left: *rem;</code></li>
+            <li><code data-hl="css">&.spacing-y-* &gt; * + *</code> sets <code data-hl="css">margin-top: *rem;</code></li>
+          </ul>
+        </li>
+      </ul>
+    </li>
+    <li>
+      <a href="https://developer.mozilla.org/docs/Web/CSS/padding">Paddings</a>
+      <ul>
+        <li><code data-hl="css">.p-*</code> sets <code data-hl="css">padding: *rem;</code></li>
+        <li><code data-hl="css">.px-*</code> sets <code data-hl="css">padding-left: *rem; padding-right: *rem;</code></li>
+        <li><code data-hl="css">.py-*</code> sets <code data-hl="css">padding-top: *rem; padding-bottom: *rem;</code></li>
+        <li><code data-hl="css">.pt-*</code> sets <code data-hl="css">padding-top: *rem;</code></li>
+        <li><code data-hl="css">.pb-*</code> sets <code data-hl="css">padding-bottom: *rem;</code></li>
+        <li><code data-hl="css">.pl-*</code> sets <code data-hl="css">padding-left: *rem;</code></li>
+        <li><code data-hl="css">.pr-*</code> sets <code data-hl="css">padding-right: *rem;</code></li>
       </ul>
     </li>
   </ul>
