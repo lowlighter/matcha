@@ -211,14 +211,14 @@
     <fieldset>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
       <legend>Customization</legend>
-      <label style="width: 100%;">
+      <label class="width">
         Extra CSS content
         <small>
           Append your own custom CSS styles to the final build without the need to fork the project.
           You can use <a href="https://developer.mozilla.org/docs/Web/CSS/important"><code data-hl="css">!important</code></a> rules
           when needed to ensure your styles are applied since <em>matcha.css</em> never uses this priority level.
         </small>
-        <div class="editor" style="margin-top: .5rem;">
+        <div class="editor mt-.5">
           <textarea rows="8" name="custom">/** Your custom extra CSS here */</textarea>
           <div class="highlight"></div>
         </div>
