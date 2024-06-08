@@ -92,11 +92,16 @@ details summary a {
 
 .matcha-build .variables input[name$="opacity"] {
   margin-left: .25rem;
-  max-width: 4rem;
+  width: 3rem;
+  text-align: center;
 }
 
 .matcha-build .variables td code:only-child {
   white-space: nowrap;
+}
+
+.matcha-build .variables input[type="color"] {
+  width: 3rem;
 }
 
 .matcha-build .styling {

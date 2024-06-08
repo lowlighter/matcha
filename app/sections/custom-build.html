@@ -12,6 +12,7 @@
   </p>
   <form class="matcha-build">
     <fieldset class="styling">
+      <!-- TODO(@lowlighter): add sublist of each HTML element contained in a scope -->
       <legend>
         <label>
           <input type="checkbox" data-for="styling" checked> Styling scopes
@@ -52,6 +53,7 @@
         <input type="checkbox" name="extra" value="@layouts" checked>
         Layouts<br>
         <small>Include layouts that require specific HTML structures.</small>
+        <!-- TODO(@lowlighter): toggle visibility based on @layout value -->
       </label>
       <label>
         <input type="checkbox" name="extra" value="@utilities" checked>
@@ -88,13 +90,14 @@
     </fieldset>
     <fieldset class="variables">
       <legend>
-        Variables
+        Color and background related variables
       </legend>
       <div class="table-responsive">
         <table>
           <tr>
             <th colspan="3">Colors</th>
             <th colspan="3">Backgrounds</th>
+            <th rowspan="2">Example usage</th>
           </tr>
           <tr>
             <th>Name</th>
@@ -103,111 +106,218 @@
             <th>Name</th>
             <th>Light</th>
             <th>Dark</th>
-          </tr>
-          <tr>
-            <td><code>--ly-brand</code></td>
-            <td><input type="color" data-mode="light" name="--ly-brand"></td>
-            <td></td>
-            <td><code>--ly-bg-brand</code></td>
-            <td><input type="color" data-mode="light" name="--ly-bg-brand"></td>
-            <td></td>
           </tr>
           <tr>
             <td><code>--default</code></td>
-            <td><input type="color" data-mode="light" name="--default"></td>
-            <td><input type="color" data-mode="dark" name="--default"></td>
+            <td><input type="color" name="--light-default"></td>
+            <td><input type="color" name="--dark-default"></td>
             <td><code>--bg-default</code></td>
-            <td><input type="color" data-mode="light" name="--bg-default"></td>
-            <td><input type="color" data-mode="dark" name="--bg-default"></td>
+            <td><input type="color" name="--light-bg-default"></td>
+            <td><input type="color" name="--dark-bg-default"></td>
+            <td><small class="muted">default text color and background color</small></td>
           </tr>
           <tr>
             <td><code>--contrast</code></td>
-            <td><input type="color" data-mode="light" name="--contrast"></td>
-            <td><input type="color" data-mode="dark" name="--contrast"></td>
+            <td><input type="color" name="--light-contrast"></td>
+            <td><input type="color" name="--dark-contrast"></td>
             <td><code>--bg-contrast</code></td>
-            <td><input type="color" data-mode="light" name="--bg-contrast"></td>
-            <td><input type="color" data-mode="dark" name="--bg-contrast"></td>
+            <td><input type="color" name="--light-bg-contrast"></td>
+            <td><input type="color" name="--dark-bg-contrast"></td>
+            <td><small class="muted">used to constrast with <code>--default</code></small></td>
           </tr>
           <tr>
             <td><code>--subtle</code></td>
-            <td><input type="color" data-mode="light" name="--subtle"></td>
-            <td><input type="color" data-mode="dark" name="--subtle"></td>
+            <td><input type="color" name="--light-subtle"></td>
+            <td><input type="color" name="--dark-subtle"></td>
             <td><code>--bg-subtle</code></td>
-            <td><input type="color" data-mode="light" name="--bg-subtle"></td>
-            <td><input type="color" data-mode="dark" name="--bg-subtle"></td>
+            <td><input type="color" name="--light-bg-subtle"></td>
+            <td><input type="color" name="--dark-bg-subtle"></td>
+            <td><small class="muted"><code data-hl="html">&lt;progress&gt;</code> and <code data-hl="html">&lt;meter&gt;</code> backgrounds, etc.</small></td>
           </tr>
           <tr>
             <td><code>--muted</code></td>
-            <td><input type="color" data-mode="light" name="--muted"></td>
-            <td><input type="color" data-mode="dark" name="--muted"></td>
+            <td><input type="color" name="--light-muted"></td>
+            <td><input type="color" name="--dark-muted"></td>
             <td><code>--bg-muted</code></td>
-            <td><input type="color" data-mode="light" name="--bg-muted"></td>
-            <td><input type="color" data-mode="dark" name="--bg-muted"></td>
+            <td><input type="color" name="--light-bg-muted"></td>
+            <td><input type="color" name="--dark-bg-muted"></td>
+            <td><small class="muted"><code data-hl="css">.disabled</code>, <code data-hl="html">&lt;caption&gt;</code>, <code data-hl="html">&lt;blockquote&gt;</code>, etc.</small></td>
           </tr>
           <tr>
             <td><code>--accent</code></td>
-            <td><input type="color" data-mode="light" name="--accent"></td>
-            <td><input type="color" data-mode="dark" name="--accent"></td>
+            <td><input type="color" name="--light-accent"></td>
+            <td><input type="color" name="--dark-accent"></td>
             <td><code>--bg-accent</code></td>
-            <td><input type="color" data-mode="light" name="--bg-accent"></td>
-            <td><input type="color" data-mode="dark" name="--bg-accent"></td>
+            <td><input type="color" name="--light-bg-accent"></td>
+            <td><input type="color" name="--dark-bg-accent"></td>
+            <td><small class="muted"><code data-hl="css">:hover</code>, <code data-hl="css">.selected</code>, <code data-hl="html">&lt;a&gt;</code>, <code data-hl="html">&lt;button&gt;</code>, etc.</small></td>
           </tr>
           <tr>
             <td><code>--active</code></td>
-            <td><input type="color" data-mode="light" name="--active"></td>
-            <td><input type="color" data-mode="dark" name="--active"></td>
+            <td><input type="color" name="--light-active"></td>
+            <td><input type="color" name="--dark-active"></td>
             <td><code>--bg-active</code></td>
-            <td><input type="color" data-mode="light" name="--bg-active"></td>
-            <td><input type="color" data-mode="dark" name="--bg-active"></td>
+            <td><input type="color" name="--light-bg-active"></td>
+            <td><input type="color" name="--dark-bg-active"></td>
+            <td><small class="muted"><code data-hl="css">:active</code>, <code data-hl="css">:focus</code>, etc.</small></td>
           </tr>
           <tr>
             <td><code>--variant</code></td>
-            <td><input type="color" data-mode="light" name="--variant"></td>
-            <td><input type="color" data-mode="dark" name="--variant"></td>
+            <td><input type="color" name="--light-variant"></td>
+            <td><input type="color" name="--dark-variant"></td>
             <td><code>--bg-variant</code></td>
-            <td><input type="color" data-mode="light" name="--bg-variant"></td>
-            <td><input type="color" data-mode="dark" name="--bg-variant"></td>
+            <td><input type="color" name="--light-bg-variant"></td>
+            <td><input type="color" name="--dark-bg-variant"></td>
+            <td></td>
           </tr>
           <tr>
             <td><code>--success</code></td>
-            <td><input type="color" data-mode="light" name="--success"></td>
-            <td><input type="color" data-mode="dark" name="--success"></td>
+            <td><input type="color" name="--light-success"></td>
+            <td><input type="color" name="--dark-success"></td>
             <td><code>--bg-success</code></td>
-            <td><input type="color" data-mode="light" name="--bg-success"></td>
-            <td><input type="color" data-mode="dark" name="--bg-success"></td>
+            <td><input type="color" name="--light-bg-success"></td>
+            <td><input type="color" name="--dark-bg-success"></td>
+            <td><small class="muted"><code data-hl="css">:user-valid</code>, <code data-hl="html">&lt;ins&gt;</code>, <code data-hl="html">&lt;meter&gt;</code>'s optimum value, etc.</small></td>
           </tr>
           <tr>
             <td><code>--attention</code></td>
-            <td><input type="color" data-mode="light" name="--attention"></td>
-            <td><input type="color" data-mode="dark" name="--attention"></td>
+            <td><input type="color" name="--light-attention"></td>
+            <td><input type="color" name="--dark-attention"></td>
             <td><code>--bg-attention</code></td>
-            <td><input type="color" data-mode="light" name="--bg-attention"></td>
-            <td><input type="color" data-mode="dark" name="--bg-attention"></td>
+            <td><input type="color" name="--light-bg-attention"></td>
+            <td><input type="color" name="--dark-bg-attention"></td>
+            <td><small class="muted"><code data-hl="html">&lt;meter&gt;</code>'s sub-optimum value, etc.</small></td>
           </tr>
           <tr>
             <td><code>--severe</code></td>
-            <td><input type="color" data-mode="light" name="--severe"></td>
-            <td><input type="color" data-mode="dark" name="--severe"></td>
+            <td><input type="color" name="--light-severe"></td>
+            <td><input type="color" name="--dark-severe"></td>
             <td><code>--bg-severe</code></td>
-            <td><input type="color" data-mode="light" name="--bg-severe"></td>
-            <td><input type="color" data-mode="dark" name="--bg-severe"></td>
+            <td><input type="color" name="--light-bg-severe"></td>
+            <td><input type="color" name="--dark-bg-severe"></td>
+            <td></td>
           </tr>
           <tr>
             <td><code>--danger</code></td>
-            <td><input type="color" data-mode="light" name="--danger"></td>
-            <td><input type="color" data-mode="dark" name="--danger"></td>
+            <td><input type="color" name="--light-danger"></td>
+            <td><input type="color" name="--dark-danger"></td>
             <td><code>--bg-danger</code></td>
-            <td><input type="color" data-mode="light" name="--bg-danger"></td>
-            <td><input type="color" data-mode="dark" name="--bg-danger"></td>
+            <td><input type="color" name="--light-bg-danger"></td>
+            <td><input type="color" name="--dark-bg-danger"></td>
+            <td><small class="muted"><code data-hl="css">:user-invalid</code>, <code data-hl="html">&lt;del&gt;</code>, <code data-hl="html">&lt;meter&gt;</code>'s sub-sub-optimum value, <code data-hl="html">&lt;button type="reset"&gt;</code>, etc.</small></td>
           </tr>
         </table>
       </div>
       <footer>
-        <button type="reset">Reset colors to default</button>
+        <button type="reset">Reset to default</button>
       </footer>
     </fieldset>
-    <div data-color-scheme="light"></div>
-    <div data-color-scheme="dark"></div>
+    <fieldset class="variables">
+      <legend>Font related variables</legend>
+      <label class="width">
+        <code>--ft</code>
+        <small>Default font family.</small>
+        <small></small>
+        <input type="text" name="--ft">
+      </label>
+      <label class="width">
+        <code>--ft-mono</code>
+        <small>Default monospaced font family, used in preformatted blocks (e.g. <code data-hl="html">&lt;pre&gt;</code>, <code data-hl="html">&lt;code&gt;</code>, <code data-hl="html">&lt;var&gt;</code>, <code data-hl="html">&lt;samp&gt;</code>, <code data-hl="html">&lt;kbd&gt;</code>, etc.).</small>
+        <input type="text" name="--ft-mono">
+      </label>
+      <label class="width">
+        <code>--ft-size</code>
+        <small>Default font size.</small>
+        <input type="text" name="--ft-size">
+      </label>
+      <footer>
+        <button type="reset">Reset to default</button>
+      </footer>
+    </fieldset>
+    <fieldset class="variables">
+      <legend>Layout related variables</legend>
+      <p class="muted">
+        These variables are only revelant when using a layout from <code>@layouts</code> extra feature.
+      </p>
+      <label class="width">
+        <code>--ly-header-size</code>
+        <small>Size of top-level <code data-hl="html">&lt;header&gt;</code>.</small>
+        <small></small>
+        <input type="text" name="--ly-header-size">
+      </label>
+      <label class="width">
+        <code>--ly-brand</code>
+        <small>Text color in top-level <code data-hl="html">&lt;header&gt;</code>.</small>
+        <input type="color" name="--ly-brand">
+      </label>
+      <label class="width">
+        <code>--ly-bg-brand</code>
+        <small>Background color in top-level <code data-hl="html">&lt;header&gt;</code>.</small>
+        <input type="color" name="--ly-bg-brand">
+      </label>
+      <label class="width">
+        <code>--ly-aside-size-small</code>
+        <small>Size of main <code data-hl="html">&lt;aside&gt;</code> on small screens.</small>
+        <input type="text" name="--ly-aside-size-small">
+      </label>
+      <footer>
+        <button type="reset">Reset to default</button>
+      </footer>
+    </fieldset>
+    <fieldset class="variables">
+      <legend>Miscellaneous variables</legend>
+      <label class="width">
+        <code>--ct-width</code>
+        <small>Maximum container width for sectioning elements that act as containers (e.g. <code data-hl="html">&lt;section&gt;</code>, etc.).</small>
+        <input type="text" name="--ct-width">
+      </label>
+      <label class="width">
+        <code>--bd-radius</code>
+        <small>Border radius basis.</small>
+        <input type="text" name="--bd-radius">
+      </label>
+      <label class="width">
+        <code>--tr-duration</code>
+        <small>Transition duration basis.</small>
+        <input type="text" name="--tr-duration">
+      </label>
+      <hr>
+      <div class="table-responsive">
+        <table>
+          <tr>
+            <th rowspan="2">Name</th>
+            <th colspan="2">Light</th>
+            <th colspan="2">Dark</th>
+            <th rowspan="2">Example usage</th>
+          </tr>
+          <tr>
+            <th>Color</th>
+            <th>Alpha</th>
+            <th>Color</th>
+            <th>Alpha</th>
+          </tr>
+          <tr>
+            <td><code>--backdrop</code></td>
+            <td><input type="color" name="--light-backdrop"></td>
+            <td><input type="text" name="--light-backdrop@opacity"></td>
+            <td><input type="color" name="--dark-backdrop"></td>
+            <td><input type="text" name="--dark-backdrop@opacity"></td>
+            <td><small class="muted"><code data-hl="css">dialog::backdrop</code>, <code data-hl="css">--shadow</code>, etc.</small></td>
+          </tr>
+          <tr>
+            <td><code>--bd-muted</code></td>
+            <td><input type="color" name="--light-bd-muted"></td>
+            <td><input type="text" name="--light-bd-muted@opacity"></td>
+            <td><input type="color" name="--dark-bd-muted"></td>
+            <td><input type="text" name="--dark-bd-muted@opacity"></td>
+            <td><small class="muted"><code data-hl="html">&lt;td&gt;</code>, <code data-hl="html">&lt;th&gt;</code>, <code data-hl="html">&lt;article&gt;</code>, <code data-hl="html">&lt;blockquote&gt;</code>, <code data-hl="html">&lt;fieldset&gt;</code>, <code data-hl="html">&lt;input&gt;</code>, <code data-hl="html">&lt;select&gt;</code>, <code data-hl="html">&lt;textarea&gt;</code>, etc.</code></small></td>
+          </tr>
+        </table>
+      </div>
+      <footer>
+        <button type="reset">Reset to default</button>
+      </footer>
+    </fieldset>
     <fieldset>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
       <legend>Customization</legend>
@@ -280,6 +390,7 @@
           form.querySelectorAll(`input[name="${input.dataset.for}"]`).forEach(child => child.checked = input.checked)
         })
       })
+      // Manage checkboxes
       form.querySelectorAll('input[type="checkbox"]').forEach(input => {
         if (input.name) {
           input.addEventListener("change", () => {
@@ -289,31 +400,32 @@
         }
       })
       // Manage colors
-      const variables = {
-        light:form.querySelector('[data-color-scheme="light"]'),
-        dark:form.querySelector('[data-color-scheme="dark"]'),
-      }
-      function reset() {
-        form.querySelectorAll('.variables input[type="color"]').forEach(input => {
-          if (!input.name)
+      function reset(element) {
+        element.querySelectorAll("input[name]").forEach(input => {
+          if ((!input.name)||(input.name.endsWith("@opacity")))
             return
-          const value = getComputedStyle(variables[input.dataset.mode]).getPropertyValue(input.name)
+          let value = getComputedStyle(element).getPropertyValue(input.name)
+          if ((input.type === "color")&&(/^#[a-f0-9]{8}$/i.test(value))) {
+            const [color, opacity] = [value.slice(0, 7), value.slice(7)]
+            value = color
+            element.querySelector(`input[name="${input.name}@opacity"]`).value = opacity
+          }
           input.value = value
           input.dataset.default = value
         })
       }
-      form.querySelector('.variables button').addEventListener("click", event => {
+      form.querySelectorAll('.variables button[type="reset"]').forEach(button => button.addEventListener("click", event => {
         event.preventDefault()
-        reset()
-      })
-      reset()
+        reset(button.closest(".variables"))
+      }))
+      form.querySelectorAll(".variables").forEach(group => reset(group))
       // Manage brewing
       const brewing = form.querySelector(".brewing button")
       const teapot = {styling:[], extra:[], variables:[]}
       form.addEventListener("change", () => {
         const styling = Array.from(form.querySelectorAll('input[name="styling"]'))
         const extra = Array.from(form.querySelectorAll('input[name="extra"]'))
-        const variables = Array.from(form.querySelectorAll('.variables input[type="color"]'))
+        const variables = Array.from(form.querySelectorAll('.variables input'))
         Object.assign(teapot, {
           styling:styling.filter(({checked}) => checked).map(({value}) => value),
           extra:extra.filter(({checked}) => checked).map(({value}) => value),
@@ -327,20 +439,16 @@
         const minify = form.querySelector('input[name="minify"]').checked
         const custom = form.querySelector('textarea[name="custom"]').value
         const parts = await Promise.all([...teapot.styling, ...teapot.extra].sort((a, b) => a.localeCompare(b)).map(async name => await fetch(`/styles/${name}/mod.css`).then(response  => response.text())))
-        stylesheet = [banner, ...parts, custom.trim()].join("\n")
-        console.log(stylesheet)
         if (teapot.variables.length) {
-          const light = teapot.variables.filter(({mode}) => mode === "light").map(({name, value}) => `${name}: ${value};`).join("\n")
-          const dark = teapot.variables.filter(({mode}) => mode === "dark").map(({name, value}) => `${name}: ${value};`).join("\n")
-          stylesheet += "/* Variables */"
-          if (light.trim().length) {
-            stylesheet += `:root,[data-color-scheme="light"] {\n${light}\n}\n`
-          }
-          if (dark.trim().length) {
-            stylesheet += `[data-color-scheme="dark"] {\n${dark}\n}\n`
-            stylesheet += `@media (prefers-color-scheme: dark) {\n  :root:not([data-color-scheme="light"]) {\n${dark.split("\n").map(line => `  ${line}`).join("\n")}\n  }\n}\n`
-          }
+          const [_, defined, computed] = (await fetch("/styles/@root/mod.css").then(response => response.text())).match(/^(?<defined>:root\s*\{[\s\S]*?\})(?<computed>[\s\S*]*)$/)
+          const root = new CSSStyleSheet()
+          root.insertRule(defined)
+          //TODO(@lowlighter): set variables
+          console.log(root.rules[0].style)
+          //==============================
+          parts.unshift(root.rules[0].cssText, computed)
         }
+        stylesheet = [banner, ...parts, custom.trim()].join("\n")
         try {
           brewing.toggleAttribute("disabled", true)
           brewing.style.cursor = "loading"
