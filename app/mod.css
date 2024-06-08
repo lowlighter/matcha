@@ -95,6 +95,10 @@ details summary a {
   max-width: 4rem;
 }
 
+.matcha-build .variables td code:only-child {
+  white-space: nowrap;
+}
+
 .matcha-build .styling {
   display: flex;
   flex-wrap: wrap;

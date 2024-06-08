@@ -117,5 +117,11 @@ export async function html_builder() {
   section.innerHTML = builder.querySelector("details")!.innerHTML
   section.querySelector("summary")?.remove()
   document.querySelector("main")!.append(section)
+  // Syntax highlighting
+  Array.from(document.querySelectorAll("[data-hl]")).forEach((_element) => {
+    const element = _element as unknown as HTMLElement
+    element.innerHTML = syntax.highlight(element.innerText, { language: element.getAttribute("data-hl")! }).value.trim()
+    element.removeAttribute("data-hl")
+  })
   return `<!DOCTYPE html>${document.documentElement!.outerHTML}`
 }
