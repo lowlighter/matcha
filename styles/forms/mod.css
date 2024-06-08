@@ -11,6 +11,10 @@ form {
   margin-bottom: 0;
 }
 
+form code {
+  background: var(--bg-subtle);
+}
+
 /* Fieldset */
 fieldset {
   padding: .5rem 1rem;
