@@ -1,7 +1,7 @@
 /// <reference lib="dom" />
 // Imports
 import { css } from "./build/css.ts"
-import { html, html_builder } from "./build/html.ts"
+import { html, html_builder, html_builder_demo } from "./build/html.ts"
 import { ssg } from "./build/ssg.ts"
 import { dist } from "./build/dist.ts"
 import { STATUS_CODE, STATUS_TEXT } from "jsr:@std/http@0.224.1"
@@ -22,6 +22,8 @@ switch (Deno.args[0]) {
             return new Response(await html_builder(), { headers: { "Content-Type": "text/html" } })
           case new URLPattern("/matcha.css", url.origin).test(url.href):
             return new Response(await css(), { headers: { "Content-Type": "text/css" } })
+          case new URLPattern("/build/demo{.html}?", url.origin).test(url.href):
+            return new Response(await html_builder_demo(), { headers: { "Content-Type": "text/html" } })
           case new URLPattern("/mod.css", url.origin).test(url.href):
             return new Response(await Deno.readFile(new URL("mod.css", import.meta.url)), { headers: { "Content-Type": "text/css" } })
           case new URLPattern("/mod.svg", url.origin).test(url.href):

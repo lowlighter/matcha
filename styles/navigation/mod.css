@@ -56,8 +56,13 @@ menu > li > :is(a, a:hover) {
     right: 0;
     bottom: -.5rem;
     left: 0;
+    border-right: none;
     border-bottom: 2px solid currentColor;
     border-left: none;
+  }
+
+  menu > li > menu > li.selected::before {
+    border-left: 2px solid currentColor;
   }
 }
 
@@ -107,7 +112,6 @@ menu > li > menu > li.selected::before {
   bottom: calc(.5 * var(--bd-radius));
   left: 0;
   border-bottom: none;
-  border-left: 2px solid currentColor;
 }
 
 @media (min-width: 544px) {

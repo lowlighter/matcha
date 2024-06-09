@@ -110,6 +110,14 @@ details summary a {
   justify-content: space-between;
 }
 
+.matcha-build .styling label code {
+  white-space: nowrap;
+}
+
+.matcha-build .styling label small {
+  opacity: .75;
+}
+
 .matcha-build .styling > div {
   flex: 1 1 0;
 }

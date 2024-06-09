@@ -125,3 +125,56 @@ export async function html_builder() {
   })
   return `<!DOCTYPE html>${document.documentElement!.outerHTML}`
 }
+
+/** Generate HTML for custom builder demo */
+export async function html_builder_demo() {
+  // Include mod.html files and clean it
+  let html = await Deno.readTextFile(new URL("app/mod.html", root))
+  for (const _ of [1, 2]) {
+    for (const match of html.matchAll(/<!--\/(?<path>[\s\S]+?\/.*\.html)-->/g)) {
+      const path = match.groups!.path.trim()
+      const content = await Deno.readTextFile(new URL(path, root))
+      html = html.replace(match[0], content)
+    }
+  }
+  const document = new DOMParser().parseFromString(html, "text/html")!
+  document.querySelector('header nav menu a[href="/build"]')?.parentElement?.remove()
+  document.querySelector('header nav menu a[href="/"]')?.parentElement?.remove()
+  for (
+    const selection of [
+      "body > aside",
+      "body > header",
+      "body > footer",
+      "body > script",
+      "section.matcha",
+      '[id="nav"] ~ p',
+      '[id="utilities"] ~ :is(p, div)',
+      '[id="utilities-colors"] ~ :is(p, div)',
+      '[id="syntax-highlighting"] ~ p',
+    ]
+  ) {
+    document.querySelectorAll(selection).forEach((element) => (element as unknown as HTMLElement).remove())
+  }
+  for (const id of ["html", "layouts", "utilities-classes", "utilities-synergies", "code-editor", "istanbul-coverage", "unstyled"]) {
+    document.querySelector(`[id="${id}"]`)?.parentElement?.remove()
+  }
+  document.querySelectorAll(".example").forEach((_element) => {
+    const element = _element as unknown as HTMLElement
+    Array.from(element.parentElement?.children ?? []).forEach((element) => {
+      if (element.classList.contains("example")) {
+        return
+      }
+      if (/^H[1-6]$/.test(element.tagName)) {
+        return
+      }
+      element.remove()
+    })
+  })
+  // Syntax highlighting
+  Array.from(document.querySelectorAll("[data-hl]")).forEach((_element) => {
+    const element = _element as unknown as HTMLElement
+    element.innerHTML = syntax.highlight(element.innerText, { language: element.getAttribute("data-hl")! }).value.trim()
+    element.removeAttribute("data-hl")
+  })
+  return `<!DOCTYPE html>${document.documentElement!.outerHTML}`
+}
