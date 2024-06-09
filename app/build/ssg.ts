@@ -2,7 +2,7 @@
 import { copy, emptyDir, ensureDir, expandGlob } from "jsr:@std/fs@0.229.1"
 import { dirname, fromFileUrl } from "jsr:@std/path@0.225.1"
 import { root } from "./root.ts"
-import { html, html_builder } from "./html.ts"
+import { html, html_builder, html_builder_demo } from "./html.ts"
 import { compatibility } from "jsr:@libs/bundle@5/css"
 
 /** Static site generation */
@@ -34,6 +34,9 @@ export async function ssg() {
   console.log("Created .pages/index.html")
   await Deno.writeTextFile(new URL(".pages/build.html", root), await html_builder())
   console.log("Created .pages/build.html")
+  await ensureDir(new URL(".pages/build", root))
+  await Deno.writeTextFile(new URL(".pages/build/demo.html", root), await html_builder_demo())
+  console.log("Created .pages/build/demo.html")
   // Copy styles
   await ensureDir(new URL(".pages/styles", root))
   console.log("Created .pages/styles")
