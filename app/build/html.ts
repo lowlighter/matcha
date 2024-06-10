@@ -140,6 +140,7 @@ export async function html_builder_demo() {
   const document = new DOMParser().parseFromString(html, "text/html")!
   document.querySelector('header nav menu a[href="/build"]')?.parentElement?.remove()
   document.querySelector('header nav menu a[href="/"]')?.parentElement?.remove()
+  document.querySelector('link[rel="stylesheet"][href="/matcha.css"]')?.remove()
   for (
     const selection of [
       "body > aside",
@@ -170,6 +171,10 @@ export async function html_builder_demo() {
       element.remove()
     })
   })
+  // Clean background image
+  const style = document.createElement("style")
+  style.innerText = `body { background-image: none; }`
+  document.head.append(style)
   // Syntax highlighting
   Array.from(document.querySelectorAll("[data-hl]")).forEach((_element) => {
     const element = _element as unknown as HTMLElement

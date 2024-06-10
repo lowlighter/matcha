@@ -458,7 +458,7 @@
           })
         }
       })
-      // Manage colors
+      // Manage variables
       function reset(element) {
         element.querySelectorAll("input[name]").forEach(input => {
           if ((!input.name)||(input.name.endsWith("@opacity")))
@@ -483,8 +483,13 @@
       const preview = form.querySelector(".preview button")
       preview.addEventListener("click", async event => {
         event.preventDefault()
-        document.querySelector(".preview iframe").src = "/build/demo"
-        // TODO(@lowlighter): split brewing and inject brewed matcha here (brewing button should only open it in new tab)
+        const iframe = form.querySelector(".preview iframe")
+        iframe.src = "/build/demo"
+        iframe.onload = async function() {
+          const style = iframe.contentDocument.createElement("style")
+          style.innerText = await brew()
+          iframe.contentDocument.head.appendChild(style)
+        }
       })
       // Manage brewing
       const brewing = form.querySelector(".brewing button")
@@ -505,24 +510,30 @@
           teapot.variables.find(variable => variable.name === name.replace("@opacity", "")).value = `${color}${opacity}`
         })
       })
-      form.querySelector(".brewing button").addEventListener("click", async event => {
-        event.preventDefault()
-        let stylesheet = ""
-        const minify = form.querySelector('input[name="minify"]').checked
+      async function brew() {
         const custom = form.querySelector('textarea[name="custom"]').value
+        const root = await fetch("/styles/@root/mod.css").then(response => response.text())
         const parts = await Promise.all([...teapot.styling, ...teapot.extra].sort((a, b) => a.localeCompare(b)).map(async name => await fetch(`/styles/${name}/mod.css`).then(response  => response.text())))
         if (teapot.variables.length) {
-          const [_, defined, computed] = (await fetch("/styles/@root/mod.css").then(response => response.text())).match(/^(?<defined>:root\s*\{[\s\S]*?\})(?<computed>[\s\S*]*)$/)
-          const root = new CSSStyleSheet()
-          root.insertRule(defined)
-          for (const [key, value] of Object.entries(teapot.variables)) {
-            if (key in root.rules[0].style) {
-              root.rules[0].style.setProperty(key, value)
-            }
+          const [_, defined, computed] = root.match(/^(?<defined>:root\s*\{[\s\S]*?\})(?<computed>[\s\S*]*)$/)
+          const stylesheet = new CSSStyleSheet()
+          stylesheet.insertRule(defined)
+          for (const {name, value} of teapot.variables) {
+            stylesheet.rules[0].style.setProperty(name, value)
           }
-          parts.unshift(root.rules[0].cssText, computed)
+          parts.unshift(stylesheet.rules[0].cssText, computed)
+          console.log(stylesheet.rules[0].cssText)
         }
-        stylesheet = [banner, ...parts, custom.trim()].join("\n")
+        else {
+          parts.unshift(root)
+        }
+        return [banner, ...parts, custom.trim()].join("\n")
+      }
+      // Manage brewed download
+      form.querySelector(".brewing button").addEventListener("click", async event => {
+        event.preventDefault()
+        const minify = form.querySelector('input[name="minify"]').checked
+        const stylesheet = await brew()
         try {
           brewing.toggleAttribute("disabled", true)
           brewing.style.cursor = "loading"
