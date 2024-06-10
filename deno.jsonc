@@ -39,7 +39,14 @@
     "semiColons": false,
     "lineWidth": 200,
     "exclude": [
-      "coverage"
+      "coverage",
+      ".pages"
+    ]
+  },
+  "lint": {
+    "exclude": [
+      "coverage",
+      ".pages"
     ]
   }
 }

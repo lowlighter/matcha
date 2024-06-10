@@ -5,6 +5,9 @@ import { root } from "./root.ts"
 import { html, html_builder, html_builder_demo } from "./html.ts"
 import { compatibility } from "jsr:@libs/bundle@5/css"
 
+/** Highlight.js CDN */
+export const highlight = "https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"
+
 /** Static site generation */
 export async function ssg() {
   await emptyDir(new URL(".pages", root))
@@ -52,5 +55,8 @@ export async function ssg() {
       console.log(`Created .pages/${alias}`)
     }
   }
+  // Download highlight.js
+  await Deno.writeTextFile(new URL(".pages/highlight.js", root), await fetch(highlight).then((response) => response.text()))
+  console.log("Created .pages/highlight.js")
   console.log("Done!")
 }

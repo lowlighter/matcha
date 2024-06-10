@@ -2,7 +2,7 @@
 // Imports
 import { css } from "./build/css.ts"
 import { html, html_builder, html_builder_demo } from "./build/html.ts"
-import { ssg } from "./build/ssg.ts"
+import { highlight, ssg } from "./build/ssg.ts"
 import { dist } from "./build/dist.ts"
 import { STATUS_CODE, STATUS_TEXT } from "jsr:@std/http@0.224.1"
 import { root } from "./build/root.ts"
@@ -38,6 +38,8 @@ switch (Deno.args[0]) {
             return api_minify(request)
           case new URLPattern("/api/preview", url.origin).test(url.href.replace(url.search, "")):
             return api_preview(request)
+          case new URLPattern("/highlight.js", url.origin).test(url.href):
+            return fetch(highlight)
           default:
             return new Response(STATUS_TEXT[STATUS_CODE.NotFound], { status: STATUS_CODE.NotFound })
         }
