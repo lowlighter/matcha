@@ -46,6 +46,15 @@ aside nav ul ul ul li :is(a, [class^="hljs-"], var) {
   color: var(--muted) !important;
 }
 
+:is(section) > :is(h1, h2, h3, h4, h5, h6)[id]::before, .hx[id]::before, #matcha::before {
+  content: "";
+  display: block;
+  height: calc(1rem + var(--ly-header-size));
+  margin-top: calc(-1 * (1rem + var(--ly-header-size)));
+  visibility: hidden;
+  pointer-events: none;
+}
+
 /* Matcha header and footer */
 body > header svg,
 body > footer svg {
@@ -131,13 +140,8 @@ details summary a {
   word-break: keep-all;
 }
 
-:is(section) > :is(h1, h2, h3, h4, h5, h6)[id]::before, .hx[id]::before, #matcha::before {
-  content: "";
-  display: block;
-  height: calc(1rem + var(--ly-header-size));
-  margin-top: calc(-1 * (1rem + var(--ly-header-size)));
-  visibility: hidden;
-  pointer-events: none;
+.matcha-preview {
+  background: var(--bg-subtle);
 }
 
 /* CSS compatibility */

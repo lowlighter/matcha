@@ -108,7 +108,7 @@ export async function html_builder() {
   const html = await Deno.readTextFile(new URL("app/mod.html", root))
   const document = new DOMParser().parseFromString(html, "text/html")!
   document.querySelector('header nav menu a[href="/build"]')?.parentElement?.remove()
-  for (const selection of ["body > aside", "body > script", " main > section:not(.matcha)", "section.matcha section"]) {
+  for (const selection of ["body > aside", " main > section:not(.matcha)", "section.matcha section"]) {
     document.querySelectorAll(selection).forEach((element) => (element as unknown as HTMLElement).remove())
   }
   // Include uncollapsed builder
