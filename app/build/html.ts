@@ -111,6 +111,14 @@ export async function html_builder() {
   highlight(builder)
   section.innerHTML = builder.querySelector("details")!.innerHTML
   document.querySelector("main")!.append(section)
+  // Include scripts
+  await Promise.all(
+    Array.from(document.querySelectorAll("script[data-script]")).map(async (_element) => {
+      const element = _element as unknown as HTMLScriptElement
+      element.innerText = `{\n${await Deno.readTextFile(new URL(element.dataset.script!.slice(1), root))}\n}`
+      element.removeAttribute("data-script")
+    }),
+  )
   return `<!DOCTYPE html>${document.documentElement!.outerHTML}`
 }
 
@@ -165,6 +173,7 @@ export async function html_builder_demo() {
 
 /** Template mod.html */
 async function template({ remove }: { remove?: { parent?: string[]; selectors?: string[] } } = {}) {
+  // Generate HTML
   let html = await Deno.readTextFile(new URL("app/mod.html", root))
   for (const _ of [1, 2]) {
     for (const match of html.matchAll(/<!--\/(?<path>[\s\S]+?\/.*\.html)-->/g)) {
@@ -175,6 +184,7 @@ async function template({ remove }: { remove?: { parent?: string[]; selectors?: 
   }
   const document = new DOMParser().parseFromString(html, "text/html")!
   highlight(document)
+  // Include scripts
   await Promise.all(
     Array.from(document.querySelectorAll("script[data-script]")).map(async (_element) => {
       const element = _element as unknown as HTMLScriptElement
@@ -182,6 +192,7 @@ async function template({ remove }: { remove?: { parent?: string[]; selectors?: 
       element.removeAttribute("data-script")
     }),
   )
+  // Clean up
   if (remove?.parent) {
     for (const selector of remove.parent) {
       document.querySelector(selector)?.parentElement?.remove()
