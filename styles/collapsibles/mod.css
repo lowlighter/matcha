@@ -9,10 +9,10 @@ details {
 
 summary {
   display: list-item;
+  border-radius: calc(var(--bd-radius) - 1px) calc(var(--bd-radius) - 1px) 0 0;
   color: var(--accent);
   cursor: pointer;
   user-select: none;
-  border-radius: calc(var(--bd-radius) - 1px) calc(var(--bd-radius) - 1px) 0 0;
 }
 
 summary:hover {
