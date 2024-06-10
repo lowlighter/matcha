@@ -8,6 +8,7 @@ vercel.json
 # Web site
 .pages
 *.html
+*.js
 api
 app
 

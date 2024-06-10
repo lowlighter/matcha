@@ -4,3 +4,4 @@
 .devcontainer/* -linguist-detectable
 *.ts -linguist-detectable
 *.html linguist-documentation
+*.js linguist-documentation
