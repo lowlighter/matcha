@@ -4,10 +4,11 @@ import { css } from "./build/css.ts"
 import { html, html_builder, html_builder_demo } from "./build/html.ts"
 import { highlight, ssg } from "./build/ssg.ts"
 import { dist } from "./build/dist.ts"
-import { STATUS_CODE, STATUS_TEXT } from "jsr:@std/http@0.224.1"
+import { serveDir, STATUS_CODE, STATUS_TEXT } from "jsr:@std/http@0.224.1"
 import { root } from "./build/root.ts"
 import api_minify from "../api/brew.ts"
 import api_preview from "../api/preview.ts"
+import { fromFileUrl } from "jsr:@std/path"
 
 // Serve files
 switch (Deno.args[0]) {
@@ -40,6 +41,8 @@ switch (Deno.args[0]) {
             return api_preview(request)
           case new URLPattern("/highlight.js", url.origin).test(url.href):
             return fetch(highlight)
+          case new URLPattern("/v/*", url.origin).test(url.href):
+            return serveDir(request, { fsRoot: fromFileUrl(new URL(".pages/v", root)), urlRoot: "v", showDirListing: true, quiet: true })
           default:
             return new Response(STATUS_TEXT[STATUS_CODE.NotFound], { status: STATUS_CODE.NotFound })
         }

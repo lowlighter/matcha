@@ -68,7 +68,10 @@ To utilize **matcha.css**, just include the following line in the `<head>` secti
 ```
 
 Assets are hosted on [Vercel](https://vercel.com) but _matcha.css_ is also available on
-[![npm](https://img.shields.io/npm/v/@lowlighter%2Fmatcha?logo=npm&labelColor=cb0000&color=black)](https://www.npmjs.com/package/@lowlighter/matcha) and CDN services that distributes npm packages.
+[![npm](https://img.shields.io/npm/v/@lowlighter%2Fmatcha?logo=npm&labelColor=cb0000&color=black)](https://www.npmjs.com/package/@lowlighter/matcha) and CDN services that distributes npm packages such
+as [JSdelivr](https://www.jsdelivr.com/package/npm/@lowlighter/matcha).
+
+All published versions are available in the [`/v/`](https://matcha.mizu.sh/v/) directory. By default, the `main` branch is served.
 
 ### 🍴 À la carte
 
