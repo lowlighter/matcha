@@ -8,7 +8,7 @@ import { default as hljs } from "https://esm.sh/highlight.js@11.9.0/lib/language
 import { default as hlts } from "https://esm.sh/highlight.js@11.9.0/lib/languages/typescript"
 import { default as hlmd } from "https://esm.sh/highlight.js@11.9.0/lib/languages/markdown"
 import { default as hlsh } from "https://esm.sh/highlight.js@11.9.0/lib/languages/diff"
-import { DOMParser } from "https://deno.land/x/deno_dom@v0.1.45/deno-dom-wasm.ts"
+import { DOMParser, type HTMLDocument } from "https://deno.land/x/deno_dom@v0.1.45/deno-dom-wasm.ts"
 import { gzipSize } from "https://deno.land/x/gzip_size@v0.3.0/mod.ts"
 syntax.registerLanguage("xml", hlxml)
 syntax.registerLanguage("css", hlcss)
@@ -20,23 +20,12 @@ syntax.registerLanguage("diff", hlsh)
 
 /** Generate HTML */
 export async function html() {
-  // Include mod.html files
-  let html = await Deno.readTextFile(new URL("app/mod.html", root))
-  for (const _ of [1, 2]) {
-    for (const match of html.matchAll(/<!--\/(?<path>[\s\S]+?\/.*\.html)-->/g)) {
-      const path = match.groups!.path.trim()
-      const content = await Deno.readTextFile(new URL(path, root))
-      html = html.replace(match[0], content)
-    }
-  }
-  // Generate code examples
-  const document = new DOMParser().parseFromString(html, "text/html")!
-  document.querySelector('header nav menu a[href="/"]')?.parentElement?.remove()
-  Array.from(document.querySelectorAll("[data-hl]")).forEach((_element) => {
-    const element = _element as unknown as HTMLElement
-    element.innerHTML = syntax.highlight(element.innerText, { language: element.getAttribute("data-hl")! }).value.trim()
-    element.removeAttribute("data-hl")
+  const document = await template({
+    remove: {
+      parent: ['header nav menu a[href="/"]'],
+    },
   })
+  // Generate code examples
   Array.from(document.querySelectorAll(".example:not([data-codeless])")).forEach((_element) => {
     const element = _element as unknown as HTMLElement
     const clone = element.cloneNode(true) as unknown as HTMLElement
@@ -51,8 +40,14 @@ export async function html() {
     const details = document.createElement("details") as unknown as HTMLDetailsElement
     details.innerHTML = `<summary>See code</summary><pre><code></code></pre>`
     details.querySelector("code")!.innerHTML = syntax.highlight(code, { language: "html" }).value.trim()
+    details.querySelectorAll("code span.language-xml").forEach((_element) => {
+      const element = _element as unknown as HTMLElement
+      const code = `\n${element.innerText.split("\n").filter((line) => line !== "///").map((line, i, eol) => (i === 0) || (i === eol.length - 1) ? line : `  ${line}`).join("\n")}\n`
+      element.innerHTML = syntax.highlight(code, { language: "js" }).value
+    })
     element.after(details)
   })
+  // Generate code example color scheme tabs
   Array.from(document.querySelectorAll(".example:not([data-codeless]), .example[data-color-schemeable]")).forEach((_element) => {
     const element = _element as unknown as HTMLElement
     const tabs = document.createElement("menu") as unknown as HTMLMenuElement
@@ -97,68 +92,58 @@ export async function html() {
   return `<!DOCTYPE html>${document.documentElement!.outerHTML}`
 }
 
-/** Strip emojis */
-function emojiless(string: string) {
-  return string.replace(/[\u{1F600}-\u{1F64F}|\u{1F300}-\u{1F5FF}|\u{1F680}-\u{1F6FF}|\u{1F1E0}-\u{1F1FF}|\u{2600}-\u{26FF}|\u{2700}-\u{27BF}]+/gu, "")
-}
-
 /** Generate HTML for custom builder */
 export async function html_builder() {
-  // Clean mod.html
-  const html = await Deno.readTextFile(new URL("app/mod.html", root))
-  const document = new DOMParser().parseFromString(html, "text/html")!
-  document.querySelector('header nav menu a[href="/build"]')?.parentElement?.remove()
-  for (const selection of ["body > aside", " main > section:not(.matcha)", "section.matcha section"]) {
-    document.querySelectorAll(selection).forEach((element) => (element as unknown as HTMLElement).remove())
-  }
+  const document = await template({
+    remove: {
+      parent: ['header nav menu a[href="/build"]'],
+      selectors: [
+        "body > aside",
+        " main > section:not(.matcha)",
+        "section.matcha section",
+      ],
+    },
+  })
   // Include uncollapsed builder
   const builder = new DOMParser().parseFromString(await Deno.readTextFile(new URL("app/sections/custom-build.html", root)), "text/html")!
   const section = document.createElement("section")
+  builder.querySelector("summary")?.remove()
+  highlight(builder)
   section.innerHTML = builder.querySelector("details")!.innerHTML
-  section.querySelector("summary")?.remove()
   document.querySelector("main")!.append(section)
-  // Syntax highlighting
-  Array.from(document.querySelectorAll("[data-hl]")).forEach((_element) => {
-    const element = _element as unknown as HTMLElement
-    element.innerHTML = syntax.highlight(element.innerText, { language: element.getAttribute("data-hl")! }).value.trim()
-    element.removeAttribute("data-hl")
-  })
   return `<!DOCTYPE html>${document.documentElement!.outerHTML}`
 }
 
 /** Generate HTML for custom builder demo */
 export async function html_builder_demo() {
-  // Include mod.html files and clean it
-  let html = await Deno.readTextFile(new URL("app/mod.html", root))
-  for (const _ of [1, 2]) {
-    for (const match of html.matchAll(/<!--\/(?<path>[\s\S]+?\/.*\.html)-->/g)) {
-      const path = match.groups!.path.trim()
-      const content = await Deno.readTextFile(new URL(path, root))
-      html = html.replace(match[0], content)
-    }
-  }
-  const document = new DOMParser().parseFromString(html, "text/html")!
-  document.querySelector('header nav menu a[href="/build"]')?.parentElement?.remove()
-  document.querySelector('header nav menu a[href="/"]')?.parentElement?.remove()
-  document.querySelector('link[rel="stylesheet"][href="/matcha.css"]')?.remove()
-  for (
-    const selection of [
-      "body > aside",
-      "body > header",
-      "body > footer",
-      "body > script",
-      "section.matcha",
-      '[id="nav"] ~ p',
-      '[id="utilities"] ~ :is(p, div)',
-      '[id="utilities-colors"] ~ :is(p, div)',
-      '[id="syntax-highlighting"] ~ p',
-    ]
-  ) {
-    document.querySelectorAll(selection).forEach((element) => (element as unknown as HTMLElement).remove())
-  }
-  for (const id of ["html", "layouts", "utilities-classes", "utilities-synergies", "code-editor", "istanbul-coverage", "unstyled"]) {
-    document.querySelector(`[id="${id}"]`)?.parentElement?.remove()
-  }
+  const document = await template({
+    remove: {
+      parent: [
+        'header nav menu a[href="/build"]',
+        'header nav menu a[href="/"]',
+        '[id="html"]',
+        '[id="layouts"]',
+        '[id="utilities-classes"]',
+        '[id="utilities-synergies"]',
+        '[id="code-editor"]',
+        '[id="istanbul-coverage"]',
+        '[id="unstyled"]',
+      ],
+      selectors: [
+        'link[rel="stylesheet"][href="/matcha.css"]',
+        "body > aside",
+        "body > header",
+        "body > footer",
+        "body > script",
+        "section.matcha",
+        '[id="nav"] ~ p',
+        '[id="utilities"] ~ :is(p, div)',
+        '[id="utilities-colors"] ~ :is(p, div)',
+        '[id="syntax-highlighting"] ~ p',
+      ],
+    },
+  })
+  // Filter only examples
   document.querySelectorAll(".example").forEach((_element) => {
     const element = _element as unknown as HTMLElement
     Array.from(element.parentElement?.children ?? []).forEach((element) => {
@@ -175,11 +160,51 @@ export async function html_builder_demo() {
   const style = document.createElement("style")
   style.innerText = `body { background-image: none; }`
   document.head.append(style)
-  // Syntax highlighting
+  return `<!DOCTYPE html>${document.documentElement!.outerHTML}`
+}
+
+/** Template mod.html */
+async function template({ remove }: { remove?: { parent?: string[]; selectors?: string[] } } = {}) {
+  let html = await Deno.readTextFile(new URL("app/mod.html", root))
+  for (const _ of [1, 2]) {
+    for (const match of html.matchAll(/<!--\/(?<path>[\s\S]+?\/.*\.html)-->/g)) {
+      const path = match.groups!.path.trim()
+      const content = await Deno.readTextFile(new URL(path, root))
+      html = html.replace(match[0], content)
+    }
+  }
+  const document = new DOMParser().parseFromString(html, "text/html")!
+  highlight(document)
+  await Promise.all(
+    Array.from(document.querySelectorAll("script[data-script]")).map(async (_element) => {
+      const element = _element as unknown as HTMLScriptElement
+      element.innerText = `{\n${await Deno.readTextFile(new URL(element.dataset.script!.slice(1), root))}\n}`
+      element.removeAttribute("data-script")
+    }),
+  )
+  if (remove?.parent) {
+    for (const selector of remove.parent) {
+      document.querySelector(selector)?.parentElement?.remove()
+    }
+  }
+  if (remove?.selectors) {
+    for (const selector of remove.selectors) {
+      document.querySelectorAll(selector).forEach((element) => (element as unknown as HTMLElement).remove())
+    }
+  }
+  return document
+}
+
+/** Syntax highlighting */
+function highlight(document: HTMLDocument) {
   Array.from(document.querySelectorAll("[data-hl]")).forEach((_element) => {
     const element = _element as unknown as HTMLElement
     element.innerHTML = syntax.highlight(element.innerText, { language: element.getAttribute("data-hl")! }).value.trim()
     element.removeAttribute("data-hl")
   })
-  return `<!DOCTYPE html>${document.documentElement!.outerHTML}`
+}
+
+/** Strip emojis */
+function emojiless(string: string) {
+  return string.replace(/[\u{1F600}-\u{1F64F}|\u{1F300}-\u{1F5FF}|\u{1F680}-\u{1F6FF}|\u{1F1E0}-\u{1F1FF}|\u{2600}-\u{26FF}|\u{2700}-\u{27BF}]+/gu, "")
 }
