@@ -129,8 +129,8 @@
             </div>
           </section>
           <!--/app/sections/preset-build.html-->
-          <!--/app/sections/preview-website.html-->
           <!--/app/sections/custom-build.html-->
+          <!--/app/sections/preview-website.html-->
           <!--/app/sections/supported-browsers.html-->
         </section>
       </section>
@@ -357,7 +357,10 @@
         document.querySelectorAll(".example-tabs li.color-scheme").forEach(element => {
           element.querySelector(`svg.${prefers}`).style.display = "inline-block"
           element.addEventListener("click", event => {
-            const example = element.parentNode.nextSibling
+            const example = element.parentNode.nextElementSibling
+            if (example.tagName === "IFRAME") {
+              example.contentWindow.document.documentElement.dataset.colorScheme = (example.contentWindow.document.documentElement.dataset.colorScheme ?? prefers) === 'light' ? 'dark' : 'light'
+            }
             example.dataset.colorScheme = (example.dataset.colorScheme ?? prefers) === 'light' ? 'dark' : 'light'
             element.querySelector("svg.light").style.display = example.dataset.colorScheme === 'light' ? "inline-block" : "none"
             element.querySelector("svg.dark").style.display = example.dataset.colorScheme === 'dark' ? "inline-block" : "none"

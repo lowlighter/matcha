@@ -46,6 +46,15 @@ aside nav ul ul ul li :is(a, [class^="hljs-"], var) {
   color: var(--muted) !important;
 }
 
+:is(section) > :is(h1, h2, h3, h4, h5, h6)[id]::before, .hx[id]::before, #matcha::before {
+  content: "";
+  display: block;
+  height: calc(1rem + var(--ly-header-size));
+  margin-top: calc(-1 * (1rem + var(--ly-header-size)));
+  visibility: hidden;
+  pointer-events: none;
+}
+
 /* Matcha header and footer */
 body > header svg,
 body > footer svg {
@@ -92,17 +101,30 @@ details summary a {
 
 .matcha-build .variables input[name$="opacity"] {
   margin-left: .25rem;
-  max-width: 4rem;
+  width: 3rem;
+  text-align: center;
 }
 
 .matcha-build .variables td code:only-child {
   white-space: nowrap;
 }
 
+.matcha-build .variables input[type="color"] {
+  width: 3rem;
+}
+
 .matcha-build .styling {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+}
+
+.matcha-build .styling label code {
+  white-space: nowrap;
+}
+
+.matcha-build .styling label small {
+  opacity: .75;
 }
 
 .matcha-build .styling > div {
@@ -118,13 +140,8 @@ details summary a {
   word-break: keep-all;
 }
 
-:is(section) > :is(h1, h2, h3, h4, h5, h6)[id]::before, .hx[id]::before, #matcha::before {
-  content: "";
-  display: block;
-  height: calc(1rem + var(--ly-header-size));
-  margin-top: calc(-1 * (1rem + var(--ly-header-size)));
-  visibility: hidden;
-  pointer-events: none;
+.matcha-preview {
+  background: var(--bg-subtle);
 }
 
 /* CSS compatibility */
