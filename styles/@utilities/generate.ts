@@ -1,5 +1,5 @@
 import { fromFileUrl } from "jsr:@std/path/from-file-url"
-const rules = ["/* This file is auto-generated, please do not edit manually */"]
+const rules = []
 const values = [0, .125, .25, .5, .75, 1, 1.25, 1.5, 1.75, 2, 3, 4].map((value) => `${value}`.replace(/^0./, "."))
 
 // Margin and padding utilities
@@ -12,7 +12,7 @@ for (const property of ["margin", "padding"]) {
           rule += `${property}: ${value}rem;`
           break
         case "x":
-          rule += `${property}-left: ${value}rem; ${property}-right: ${value}rem;`
+          rule += `${property}-right: ${value}rem; ${property}-left: ${value}rem;`
           break
         case "y":
           rule += `${property}-top: ${value}rem; ${property}-bottom: ${value}rem;`
@@ -46,4 +46,9 @@ for (const property of ["spacing"]) {
 }
 
 // Save generated CSS
-await Deno.writeTextFile(fromFileUrl(import.meta.resolve("./mod+generated.css")), rules.join("\n"))
+let css = await Deno.readTextFile(fromFileUrl(import.meta.resolve("./mod.css")))
+css = css.replace(/(\/\* This section is auto-generated, please do not edit manually \*\/)[\s\S]*(\/\* --- \*\/)/, `$1${rules.join("\n")}$2`)
+await Deno.writeTextFile(fromFileUrl(import.meta.resolve("./mod.css")), css)
+
+/* This section is auto-generated, please do not edit manually */
+/* --- */
