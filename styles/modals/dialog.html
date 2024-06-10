@@ -42,23 +42,7 @@
         </form>
       </footer>
     </dialog>
-    <script>
-      {
-        const dialog = document.currentScript.previousElementSibling
-        dialog.querySelector('[type="button"]').addEventListener("click", event => {
-          event.preventDefault()
-          dialog.close()
-          dialog.style = "position: fixed;"
-          dialog.showModal()
-        })
-        dialog.querySelector('[type="submit"]').addEventListener("click", event => {
-          event.preventDefault()
-          dialog.close()
-          dialog.style = "position: relative;"
-          dialog.show()
-        })
-      }
-    </script>
+    <script data-script="/styles/modals/dialog.js"></script>
   </div>
   <div class="flash success">
     It is advised to use <code data-hl="html">&lt;form method="dialog"&gt;</code> which makes the browser <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/form#method" target="_blank">natively close the dialog box without any JavaScript</a> when it is submitted.

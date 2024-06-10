@@ -15,7 +15,6 @@
 </ul>
 <section>
   <div class="example">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
     <div class="editor">
       <textarea rows="6">// This element is editable and highlights TypeScript code
 import * as mizu from "https://mizu.sh/mizu.js"
@@ -25,22 +24,7 @@ console.log(`🌊 mizu.js version: ${version}`)
 </textarea>
       <div class="highlight"></div>
     </div>
-    <script data-keep>
-      {
-        const editor = document.currentScript.previousElementSibling
-        const textarea = editor.querySelector("textarea")
-        const highlight = editor.querySelector(".highlight")
-        textarea.addEventListener("input", () => coloration(textarea.value))
-        textarea.addEventListener("scroll", function () {
-          highlight.scrollTop = this.scrollTop
-          highlight.scrollLeft = this.scrollLeft
-        })
-        function coloration(value) {
-          highlight.innerHTML = hljs.highlight(value, { language: "typescript" }).value
-        }
-        coloration(textarea.value)
-      }
-    </script>
+    <script data-keep data-script="/styles/@code-editor/mod.js"></script>
   </div>
   <p class="flash attention">
     These extra styles does not actually perform syntax highlighting, it is only for styling the code editor.

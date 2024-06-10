@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="/mod.css">
     <link rel="apple-touch-icon" sizes="180x180" href="/180x180.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/32x32.png">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
   </head>
   <body class="layout-simple">
     <header>
@@ -351,22 +352,6 @@
         </menu>
       </nav>
     </footer>
-    <script>
-      {
-        const prefers = matchMedia('(prefers-color-scheme: dark)') ? 'dark' : 'light'
-        document.querySelectorAll(".example-tabs li.color-scheme").forEach(element => {
-          element.querySelector(`svg.${prefers}`).style.display = "inline-block"
-          element.addEventListener("click", event => {
-            const example = element.parentNode.nextElementSibling
-            if (example.tagName === "IFRAME") {
-              example.contentWindow.document.documentElement.dataset.colorScheme = (example.contentWindow.document.documentElement.dataset.colorScheme ?? prefers) === 'light' ? 'dark' : 'light'
-            }
-            example.dataset.colorScheme = (example.dataset.colorScheme ?? prefers) === 'light' ? 'dark' : 'light'
-            element.querySelector("svg.light").style.display = example.dataset.colorScheme === 'light' ? "inline-block" : "none"
-            element.querySelector("svg.dark").style.display = example.dataset.colorScheme === 'dark' ? "inline-block" : "none"
-          });
-        })
-      }
-    </script>
+    <script data-script="/app/mod.js"></script>
   </body>
 </html>

@@ -31,22 +31,5 @@
     </li>
   </menu>
   <iframe class="matcha-preview" loading="lazy" title="preview" height="420" class="bd-muted"></iframe>
-  <script>
-    {
-      const form = document.currentScript.parentElement.querySelector("form")
-      const iframe = document.currentScript.parentElement.querySelector("iframe")
-      form.addEventListener("submit", async event => {
-        event.preventDefault()
-        iframe.src = `/api/preview?url=${form.querySelector("input").value}`
-        iframe.onload = function() {
-          const origin = new URL(new URL(iframe.src).searchParams.get("url")).href
-          iframe.contentDocument.querySelectorAll("style,script").forEach(element => element.remove())
-          const link = iframe.contentDocument.createElement("link")
-          link.href = "/matcha.css"
-          link.rel = "stylesheet"
-          iframe.contentDocument.head.appendChild(link)
-        }
-      })
-    }
-  </script>
+  <script data-script="/app/sections/preview-website.js"></script>
 </details>
