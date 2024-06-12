@@ -115,7 +115,7 @@ export async function ssg() {
     if (major === "0") {
       continue
     }
-    const version = versions.filter((version: string) => version.startsWith(`${major}.`))[0]
+    const version = versions.filter((version: string) => version.startsWith(`${major}.`)).reverse()[0]
     await copy(new URL(`.pages/v/${version}`, root), new URL(`.pages/v/${major}`, root))
     console.log(`Created .pages/v/${major} from version ${version}`)
   }
@@ -123,7 +123,7 @@ export async function ssg() {
     if (minor.startsWith("0.")) {
       continue
     }
-    const version = versions.filter((version: string) => version.startsWith(`${minor}.`))[0]
+    const version = versions.filter((version: string) => version.startsWith(`${minor}.`)).reverse()[0]
     await copy(new URL(`.pages/v/${version}`, root), new URL(`.pages/v/${minor}`, root))
     console.log(`Created .pages/v/${minor} from version ${version}`)
   }
