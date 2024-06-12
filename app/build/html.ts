@@ -96,7 +96,10 @@ export async function html() {
 export async function html_builder() {
   const document = await template({
     remove: {
-      parent: ['header nav menu a[href="/build"]'],
+      parent: [
+        'header nav menu a[href="/build"]',
+        'header nav menu a[href="/v/"]',
+      ],
       selectors: [
         "body > aside",
         " main > section:not(.matcha)",
