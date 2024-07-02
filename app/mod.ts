@@ -17,31 +17,31 @@ switch (Deno.args[0]) {
       try {
         const url = new URL(request.url)
         switch (true) {
-          case new URLPattern("/{index.html}?", url.origin).test(url.href) && request.headers.get("Accept")?.includes("text/html"):
+          case new URLPattern("/{index.html}?", url.origin).test(url.href.replace(url.search, "")) && request.headers.get("Accept")?.includes("text/html"):
             return new Response(await html(), { headers: { "Content-Type": "text/html" } })
-          case new URLPattern("/build{.html}?", url.origin).test(url.href) && request.headers.get("Accept")?.includes("text/html"):
+          case new URLPattern("/build{.html}?", url.origin).test(url.href.replace(url.search, "")) && request.headers.get("Accept")?.includes("text/html"):
             return new Response(await html_builder(), { headers: { "Content-Type": "text/html" } })
-          case new URLPattern("/matcha.css", url.origin).test(url.href):
+          case new URLPattern("/matcha.css", url.origin).test(url.href.replace(url.search, "")):
             return new Response(await css(), { headers: { "Content-Type": "text/css" } })
-          case new URLPattern("/build/demo{.html}?", url.origin).test(url.href):
+          case new URLPattern("/build/demo{.html}?", url.origin).test(url.href.replace(url.search, "")):
             return new Response(await html_builder_demo(), { headers: { "Content-Type": "text/html" } })
-          case new URLPattern("/mod.css", url.origin).test(url.href):
+          case new URLPattern("/mod.css", url.origin).test(url.href.replace(url.search, "")):
             return new Response(await Deno.readFile(new URL("mod.css", import.meta.url)), { headers: { "Content-Type": "text/css" } })
-          case new URLPattern("/mod.svg", url.origin).test(url.href):
+          case new URLPattern("/mod.svg", url.origin).test(url.href.replace(url.search, "")):
             return new Response(await Deno.readFile(new URL("mod.svg", import.meta.url)), { headers: { "Content-Type": "image/svg+xml" } })
-          case new URLPattern("/*.png", url.origin).test(url.href):
+          case new URLPattern("/*.png", url.origin).test(url.href.replace(url.search, "")):
             return new Response(await Deno.readFile(new URL(url.pathname.slice(1), new URL("app/icons/", root))), { headers: { "Content-Type": "image/png" } })
-          case new URLPattern("/*.svg", url.origin).test(url.href):
+          case new URLPattern("/*.svg", url.origin).test(url.href.replace(url.search, "")):
             return new Response(await Deno.readFile(new URL(url.pathname.slice(1), new URL("app/icons/", root))), { headers: { "Content-Type": "image/svg+xml" } })
-          case new URLPattern("/styles/*", url.origin).test(url.href):
+          case new URLPattern("/styles/*", url.origin).test(url.href.replace(url.search, "")):
             return new Response(await Deno.readFile(new URL(url.pathname.slice(1), root)), { headers: { "Content-Type": "text/css" } })
-          case new URLPattern("/api/brew", url.origin).test(url.href):
+          case new URLPattern("/api/brew", url.origin).test(url.href.replace(url.search, "")):
             return api_minify(request)
           case new URLPattern("/api/preview", url.origin).test(url.href.replace(url.search, "")):
             return api_preview(request)
-          case new URLPattern("/highlight.js", url.origin).test(url.href):
+          case new URLPattern("/highlight.js", url.origin).test(url.href.replace(url.search, "")):
             return fetch(highlight)
-          case new URLPattern("/v/*", url.origin).test(url.href):
+          case new URLPattern("/v/*", url.origin).test(url.href.replace(url.search, "")):
             return serveDir(request, { fsRoot: fromFileUrl(new URL(".pages/v", root)), urlRoot: "v", showDirListing: true, quiet: true })
           default:
             return new Response(STATUS_TEXT[STATUS_CODE.NotFound], { status: STATUS_CODE.NotFound })
