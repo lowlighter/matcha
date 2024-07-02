@@ -3,10 +3,11 @@ import { expandGlob } from "jsr:@std/fs@0.229.1"
 import { fromFileUrl } from "jsr:@std/path@0.225.1"
 import { bundle } from "jsr:@libs/bundle@5/css"
 import { root as _root } from "./root.ts"
+import { version } from "./version.ts"
 
 /** Banner */
 export const banner = [
-  "matcha.css",
+  `matcha.css — ${version}`,
   `Copyright © ${new Date().getFullYear()} Lecoq Simon (@lowlighter)`,
   "MIT license — https://github.com/lowlighter/matcha",
 ].join("\n")

@@ -10,6 +10,7 @@ import { default as hlmd } from "https://esm.sh/highlight.js@11.9.0/lib/language
 import { default as hlsh } from "https://esm.sh/highlight.js@11.9.0/lib/languages/diff"
 import { DOMParser, type HTMLDocument } from "https://deno.land/x/deno_dom@v0.1.45/deno-dom-wasm.ts"
 import { gzipSize } from "https://deno.land/x/gzip_size@v0.3.0/mod.ts"
+import { version } from "./version.ts"
 syntax.registerLanguage("xml", hlxml)
 syntax.registerLanguage("css", hlcss)
 syntax.registerLanguage("lisp", hllisp)
@@ -187,6 +188,13 @@ async function template({ remove }: { remove?: { parent?: string[]; selectors?: 
   }
   const document = new DOMParser().parseFromString(html, "text/html")!
   highlight(document)
+  // Force uncached resources on version changes
+  document.querySelectorAll('link[rel="stylesheet"]').forEach((element) => {
+    const link = element as unknown as HTMLLinkElement
+    if (link.getAttribute("href")?.startsWith("/")) {
+      link.setAttribute("href", `${link.getAttribute("href")}?v=${version}`)
+    }
+  })
   // Include scripts
   await Promise.all(
     Array.from(document.querySelectorAll("script[data-script]")).map(async (_element) => {
