@@ -177,6 +177,10 @@ input:is([type="radio"],[type="checkbox"]):disabled {
   background-color: var(--bd-muted);
 }
 
+input[type="checkbox"]:disabled {
+  border-color: transparent;
+}
+
 input[type="range"] {
   height: .5rem;
   border: transparent;
