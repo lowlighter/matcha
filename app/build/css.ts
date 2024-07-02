@@ -56,7 +56,6 @@ export async function css({ only = [] as string[], exclude = ["@istanbul-coverag
     }
     return 0
   })
-  console.log(files)
   for (const { path } of files) {
     css += await Deno.readTextFile(path)
   }
