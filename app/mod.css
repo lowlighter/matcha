@@ -72,26 +72,8 @@ body > footer svg.sponsor {
   fill: var(--variant);
 }
 
-[data-color-scheme="dark"] body > header svg.light {
+body > header svg.light, body > header svg.dark {
   display: none;
-}
-
-[data-color-scheme="light"] body > header svg.dark {
-  display: none;
-}
-
-:root:not([data-color-scheme="dark"]) body > header svg.dark {
-  display: none;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root:not([data-color-scheme="light"]) body > header svg.dark {
-    display: inline-block;
-  }
-
-  :root:not([data-color-scheme="light"]) body > header svg.light {
-    display: none;
-  }
 }
 
 /* Matcha build */
