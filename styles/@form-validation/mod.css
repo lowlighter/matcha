@@ -1,0 +1,11 @@
+textarea:user-invalid,
+select:user-invalid,
+input:not([type="radio"],[type="checkbox"],[type="range"],[type="submit"],[type="image"]):user-invalid {
+  border: 1px solid var(--danger);
+}
+
+textarea:user-valid,
+select:user-valid,
+input:not([type="radio"],[type="checkbox"],[type="range"],[type="submit"],[type="image"]):user-valid {
+  border: 1px solid var(--success);
+}
