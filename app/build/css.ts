@@ -1,6 +1,6 @@
 // Imports
 import { expandGlob } from "jsr:@std/fs@0.229.1"
-import { fromFileUrl } from "jsr:@std/path@0.225.1"
+import { basename, dirname, fromFileUrl } from "jsr:@std/path@0.225.1"
 import { bundle } from "jsr:@libs/bundle@5/css"
 import { root as _root } from "./root.ts"
 import { version } from "./version.ts"
@@ -38,7 +38,25 @@ export async function css({ only = [] as string[], exclude = ["@istanbul-coverag
       return only.includes(name)
     })
   }
-  files.sort((a, b) => a.path.localeCompare(b.path))
+  files.sort((A, B) => {
+    const a = basename(dirname(A.path))
+    const b = basename(dirname(B.path))
+    if (a === "@root") {
+      return -1
+    }
+    if (b === "@root") {
+      return 1
+    }
+    if ((a.startsWith("@")) && (b.startsWith("@"))) {
+      return a.localeCompare(b)
+    } else if (a.startsWith("@")) {
+      return 1
+    } else if (b.startsWith("@")) {
+      return -1
+    }
+    return 0
+  })
+  console.log(files)
   for (const { path } of files) {
     css += await Deno.readTextFile(path)
   }
