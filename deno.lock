@@ -17,6 +17,7 @@
       "jsr:@std/fmt@^0.225.1": "jsr:@std/fmt@0.225.2",
       "jsr:@std/fs@0.229.1": "jsr:@std/fs@0.229.1",
       "jsr:@std/http@0.224.1": "jsr:@std/http@0.224.1",
+      "jsr:@std/jsonc@0.224.3": "jsr:@std/jsonc@0.224.3",
       "jsr:@std/media-types@^1.0.0-rc.1": "jsr:@std/media-types@1.0.0-rc.1",
       "jsr:@std/path": "jsr:@std/path@0.225.1",
       "jsr:@std/path@0.225.1": "jsr:@std/path@0.225.1",
@@ -110,6 +111,9 @@
           "jsr:@std/path@^0.225.1",
           "jsr:@std/streams@^0.224.1"
         ]
+      },
+      "@std/jsonc@0.224.3": {
+        "integrity": "c10770a31489f5b85a3562d9b107c497666d8b6a49291ee2711d84da2616c2d6"
       },
       "@std/media-types@1.0.0-rc.1": {
         "integrity": "ff3cc8d5b536be2730fc4d446865007faf69bf4d46e7bea426d5e1d9c6ba9053"
