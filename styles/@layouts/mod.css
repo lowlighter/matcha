@@ -1,4 +1,4 @@
-body.layout-simple {
+.layout-simple {
   display: grid;
   max-width: none;
   padding: 0 1.5rem;
@@ -11,7 +11,7 @@ body.layout-simple {
   grid-template-rows: auto 1fr auto;
 }
 
-body.layout-simple > :is(header:first-of-type, footer:last-of-type) {
+.layout-simple > :is(header:first-of-type, footer:last-of-type) {
   display: flex;
   height: max-content;
   flex-wrap: wrap;
@@ -24,12 +24,12 @@ body.layout-simple > :is(header:first-of-type, footer:last-of-type) {
   grid-area: header;
 }
 
-body.layout-simple > :is(header:first-of-type, footer:last-of-type) > * {
+.layout-simple > :is(header:first-of-type, footer:last-of-type) > * {
   margin-top: 0;
   margin-bottom: 0;
 }
 
-body.layout-simple > header:first-of-type {
+.layout-simple > header:first-of-type {
   position: sticky;
   z-index: 200;
   top: 0;
@@ -37,21 +37,21 @@ body.layout-simple > header:first-of-type {
   white-space: nowrap;
 }
 
-body.layout-simple > main:only-of-type {
+.layout-simple > main:only-of-type {
   grid-area: main;
 }
 
-body.layout-simple > footer:last-of-type {
+.layout-simple > footer:last-of-type {
   overflow: auto;
   grid-area: footer;
 }
 
-body.layout-simple > :is(header:first-of-type, footer:last-of-type) > nav > menu {
+.layout-simple > :is(header:first-of-type, footer:last-of-type) > nav > menu {
   flex-direction: row;
   justify-content: center;
 }
 
-body.layout-simple > aside {
+.layout-simple > aside {
   display: none;
   padding: 0;
   border-left: none;
@@ -59,7 +59,7 @@ body.layout-simple > aside {
   backdrop-filter: blur(100px);
 }
 
-body.layout-simple > aside > nav:only-child {
+.layout-simple > aside > nav:only-child {
   position: sticky;
   top: var(--ly-header-size);
   overflow: auto;
@@ -69,7 +69,7 @@ body.layout-simple > aside > nav:only-child {
   margin: 0;
 }
 
-body.layout-simple > aside:nth-of-type(1):is([data-expandable], [data-expand]) {
+.layout-simple > aside:nth-of-type(1):is([data-expandable], [data-expand]) {
   display: block;
   overflow: hidden;
   max-height: var(--ly-aside-size-small);
@@ -78,11 +78,11 @@ body.layout-simple > aside:nth-of-type(1):is([data-expandable], [data-expand]) {
   grid-area: aside1;
 }
 
-body.layout-simple > aside:nth-of-type(1)[data-expand] {
+.layout-simple > aside:nth-of-type(1)[data-expand] {
   max-height: none;
 }
 
-body.layout-simple > aside:nth-of-type(1)[data-expandable]::before {
+.layout-simple > aside:nth-of-type(1)[data-expandable]::before {
   display: flex;
   height: var(--ly-aside-size-small);
   align-items: center;
@@ -91,36 +91,36 @@ body.layout-simple > aside:nth-of-type(1)[data-expandable]::before {
   cursor: pointer;
 }
 
-body.layout-simple > aside:nth-of-type(1)[data-expandable]:hover,
-body.layout-simple > aside:nth-of-type(1)[data-expandable][data-expand] {
+.layout-simple > aside:nth-of-type(1)[data-expandable]:hover,
+.layout-simple > aside:nth-of-type(1)[data-expandable][data-expand] {
   max-height: none;
 }
 
-body.layout-simple > aside:nth-of-type(1)[data-expandable]:hover::before {
+.layout-simple > aside:nth-of-type(1)[data-expandable]:hover::before {
   color: var(--accent);
 }
 
-body.layout-simple > aside > nav:only-child > ul {
+.layout-simple > aside > nav:only-child > ul {
   height: 100%;
 }
 
-body.layout-simple > aside a {
+.layout-simple > aside a {
   color: var(--default);
 }
 
 @media (min-width: 960px) {
-  body.layout-simple > aside:nth-of-type(1)[data-expandable]::before {
+  .layout-simple > aside:nth-of-type(1)[data-expandable]::before {
     display: none;
   }
 
-  body.layout-simple > aside:nth-of-type(1):is([data-expandable], [data-expand]) {
+  .layout-simple > aside:nth-of-type(1):is([data-expandable], [data-expand]) {
     overflow: unset;
     max-height: none;
     margin-right: 0;
     margin-left: 0;
   }
 
-  body.layout-simple:has(> aside:nth-of-type(1)) {
+  .layout-simple:has(> aside:nth-of-type(1)) {
     padding-left: 0;
     grid-template-areas:
     "header header"
@@ -130,11 +130,11 @@ body.layout-simple > aside a {
     grid-template-rows: auto 1fr auto;
   }
 
-  body.layout-simple:has(> aside:nth-of-type(1)) > :is(header:first-of-type, footer:last-of-type) {
+  .layout-simple:has(> aside:nth-of-type(1)) > :is(header:first-of-type, footer:last-of-type) {
     margin-left: 0;
   }
 
-  body.layout-simple > aside:nth-of-type(1) {
+  .layout-simple > aside:nth-of-type(1) {
     display: block;
     box-shadow: var(--shadow-r);
     grid-area: aside1;
@@ -142,7 +142,7 @@ body.layout-simple > aside a {
 }
 
 @media (min-width: 1280px) {
-  body.layout-simple:has(> aside:nth-of-type(1)) {
+  .layout-simple:has(> aside:nth-of-type(1)) {
     grid-template-areas:
       "header header header"
       "aside1 main   ."
@@ -150,7 +150,7 @@ body.layout-simple > aside a {
     grid-template-columns: minmax(0, .3fr) 1fr minmax(0, .3fr);
   }
 
-  body.layout-simple:has(> aside:nth-of-type(2)) {
+  .layout-simple:has(> aside:nth-of-type(2)) {
     padding-right: 0;
     grid-template-areas:
       "header header header"
@@ -158,18 +158,18 @@ body.layout-simple > aside a {
       "footer footer footer";
   }
 
-  body.layout-simple:has(> aside:nth-of-type(2)) > :is(header:first-of-type, footer:last-of-type) {
+  .layout-simple:has(> aside:nth-of-type(2)) > :is(header:first-of-type, footer:last-of-type) {
     margin-right: 0;
   }
 
-  body.layout-simple > aside:nth-of-type(2) {
+  .layout-simple > aside:nth-of-type(2) {
     display: block;
     box-shadow: var(--shadow-l);
     grid-area: aside2;
   }
 }
 
-body.layout-simple > header:first-of-type > nav {
+.layout-simple > header:first-of-type > nav {
   position: absolute;
   top: 0;
   right: 0;
@@ -181,18 +181,18 @@ body.layout-simple > header:first-of-type > nav {
   transition: opacity var(--tr-duration), top var(--tr-duration);
 }
 
-body.layout-simple > header:first-of-type:hover > nav {
+.layout-simple > header:first-of-type:hover > nav {
   top: 100%;
   opacity: 1;
   pointer-events: auto;
 }
 
 @media (min-width: 768px) {
-  body.layout-simple > header:first-child {
+  .layout-simple > header:first-child {
     justify-content: space-between;
   }
 
-  body.layout-simple > header:first-child > nav {
+  .layout-simple > header:first-child > nav {
     position: static;
     height: var(--ly-header-size);
     justify-content: flex-start;
