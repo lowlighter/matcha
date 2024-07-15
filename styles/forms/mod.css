@@ -223,8 +223,8 @@ button[type]:not([type="button"]), input:is([type="submit"],[type="reset"]) {
   border-color: currentColor;
 }
 
-:is(button, input:is([type="submit"],[type="reset"],[type="button"],[type="image"])):not(:disabled):hover,
-:is(button, input:is([type="submit"],[type="reset"],[type="button"],[type="image"])):not(:disabled):active {
+:where(button, input:is([type="submit"],[type="reset"],[type="button"],[type="image"])):not(:disabled):hover,
+:where(button, input:is([type="submit"],[type="reset"],[type="button"],[type="image"])):not(:disabled):active {
   border-color: transparent;
   background: var(--accent);
   color: var(--light);
