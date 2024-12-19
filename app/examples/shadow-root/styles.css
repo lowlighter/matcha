@@ -1,0 +1,31 @@
+.example-shadow-root-content {
+  display: flex;
+  justify-content: space-around;
+}
+
+section {
+  margin-bottom: 0;
+}
+
+img {
+  max-width: 100px;
+  flex-shrink: 1;
+  box-shadow: var(--shadow);
+  margin: 1rem;
+}
+
+aside {
+  margin: 0;
+  flex-grow: 1;
+  border-left: none;
+}
+
+aside b {
+  color: var(--default);
+}
+
+audio {
+  margin-top: 0.25rem;
+  border-radius: var(--bd-radius);
+  width: 100%;
+}

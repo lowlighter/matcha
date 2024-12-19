@@ -9,8 +9,8 @@ menu {
 menu > li {
   position: relative;
   flex-shrink: 0;
-  padding: .375rem .5rem;
-  margin: .5rem .25rem;
+  padding: 0.375rem 0.5rem;
+  margin: 0.5rem 0.25rem;
   cursor: pointer;
 }
 
@@ -27,9 +27,9 @@ menu > li.selected {
 
 menu > li.selected::before {
   position: absolute;
-  top: .25rem;
-  bottom: .25rem;
-  left: -.25rem;
+  top: 0.25rem;
+  bottom: 0.25rem;
+  left: -0.25rem;
   border-right: 2px solid currentColor;
   content: "";
 }
@@ -54,7 +54,7 @@ menu > li > :is(a, a:hover) {
   menu > li.selected::before {
     top: unset;
     right: 0;
-    bottom: -.5rem;
+    bottom: -0.5rem;
     left: 0;
     border-right: none;
     border-bottom: 2px solid currentColor;
@@ -79,13 +79,13 @@ menu > li > menu {
   display: none;
   width: max-content;
   flex-direction: column;
-  padding: .5rem;
+  padding: 0.5rem;
   border: 1px solid var(--bd-muted);
   border-radius: var(--bd-radius);
   margin: 0;
   background: var(--bg-muted);
   color: var(--default);
-  opacity: .25;
+  opacity: 0.25;
   transition: opacity var(--tr-duration);
 }
 
@@ -108,8 +108,8 @@ menu > li > menu > li > menu {
 }
 
 menu > li > menu > li.selected::before {
-  top: calc(.5 * var(--bd-radius));
-  bottom: calc(.5 * var(--bd-radius));
+  top: calc(0.5 * var(--bd-radius));
+  bottom: calc(0.5 * var(--bd-radius));
   left: 0;
   border-bottom: none;
 }
@@ -120,7 +120,6 @@ menu > li > menu > li.selected::before {
     left: 100%;
   }
 }
-
 
 /* Navigation */
 
@@ -149,9 +148,9 @@ nav > ol {
   flex-wrap: wrap;
 }
 
-nav > ol > li:not(:last-child):has(>a)::after {
+nav > ol > li:not(:last-child):has(> a)::after {
   display: inline-block;
-  margin: 0 .25rem;
+  margin: 0 0.25rem;
   color: var(--default);
   content: "/";
 }
@@ -196,30 +195,30 @@ nav ul > li.selected > a {
   color: inherit;
 }
 
-nav ul > li::before, nav ul > li::after{
+nav ul > li::before, nav ul > li::after {
   position: absolute;
   left: 0;
-  content: '';
+  content: "";
 }
 
-nav ul > li::before{
-  top: .75rem;
+nav ul > li::before {
+  top: 0.75rem;
   width: 1rem;
   height: 0;
   border-top: 1px solid var(--bg-subtle);
 }
 
 nav ul > li::after {
-  top: -.75rem;
+  top: -0.75rem;
   width: 0;
   height: 100%;
   border-left: 1px solid var(--bg-subtle);
 }
 
-nav > ul > li::after{
-  top: .75rem;
+nav > ul > li::after {
+  top: 0.75rem;
 }
 
-nav > ul > li:last-child::after{
-  display:none;
+nav > ul > li:last-child::after {
+  display: none;
 }

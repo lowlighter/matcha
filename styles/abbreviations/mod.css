@@ -15,14 +15,14 @@ abbr[data-title]::after {
   top: -125%;
   left: 50%;
   display: none;
-  padding: .5em;
+  padding: 0.5em;
   border: 1px solid var(--bd-muted);
   border-radius: var(--bd-radius);
   background: var(--bg-muted);
   box-shadow: var(--shadow);
   color: var(--default);
   content: attr(data-title);
-  font-size: .75em;
+  font-size: 0.75em;
   opacity: 0;
   pointer-events: none;
   transform: translateX(-50%);

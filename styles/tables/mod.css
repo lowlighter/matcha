@@ -19,7 +19,7 @@ table {
 }
 
 caption {
-  margin-top: .5rem;
+  margin-top: 0.5rem;
   caption-side: bottom;
   color: var(--muted);
 }

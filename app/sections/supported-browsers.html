@@ -22,7 +22,9 @@
     </ol>
     <b>Notes:</b>
     <ul>
-      <li>Browser list adheres to <code>defaults</code> (<code>&gt; 0.5%, last 2 versions, Firefox ESR, not dead</code>).</li>
+      <li>
+        Browser list adheres to <code>defaults</code> (<code>&gt; 0.5%, last 2 versions, Firefox ESR, not dead</code>).
+      </li>
       <li>The first row displays the overall support for each browser.</li>
       <li>Please note that the auto-generated table may contain minor inaccuracies due to the complexity of mapping CSS features against compatibility data.</li>
       <li>Thus, browsers scoring 90% and above are considered fully supported.</li>
@@ -30,7 +32,12 @@
     <p>
       You can toggle verbosity to display additional information, such as specific CSS features and rules reported as partially supported or unsupported.
     </p>
-    <button class="variant" onclick="event.preventDefault();document.querySelectorAll('table.css-compatibility-table,ul.css-compatibility-legend').forEach(element => element.classList.toggle('details'))">Toggle verbosity</button>
+    <button
+      class="variant"
+      onclick="event.preventDefault();document.querySelectorAll('table.css-compatibility-table,ul.css-compatibility-legend').forEach(element => element.classList.toggle('details'))"
+    >
+      Toggle verbosity
+    </button>
     <ul class="css-compatibility-legend">
       <li class="danger">Unsupported feature</li>
       <li class="warning">Partially supported feature</li>

@@ -39,6 +39,8 @@ switch (Deno.args[0]) {
             return api_minify(request)
           case new URLPattern("/api/preview", url.origin).test(url.href.replace(url.search, "")):
             return api_preview(request)
+          case new URLPattern("/examples/shadow-root/styles.css", url.origin).test(url.href.replace(url.search, "")):
+            return new Response(await Deno.readFile(new URL("examples/shadow-root/styles.css", import.meta.url)), { headers: { "Content-Type": "text/css" } })
           case new URLPattern("/highlight.js", url.origin).test(url.href.replace(url.search, "")):
             return fetch(highlight)
           case new URLPattern("/v/*", url.origin).test(url.href.replace(url.search, "")):

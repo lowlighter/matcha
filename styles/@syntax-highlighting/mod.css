@@ -1,4 +1,4 @@
-:root,[data-color-scheme="light"] {
+:root, :host, [data-color-scheme="light"] {
   --comment: #57606a;
   --function: #6639ba;
   --language: #0550ae;
@@ -21,7 +21,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-color-scheme="light"]) {
+  :root:not([data-color-scheme="light"]), :host:not([data-color-scheme="light"]) {
     --comment: #8b949e;
     --function: #d2a8ff;
     --language: #79c0ff;
@@ -68,7 +68,7 @@
 .hljs-code,
 /* Bash */
 .hljs-built_in {
-  color: var(--language)
+  color: var(--language);
 }
 
 /* Code */

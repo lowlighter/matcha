@@ -1,4 +1,4 @@
-:root {
+:root, :host {
   /* Font */
   --ft: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
   --ft-mono: ui-monospace, SFMono-Regular, SF Mono, Menlo, Consolas, Liberation Mono, monospace;
@@ -45,7 +45,7 @@
   --light-bg-success: #dafbe1;
   --light-bg-attention: #fff8c5;
   --light-bg-severe: #fff1e5;
-  --light-bg-danger:  #ffebe9;
+  --light-bg-danger: #ffebe9;
   --dark-bg-default: #0d1117;
   --dark-bg-subtle: #30363d;
   --dark-bg-contrast: #6e7681;
@@ -56,7 +56,7 @@
   --dark-bg-success: #12261e;
   --dark-bg-attention: #272115;
   --dark-bg-severe: #221a19;
-  --dark-bg-danger:  #25171c;
+  --dark-bg-danger: #25171c;
 
   /* Miscellaneous */
   --light-backdrop: #8c959f33;
@@ -64,7 +64,7 @@
   --dark-bd-muted: #30363db3;
   --dark-backdrop: #161b2266;
   --bd-radius: 6px;
-  --tr-duration: .2s;
+  --tr-duration: 0.2s;
   --ct-width: 1024px;
 }
 
@@ -72,7 +72,7 @@
  * While everything below can be edited, it is advised to leave them to default and edit the upper rule instead for easier maintenance.
  */
 
-:root,[data-color-scheme="light"] {
+:root, :host, [data-color-scheme="light"] {
   /* Colors */
   --default: var(--light-default);
   --subtle: var(--light-subtle);
@@ -97,7 +97,7 @@
   --bg-success: var(--light-bg-success);
   --bg-attention: var(--light-bg-attention);
   --bg-severe: var(--light-bg-severe);
-  --bg-danger:  var(--light-bg-danger);
+  --bg-danger: var(--light-bg-danger);
 
   /* Miscellaneous */
   --bd-muted: var(--light-bd-muted);
@@ -129,7 +129,7 @@
   --bg-success: var(--dark-bg-success);
   --bg-attention: var(--dark-bg-attention);
   --bg-severe: var(--dark-bg-severe);
-  --bg-danger:  var(--dark-bg-danger);
+  --bg-danger: var(--dark-bg-danger);
 
   /* Miscellaneous */
   --bd-muted: var(--dark-bd-muted);
@@ -137,7 +137,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-color-scheme="light"]) {
+  :root:not([data-color-scheme="light"]), :host:not([data-color-scheme="light"]) {
     /* Colors */
     --default: var(--dark-default);
     --subtle: var(--dark-subtle);
@@ -162,7 +162,7 @@
     --bg-success: var(--dark-bg-success);
     --bg-attention: var(--dark-bg-attention);
     --bg-severe: var(--dark-bg-severe);
-    --bg-danger:  var(--dark-bg-danger);
+    --bg-danger: var(--dark-bg-danger);
 
     /* Miscellaneous */
     --bd-muted: var(--dark-bd-muted);
@@ -172,7 +172,7 @@
 
 /* Computed properties */
 /* stylelint-disable no-duplicate-selectors */
-:root {
+:root, :host {
   /* Shadows */
   --shadow: 0px 0px 0px 1px var(--bg-subtle), 0px 6px 12px -3px var(--backdrop), 0px 6px 18px 0px var(--backdrop);
   --shadow-r: 6px 0px 18px 0px var(--backdrop);

@@ -1,5 +1,5 @@
 code, var, samp, kbd {
-  padding: .2rem .4rem;
+  padding: 0.2rem 0.4rem;
   border-radius: var(--bd-radius);
   margin: 0;
   background: var(--bg-muted);
@@ -24,7 +24,7 @@ kbd {
 }
 
 output {
-  padding: .25rem .5rem;
+  padding: 0.25rem 0.5rem;
   border: 2px dashed var(--bd-muted);
   border-radius: var(--bd-radius);
   background: var(--bg-default);

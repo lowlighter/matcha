@@ -23,6 +23,9 @@ export async function ssg() {
   console.log("Created .pages/mod.svg")
   await copy(new URL("app/mod.css", root), new URL(".pages/mod.css", root))
   console.log("Created .pages/mod.css")
+  // Copy examples
+  await copy(fromFileUrl(new URL("app/examples", root)), new URL(".pages/examples", root))
+  console.log(`Created .pages/examples`)
   // Generate CSS
   const dist = fromFileUrl(new URL("dist", root)).replaceAll("\\", "/")
   await ensureDir(new URL(".pages/v/main", root))

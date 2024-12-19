@@ -6,11 +6,14 @@
     Add <code data-hl="css">.layout-simple</code> to an element to enable this layout.
   </p>
   <p>
-    <b>Required structure:</b><br>
+    <b>Required structure:</b>
+    <br>
     <small class="muted">Elements marked with <code class="danger">*</code> are required</small>
   </p>
   <ul class="layout-structure">
-    <li><code data-hl="css">.layout-simple</code><span class="danger">*</span>
+    <li>
+      <code data-hl="css">.layout-simple</code>
+      <span class="danger">*</span>
       <ul>
         <li><code data-hl="css">&gt; header:first-of-type</code></li>
         <li><code data-hl="css">&gt; main:only-of-type</code></li>
@@ -61,9 +64,9 @@
     <template><!-- Prevent margins from being trimmed --></template>
   </div>
   <p class="flash accent">
-    The <code data-hl="css">@media (default)</code> will hide <code data-hl="css">aside:nth-of-type(1)</code> on small screens, but it can be made visible again by adding a <code data-hl="html">data-expand</code> attribute.
-    To make it collapsible, use a <code data-hl="html">data-expandable</code> attribute instead.
-    The latter accepts a value to customize the text (e.g. <code>☰ Menu</code>).
+    The <code data-hl="css">@media (default)</code> will hide <code data-hl="css">aside:nth-of-type(1)</code> on small screens, but it can be made visible again by adding a <code data-hl="html"
+    >data-expand</code> attribute. To make it collapsible, use a <code data-hl="html">data-expandable</code> attribute instead. The latter accepts a value to customize the text (e.g. <code>☰
+      Menu</code>).
   </p>
 </section>
 <style>
@@ -101,7 +104,7 @@
   .layout-m,
   .layout-l {
     display: grid;
-    gap: .25rem;
+    gap: 0.25rem;
     grid-template-rows: auto 5rem auto;
   }
 
@@ -126,7 +129,7 @@
       "m-header m-header"
       "m-aside1 m-main"
       "m-footer m-footer";
-    grid-template-columns: minmax(0, .4fr) 1fr;
+    grid-template-columns: minmax(0, 0.4fr) 1fr;
   }
   .layout-m .layout-header {
     grid-area: m-header;
@@ -146,7 +149,7 @@
       "l-header l-header l-header"
       "l-aside1 l-main   l-aside2"
       "l-footer l-footer l-footer";
-    grid-template-columns: minmax(0, .3fr) 1fr minmax(0, .3fr);
+    grid-template-columns: minmax(0, 0.3fr) 1fr minmax(0, 0.3fr);
   }
   .layout-l .layout-header {
     grid-area: l-header;

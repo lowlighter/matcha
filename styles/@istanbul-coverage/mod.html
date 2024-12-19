@@ -1,12 +1,17 @@
-
 <p>
-  <em>matcha.css</em> provides classes that respect <a href="https://developer.mozilla.org/docs/Web/CSS/@media/prefers-color-scheme"><code data-hl="css">@media (prefers-color-scheme)</code></a> and are compatible with <a href="https://istanbul.js.org/" target="_blank">istanbul.js</a>-like coverage reports.
+  <em>matcha.css</em> provides classes that respect <a href="https://developer.mozilla.org/docs/Web/CSS/@media/prefers-color-scheme"><code data-hl="css">@media (prefers-color-scheme)</code></a> and
+  are compatible with <a href="https://istanbul.js.org/" target="_blank">istanbul.js</a>-like coverage reports.
 </p>
 <section>
   <div class="example istanbul-coverage-report" data-codeless data-color-schemeable>
-    <div class="table-responsive"><table class="coverage">
-      <tbody><tr>
-        <td class="line-count quiet"><pre><a href="#">01</a>
+    <div class="table-responsive">
+      <table class="coverage">
+        <tbody>
+          <tr>
+            <td class="line-count quiet">
+              <pre
+              >
+<a href="#">01</a>
 <a href="#">02</a>
 <a href="#">03</a>
 <a href="#">04</a>
@@ -26,8 +31,12 @@
 <a href="#">18</a>
 <a href="#">19</a>
 <a href="#">20</a>
-<a href="#">21</a></pre></td>
-        <td class="line-coverage quiet"><pre>
+<a href="#">21</a></pre
+              >
+            </td>
+            <td class="line-coverage quiet">
+              <pre
+              >
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -48,8 +57,10 @@
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-yes">x78</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span></pre></td>
-        <td class="branch-coverage quiet"><pre>
+<span class="cline-any cline-neutral">&nbsp;</span></pre
+              >
+            </td>
+            <td class="branch-coverage quiet"><pre>
 
 
 
@@ -73,7 +84,12 @@
 
 
 </pre></td>
-        <td class="text"><pre class="prettyprint" data-hl="ts">/**
+            <td class="text">
+              <pre
+                class="prettyprint"
+                data-hl="ts"
+              >
+/**
  * https://github.com/lowlighter/libs
  * @author Simon Lecoq (lowlighter)
  */
@@ -94,9 +110,13 @@ export class Context&lt;T extends record&gt; extends EventTarget {
   }
 
 }
-</pre></td>
-      </tr>
-    </tbody></table></div>
+</pre
+              >
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
     <style>
       .istanbul-coverage-report table {
         margin-left: 0;
@@ -126,7 +146,6 @@ export class Context&lt;T extends record&gt; extends EventTarget {
         border-radius: 3px;
       }
     </style>
-
   </div>
 </section>
 <p class="flash accent">
