@@ -1,5 +1,5 @@
 /* Sections */
-body {
+body, :host {
   max-width: var(--ct-width);
   padding: 0 1.5rem;
   margin: 0 auto;
@@ -8,6 +8,10 @@ body {
   font-family: var(--ft);
   font-size: var(--ft-size);
   line-height: 1.5;
+}
+
+:host {
+  max-width: auto;
 }
 
 [data-color-scheme] {
