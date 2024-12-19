@@ -45,7 +45,7 @@ button.danger:not(:disabled):active {
 }
 
 /* Fieldsets */
-fieldset:is(.accent,.active,.variant,.success,.attention,.severe,.danger) {
+fieldset:is(.accent, .active, .variant, .success, .attention, .severe, .danger) {
   border-color: currentColor;
 }
 

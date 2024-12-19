@@ -82,7 +82,7 @@ details summary a {
 }
 
 .matcha-build .variables input[name$="opacity"] {
-  margin-left: .25rem;
+  margin-left: 0.25rem;
   width: 3rem;
   text-align: center;
 }
@@ -106,7 +106,7 @@ details summary a {
 }
 
 .matcha-build .styling label small {
-  opacity: .75;
+  opacity: 0.75;
 }
 
 .matcha-build .styling > div {
@@ -170,13 +170,13 @@ details summary a {
   font-size: 85%;
   font-weight: normal;
   list-style: circle;
-  margin: 0 .5rem;
+  margin: 0 0.5rem;
 }
 
 .css-compatibility-table.details :is(td, th) > :nth-child(1) {
   border-bottom: 1px solid var(--bg-contrast);
-  padding-bottom: .5rem;
-  margin-bottom: .5rem;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .css-compatibility-table.details :is(td, th) > :nth-child(n+2) {
@@ -281,7 +281,7 @@ details summary a {
   justify-content: end;
   margin-bottom: 0;
   border-bottom: none;
-  margin: .5rem 0 .25rem;
+  margin: 0.5rem 0 0.25rem;
 }
 
 .example-tabs > li {
@@ -366,18 +366,23 @@ details summary a {
   width: 1.5em;
 }
 
-.example input:is([type="datetime-local"],[type="date"],[type="month"],[type="week"],[type="time"]) {
+.example input:is([type="datetime-local"], [type="date"], [type="month"], [type="week"], [type="time"]) {
   max-width: 100px;
 }
 
 @media (min-width: 640px) {
-  .example input:is([type="datetime-local"],[type="date"],[type="month"],[type="week"],[type="time"]) {
+  .example input:is([type="datetime-local"], [type="date"], [type="month"], [type="week"], [type="time"]) {
     max-width: none;
   }
 }
 
 .example menu {
   z-index: 200;
+}
+
+.example .example-shadow-root {
+  border: 2px dotted var(--bg-contrast);
+  border-radius: var(--bd-radius);
 }
 
 /* Layout structure */
@@ -405,7 +410,7 @@ details summary a {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(100, 0, 0, .2);
+  background-color: rgba(100, 0, 0, 0.2);
   backdrop-filter: brightness(50%) blur(5px);
 }
 
@@ -418,15 +423,15 @@ details summary a {
 }
 
 .easter-egg.glitch.blue, .easter-egg.glitch.red {
-  opacity: .1;
+  opacity: 0.1;
   animation: 1s glitch infinite;
 }
 
 @keyframes glitch {
-  1%{
+  1% {
     transform: rotateX(10deg) skewX(90deg);
   }
-  2%{
+  2% {
     transform: rotateX(0deg) skewX(0deg);
   }
 }

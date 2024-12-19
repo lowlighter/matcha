@@ -2,15 +2,20 @@
   <em>matcha.css</em> provides rules that automatically colors the borders of inputs based on their validation status.
 </p>
 <ul>
-  <li><code data-hl="css">:user-valid</code> has <code><span class="success">◉</span> --success</code> borders.</li>
-  <li><code data-hl="css">:user-invalid</code> has <code><span class="danger">◉</span> --danger</code> borders.</li>
+  <li>
+    <code data-hl="css">:user-valid</code> has <code><span class="success">◉</span> --success</code> borders.
+  </li>
+  <li>
+    <code data-hl="css">:user-invalid</code> has <code><span class="danger">◉</span> --danger</code> borders.
+  </li>
 </ul>
 <div class="example">
   <p class="note">*No validation except the ones operated by the browser are performed.</p>
   <form method="get" onsubmit="event.preventDefault()">
     <label>
       URL:
-      <small>Type an URL below. If it is valid, it'll appear in <code><span class="success">◉</span> --success</code> while it'll appear in <code><span class="danger">◉</span> --danger</code> if not.</small>
+      <small>Type an URL below. If it is valid, it'll appear in <code><span class="success">◉</span> --success</code> while it'll appear in <code><span class="danger">◉</span> --danger</code> if
+        not.</small>
       <input required type="url" placeholder="https://example.com">
     </label>
   </form>

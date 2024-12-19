@@ -36,7 +36,7 @@ section {
 aside {
   padding: 1rem;
   border-left: 4px solid var(--bd-muted);
-  margin: 0 0 0 .5rem;
+  margin: 0 0 0 0.5rem;
   color: var(--muted);
   float: right;
 }
@@ -44,7 +44,7 @@ aside {
 aside.left {
   border-right: 4px solid var(--bd-muted);
   border-left: none;
-  margin: 0 .5rem 0 0;
+  margin: 0 0.5rem 0 0;
   float: left;
 }
 
@@ -82,7 +82,7 @@ article > footer:last-child {
 /* Breaks */
 hr {
   overflow: visible;
-  height: .25em;
+  height: 0.25em;
   box-sizing: content-box;
   padding: 0;
   border: none;

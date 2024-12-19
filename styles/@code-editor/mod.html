@@ -2,21 +2,33 @@
   <em>matcha.css</em> provides classes that can be used to create a simple code editor with syntax highlighting.
 </p>
 <p>
-  <b>Required structure:</b><br>
+  <b>Required structure:</b>
+  <br>
   <small class="muted">Elements marked with <code class="danger">*</code> are required.</small>
 </p>
 <ul class="layout-structure">
-  <li><code data-hl="css">.editor</code><span class="danger">*</span>
+  <li>
+    <code data-hl="css">.editor</code>
+    <span class="danger">*</span>
     <ul>
-      <li><code data-hl="css">&gt; textarea</code><span class="danger">*</span></li>
-      <li><code data-hl="css">&gt; div.highlight</code><span class="danger">*</span></li>
+      <li>
+        <code data-hl="css">&gt; textarea</code>
+        <span class="danger">*</span>
+      </li>
+      <li>
+        <code data-hl="css">&gt; div.highlight</code>
+        <span class="danger">*</span>
+      </li>
     </ul>
   </li>
 </ul>
 <section>
   <div class="example">
     <div class="editor">
-      <textarea rows="6">// This element is editable and highlights TypeScript code
+      <textarea
+        rows="6"
+      >
+// This element is editable and highlights TypeScript code
 import * as mizu from "https://mizu.sh/mizu.js"
 
 const { version } = mizu
@@ -27,9 +39,10 @@ console.log(`🌊 mizu.js version: ${version}`)
     <script data-keep data-script="/styles/@code-editor/mod.js"></script>
   </div>
   <p class="flash attention">
-    These extra styles does not actually perform syntax highlighting, it is only for styling the code editor.
-    It is required to include a syntax highlighting library like <a href="https://highlightjs.org" target="_blank">highlight.js</a>.
-    See the example code above for a simple implementation.
+    These extra styles does not actually perform syntax highlighting, it is only for styling the code editor. It is required to include a syntax highlighting library like <a
+      href="https://highlightjs.org"
+      target="_blank"
+    >highlight.js</a>. See the example code above for a simple implementation.
   </p>
   <p class="flash accent">
     Use with <a href="#syntax-highlighting"><em>matcha.css</em>'s syntax highlighting classes</a> for a extra synergy!

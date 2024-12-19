@@ -7,14 +7,20 @@
   </p>
   <ul>
     <li><code data-hl="css">&gt; li &gt; a</code> lose their default style.</li>
-    <li><code data-hl="css">&gt; li.selected</code> is in <code><span class="accent">◉</span> --accent</code> color with a bottom border.</li>
-    <li><code data-hl="css">&gt; li.disabled</code> is in <code><span class="muted">◉</span> --muted</code> color.</li>
+    <li>
+      <code data-hl="css">&gt; li.selected</code> is in <code><span class="accent">◉</span> --accent</code> color with a bottom border.
+    </li>
+    <li>
+      <code data-hl="css">&gt; li.disabled</code> is in <code><span class="muted">◉</span> --muted</code> color.
+    </li>
   </ul>
   <p>
     Nesting a <code data-hl="html">&lt;menu&gt;</code> will create a submenu.
   </p>
   <ul>
-    <li><code data-hl="css">&gt; li:has(&gt; menu)::after</code> appends a downwards triangle (<code data-hl="css">▾</code>).</li>
+    <li>
+      <code data-hl="css">&gt; li:has(&gt; menu)::after</code> appends a downwards triangle (<code data-hl="css">▾</code>).
+    </li>
     <li><code data-hl="css">&gt; li &gt; menu &gt; li.selected</code> has a left border rather than a bottom one.</li>
   </ul>
   <!--/styles/lists/li.html-->
