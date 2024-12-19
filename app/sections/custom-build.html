@@ -390,13 +390,14 @@
     </fieldset>
     <fieldset class="miscellaneous">
       <legend>Miscellaneous</legend>
-      <label>
-        <input type="checkbox" name="minify" checked>
+      <label class="no-events">
+        <input type="checkbox" name="minify" disabled>
         Minify<br>
         <small>
           Minify CSS to reduce final bundle size.
           It requires a call to a serverless function that may fail because of a time-limit or rate-limit, if you're having issues
-          with getting your custom build, try disabling this option.
+          with getting your custom build, try disabling this option.<br>
+          <span class="severe">Minification is currently disabled. See <a href="https://github.com/lowlighter/matcha/issues/53">lowlighter/matcha/issues/53</a> for more informations.</span>
         </small>
       </label>
     </fieldset>

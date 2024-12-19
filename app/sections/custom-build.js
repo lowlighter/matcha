@@ -100,7 +100,7 @@ async function brew() {
 // Manage brewed download
 form.querySelector(".brewing button").addEventListener("click", async (event) => {
   event.preventDefault()
-  const minify = form.querySelector('input[name="minify"]').checked
+  const minify = false // form.querySelector('input[name="minify"]').checked
   const stylesheet = await brew()
   try {
     brewing.toggleAttribute("disabled", true)
