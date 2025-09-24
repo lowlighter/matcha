@@ -192,7 +192,7 @@ input[type="file"]:hover::file-selector-button {
 }
 
 /* Buttons */
-button, input:is([type="submit"], [type="reset"], [type="button"], [type="image"]) {
+button, input:is([type="submit"], [type="reset"], [type="button"], [type="image"]), *[role="button"] {
   display: inline-block;
   padding: 0.25rem 0.75rem;
   margin: 0.25rem 0.125rem;
@@ -215,7 +215,7 @@ input:is([type="image"], [type="file"], [type="color"]) {
   color: var(--danger);
 }
 
-:is(button, input:is([type="submit"], [type="reset"], [type="button"], [type="image"])):not(:disabled):active {
+:is(button, input:is([type="submit"], [type="reset"], [type="button"], [type="image"]), *[role="button"]):not(:disabled):active {
   filter: brightness(80%);
 }
 
@@ -223,8 +223,8 @@ button[type]:not([type="button"]), input:is([type="submit"], [type="reset"]) {
   border-color: currentColor;
 }
 
-:where(button, input:is([type="submit"], [type="reset"], [type="button"], [type="image"])):not(:disabled):hover,
-:where(button, input:is([type="submit"], [type="reset"], [type="button"], [type="image"])):not(:disabled):active {
+:where(button, input:is([type="submit"], [type="reset"], [type="button"], [type="image"]), *[role="button"]):not(:disabled):hover,
+:where(button, input:is([type="submit"], [type="reset"], [type="button"], [type="image"]), *[role="button"]):not(:disabled):active {
   border-color: transparent;
   background: var(--accent);
   color: var(--light);
