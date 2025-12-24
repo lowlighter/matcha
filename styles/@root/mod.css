@@ -137,7 +137,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
-  :root:not([data-color-scheme="light"]), :host:not([data-color-scheme="light"]) {
+  :root:not([data-color-scheme="light"]), :host(:not([data-color-scheme="light"])) {
     /* Colors */
     --default: var(--dark-default);
     --subtle: var(--dark-subtle);
